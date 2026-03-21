@@ -94,7 +94,7 @@ export default function ServicesPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <AnimateIn className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">What We Do</p>
-            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.03em] text-brand-text mb-6">
+            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
               Everything You Need to Get Online and{" "}
               <span className="text-brand-blue">Start Growing</span>
             </h1>
@@ -160,7 +160,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Who We Serve</p>
-            <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.03em] text-brand-text">
+            <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.01em] text-brand-text">
               Built for Local <span className="text-brand-blue">Service Businesses</span>
             </h2>
           </AnimateIn>
@@ -186,7 +186,7 @@ export default function ServicesPage() {
           style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(0,194,255,0.05) 0%, transparent 60%)" }} />
         <AnimateIn className="relative z-10 max-w-2xl mx-auto px-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Ready?</p>
-          <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.03em] text-brand-text mb-6">
+          <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.01em] text-brand-text mb-6">
             Let&apos;s Build Your <span className="text-brand-blue">Online Presence</span>
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">

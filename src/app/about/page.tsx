@@ -54,7 +54,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <AnimateIn className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Our Story</p>
-            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.03em] text-brand-text mb-6">
+            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
               We Help Local Businesses{" "}
               <span className="text-brand-blue">Level Up Online</span>
             </h1>
@@ -71,7 +71,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn from="left">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Why We Started</p>
-              <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.03em] text-brand-text mb-6">
+              <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.01em] text-brand-text mb-6">
                 Too Many Great Businesses Are{" "}
                 <span className="text-brand-blue">Invisible Online</span>
               </h2>
@@ -113,7 +113,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">The Team</p>
-            <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.03em] text-brand-text">
+            <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.01em] text-brand-text">
               Meet the People <span className="text-brand-blue">Behind Your Website</span>
             </h2>
           </AnimateIn>
@@ -145,7 +145,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">How We Work</p>
-            <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.03em] text-brand-text">
+            <h2 className="font-heading font-black text-4xl md:text-[48px] leading-[1.06] tracking-[-0.01em] text-brand-text">
               What We <span className="text-brand-blue">Believe In</span>
             </h2>
           </AnimateIn>
@@ -176,7 +176,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 grid-bg" />
         <AnimateIn className="relative z-10 max-w-2xl mx-auto px-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Let&apos;s Work Together</p>
-          <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.03em] text-brand-text mb-6">
+          <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.01em] text-brand-text mb-6">
             Ready to Get <span className="text-brand-blue">Your Business Online?</span>
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">

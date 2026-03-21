@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <AnimateIn className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Get in Touch</p>
-            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[64px] leading-[1.03] tracking-[-0.03em] text-brand-text mb-6">
+            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[64px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
               Let&apos;s Talk About Your <span className="text-brand-blue">Business</span>
             </h1>
             <p className="text-xl text-brand-muted leading-[1.75]">

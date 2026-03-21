@@ -48,7 +48,7 @@ export default function PortfolioPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <AnimateIn className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Our Work</p>
-            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.03em] text-brand-text mb-6">
+            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
               Real Websites for{" "}
               <span className="text-brand-blue">Real Businesses</span>
             </h1>
@@ -137,7 +137,7 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 grid-bg" />
         <AnimateIn className="relative z-10 max-w-2xl mx-auto px-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Your Turn</p>
-          <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.03em] text-brand-text mb-6">
+          <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.01em] text-brand-text mb-6">
             Want a Website Like This for <span className="text-brand-blue">Your Business?</span>
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">

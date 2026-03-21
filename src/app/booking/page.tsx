@@ -28,7 +28,7 @@ export default function BookingPage() {
                 style={{ animation: "pulse-dot 2s infinite" }} />
               <span className="text-brand-blue text-sm font-medium">Free — No credit card required</span>
             </div>
-            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.03em] text-brand-text mb-6">
+            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
               Book Your Free <span className="text-brand-blue">Website Audit</span>
             </h1>
             <p className="text-xl text-brand-muted leading-[1.75] max-w-xl mx-auto">

@@ -11,7 +11,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-[52px] leading-[1.06] tracking-[-0.03em] text-brand-text">
+    <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-[52px] leading-[1.06] tracking-[-0.01em] text-brand-text">
       {children}
     </h2>
   );
@@ -154,7 +154,7 @@ export default function HomePage() {
               <span className="text-brand-blue text-sm font-medium">Now accepting new clients — limited spots available</span>
             </div>
 
-            <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[1.0] tracking-[-0.03em] text-brand-text mb-7">
+            <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[1.0] tracking-[-0.01em] text-brand-text mb-7">
               Don&apos;t Have a Website?{" "}
               <span className="text-brand-blue glow-blue-text">You&apos;re Losing Customers</span>{" "}
               Every Day.
