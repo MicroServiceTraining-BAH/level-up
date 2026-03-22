@@ -262,25 +262,35 @@ export default function HomePage() {
                 style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,194,255,0.05)" }}>
                 <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
                   style={{ background: "radial-gradient(circle, rgba(0,194,255,0.08) 0%, transparent 70%)", transform: "translate(30%,-30%)" }} />
-                <div className="space-y-5 relative z-10">
-                  {[
-                    { label: "Website Complete", pct: 100, color: "#00C2FF" },
-                    { label: "Mobile Optimized", pct: 100, color: "#39FF14" },
-                    { label: "Lead System Active", pct: 100, color: "#00C2FF" },
-                    { label: "Google Visibility", pct: 85, color: "#39FF14" },
-                    { label: "Customer Inquiries", pct: 72, color: "#00C2FF" },
-                  ].map((bar) => (
-                    <div key={bar.label}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-brand-text text-sm font-medium">{bar.label}</span>
-                        <span className="text-brand-muted text-xs">{bar.pct}%</span>
+                <div className="space-y-4 relative z-10">
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { value: "47", label: "New Leads / Mo", color: "#00C2FF", up: true },
+                      { value: "#3", label: "Google Ranking", color: "#39FF14", up: true },
+                      { value: "1,240", label: "Site Visitors", color: "#00C2FF", up: true },
+                      { value: "23", label: "Calls Generated", color: "#39FF14", up: true },
+                    ].map((stat) => (
+                      <div key={stat.label} className="rounded-xl bg-brand-surface border border-brand-border p-4">
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <span className="font-heading font-black text-2xl" style={{ color: stat.color }}>{stat.value}</span>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill={stat.color} className="mb-0.5">
+                            <path d="M18 15l-6-6-6 6" stroke={stat.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                          </svg>
+                        </div>
+                        <span className="text-brand-muted text-xs">{stat.label}</span>
                       </div>
-                      <div className="h-2 bg-brand-border rounded-full overflow-hidden">
-                        <div className="h-full rounded-full"
-                          style={{ width: `${bar.pct}%`, background: bar.color, boxShadow: `0 0 8px ${bar.color}60` }} />
-                      </div>
+                    ))}
+                  </div>
+                  <div className="rounded-xl bg-brand-surface border border-brand-border p-4 flex items-center justify-between">
+                    <div>
+                      <p className="text-brand-text text-sm font-medium">Website Live</p>
+                      <p className="text-brand-muted text-xs mt-0.5">Launched in 4 days</p>
                     </div>
-                  ))}
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand-green" style={{ animation: "pulse-dot 2s infinite" }} />
+                      <span className="text-brand-green text-xs font-semibold">ACTIVE</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="mt-8 pt-6 border-t border-brand-border flex items-center justify-between relative z-10">
                   <span className="text-brand-muted text-xs">Business Status</span>
