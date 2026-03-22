@@ -1,15 +1,7 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-  host: 'smtpout.secureserver.net',
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.GODADDY_EMAIL,
-    pass: process.env.GODADDY_PASSWORD,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const { name, email, phone, message } = await req.json();
@@ -19,8 +11,8 @@ export async function POST(req: Request) {
   }
 
   try {
-    await transporter.sendMail({
-      from: `"LevelUp Local Contact" <${process.env.GODADDY_EMAIL}>`,
+    await resend.emails.send({
+      from: 'LevelUp Local <contact@lvluplocal.co>',
       to: ['Jcphilipps@lvluplocal.co', 'g.cajigas@lvluplocal.co'],
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
