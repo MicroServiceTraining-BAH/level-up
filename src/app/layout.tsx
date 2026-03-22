@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     "We build professional websites for local service businesses and turn them into customer-generating machines. Book a free website audit today.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/favicon-logo.png",
+    apple: "/favicon-logo.png",
   },
 };
 
@@ -32,8 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${inter.variable}`}>
       <head>
-        <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="icon" href="/favicon-logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon-logo.png" />
       </head>
       <body className="min-h-screen flex flex-col bg-brand-bg text-brand-text antialiased">
         <Navigation />
