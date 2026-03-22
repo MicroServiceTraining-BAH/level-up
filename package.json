@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "monitor": "SITE_URL=https://lvluplocal.co node monitor.mjs"
   },
   "dependencies": {
     "next": "16.2.1",
