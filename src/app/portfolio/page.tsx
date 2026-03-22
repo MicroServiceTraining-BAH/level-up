@@ -9,31 +9,14 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    name: "Miller's Flooring Co.",
+    name: "Pacheco's Hardwood Floors",
     category: "Flooring Contractor",
-    desc: "A clean, conversion-focused website for a family-owned flooring company. Built to showcase their work and drive quote requests from homeowners.",
-    highlights: ["Quote request form", "Project gallery", "Service area page", "Google Maps integration"],
-    gradient: "from-[#0a1628] to-[#0d1f3c]",
-    accentColor: "#00C2FF",
-    img: "https://placehold.co/1200x700/0d1f3c/00C2FF?text=Miller%27s+Flooring+Co.",
-  },
-  {
-    name: "GreenScape Landscaping",
-    category: "Landscaping Company",
-    desc: "A bold, imagery-driven website for a landscaping company targeting suburban homeowners. Heavy focus on before/after photos and seasonal service promos.",
-    highlights: ["Seasonal promotions section", "Before/after gallery", "Instant quote form", "Service package pages"],
-    gradient: "from-[#061a0e] to-[#0a2614]",
-    accentColor: "#39FF14",
-    img: "https://placehold.co/1200x700/0a2614/39FF14?text=GreenScape+Landscaping",
-  },
-  {
-    name: "The Fade Shop",
-    category: "Barbershop",
-    desc: "A sleek, modern website for a high-end urban barbershop. Designed to drive online bookings and showcase the shop's vibe and expertise.",
-    highlights: ["Online booking integration", "Team member profiles", "Service menu with pricing", "Instagram feed embed"],
-    gradient: "from-[#1a0a0a] to-[#2a0f0f]",
-    accentColor: "#FF6B35",
-    img: "https://placehold.co/1200x700/2a0f0f/FF6B35?text=The+Fade+Shop",
+    desc: "A premium, conversion-focused website for a family-owned hardwood flooring company serving Northern Virginia since 2021. Built to showcase their craftsmanship and drive free quote requests from homeowners.",
+    highlights: ["Free quote request form", "Project photo gallery", "Service area coverage", "Google Reviews integration"],
+    accentColor: "#C8A96E",
+    url: "pachecoshardwoodfloor.vercel.app",
+    live: "https://pachecoshardwoodfloor.vercel.app",
+    img: "/portfolio-pacheco.png",
   },
 ];
 
@@ -78,7 +61,7 @@ export default function PortfolioPage() {
                       <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                       </svg>
-                      www.{project.name.toLowerCase().replace(/[^a-z]/g, "")}.com
+                      {project.url}
                     </div>
                   </div>
                 </div>
@@ -108,7 +91,13 @@ export default function PortfolioPage() {
                         {project.category}
                       </span>
                       <h2 className="font-heading font-black text-2xl md:text-3xl text-brand-text mb-3 tracking-tight">{project.name}</h2>
-                      <p className="text-brand-muted text-sm leading-[1.8]">{project.desc}</p>
+                      <p className="text-brand-muted text-sm leading-[1.8] mb-5">{project.desc}</p>
+                      <a href={project.live} target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:opacity-80"
+                        style={{ color: project.accentColor, background: `${project.accentColor}12`, border: `1px solid ${project.accentColor}30` }}>
+                        View Live Site
+                        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                      </a>
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-widest text-brand-muted mb-4">Key Features</p>
