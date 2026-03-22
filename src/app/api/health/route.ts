@@ -17,7 +17,7 @@ async function checkEnvVars(): Promise<CheckResult> {
 
 async function checkResend(): Promise<CheckResult> {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(process.env.RESEND_API_KEY ?? '');
     const { data, error } = await resend.domains.list();
     if (error) return { ok: false, message: `Resend API error: ${error.message}` };
     const verified = data?.data?.some((d) => d.name === 'lvluplocal.co' && d.status === 'verified');
