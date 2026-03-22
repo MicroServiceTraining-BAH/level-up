@@ -376,7 +376,7 @@ export default function HomePage() {
                   style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.25)" }}>
                   <div className="flex items-baseline gap-1.5 mb-5">
                     <span className="text-[10px] font-bold font-heading tracking-[0.2em] text-brand-green uppercase">LVL</span>
-                    <span className="text-4xl font-heading font-black text-brand-border group-hover:text-brand-elevated leading-none transition-colors duration-300">{step.level}</span>
+                    <span className="text-4xl font-heading font-black text-brand-border group-hover:text-brand-blue/40 leading-none transition-colors duration-300">{step.level}</span>
                   </div>
                   <div className="h-[3px] w-full bg-brand-border rounded-full overflow-hidden mb-5">
                     <div className="h-full rounded-full"
