@@ -48,6 +48,26 @@ body {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-12px); }
 }
+@keyframes xp-fill {
+  from { width: 0%; }
+  to   { width: var(--xp-width); }
+}
+@keyframes lvl-pop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96%            { opacity: 0.7; }
+  97%            { opacity: 1; }
+  98%            { opacity: 0.5; }
+  99%            { opacity: 1; }
+}
 
 /* ─── Background Patterns ─── */
 .grid-bg {

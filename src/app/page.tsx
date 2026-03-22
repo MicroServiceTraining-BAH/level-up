@@ -258,46 +258,88 @@ export default function HomePage() {
             </AnimateIn>
 
             <AnimateIn from="right">
-              <div className="relative rounded-3xl bg-brand-elevated border border-brand-border p-8 overflow-hidden"
-                style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,194,255,0.05)" }}>
-                <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(circle, rgba(0,194,255,0.08) 0%, transparent 70%)", transform: "translate(30%,-30%)" }} />
-                <div className="space-y-4 relative z-10">
-                  <div className="grid grid-cols-2 gap-4">
+              {/* RPG STAT CARD */}
+              <div className="relative rounded-2xl overflow-hidden"
+                style={{
+                  background: "linear-gradient(145deg, #0e0e1a 0%, #12121f 100%)",
+                  border: "1px solid rgba(0,194,255,0.2)",
+                  boxShadow: "0 0 0 1px rgba(0,194,255,0.05), 0 24px 64px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.04)",
+                  animation: "flicker 8s infinite",
+                }}>
+
+                {/* Scanline overlay */}
+                <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden rounded-2xl opacity-[0.03]"
+                  style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,194,255,0.8) 2px, rgba(0,194,255,0.8) 3px)", backgroundSize: "100% 3px" }} />
+
+                {/* Corner brackets */}
+                <div className="absolute top-3 left-3 w-5 h-5 border-t-2 border-l-2 border-brand-blue opacity-60 rounded-tl" />
+                <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-brand-blue opacity-60 rounded-tr" />
+                <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-brand-blue opacity-60 rounded-bl" />
+                <div className="absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-brand-blue opacity-60 rounded-br" />
+
+                <div className="relative z-20 p-7">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <p className="text-brand-blue text-[10px] font-bold tracking-[0.25em] uppercase">Your Business</p>
+                      <p className="font-heading font-black text-brand-text text-xl tracking-tight mt-0.5">STAT SCREEN</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-brand-muted text-[10px] tracking-widest uppercase">Power Level</p>
+                      <p className="font-heading font-black text-3xl leading-none" style={{ color: "#39FF14", textShadow: "0 0 20px rgba(57,255,20,0.5)" }}>MAX</p>
+                    </div>
+                  </div>
+
+                  {/* Stat rows */}
+                  <div className="space-y-4">
                     {[
-                      { value: "47", label: "New Leads / Mo", color: "#00C2FF", up: true },
-                      { value: "#3", label: "Google Ranking", color: "#39FF14", up: true },
-                      { value: "1,240", label: "Site Visitors", color: "#00C2FF", up: true },
-                      { value: "23", label: "Calls Generated", color: "#39FF14", up: true },
-                    ].map((stat) => (
-                      <div key={stat.label} className="rounded-xl bg-brand-surface border border-brand-border p-4">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <span className="font-heading font-black text-2xl" style={{ color: stat.color }}>{stat.value}</span>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill={stat.color} className="mb-0.5">
-                            <path d="M18 15l-6-6-6 6" stroke={stat.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                          </svg>
+                      { stat: "Online Presence",   before: "0",  after: "100", color: "#00C2FF", pct: "100%" },
+                      { stat: "Mobile Experience", before: "0",  after: "100", color: "#39FF14", pct: "100%" },
+                      { stat: "Lead Generation",   before: "0",  after: "100", color: "#00C2FF", pct: "100%" },
+                      { stat: "Google Visibility", before: "0",  after: "100", color: "#39FF14", pct: "100%" },
+                      { stat: "Local Authority",   before: "0",  after: "100", color: "#00C2FF", pct: "100%" },
+                    ].map((row, i) => (
+                      <div key={row.stat}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-brand-muted text-xs font-mono tracking-wider uppercase">{row.stat}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-brand-muted text-[10px] font-mono line-through opacity-50">LVL {row.before}</span>
+                            <span className="text-[10px]">→</span>
+                            <span className="font-heading font-black text-xs px-2 py-0.5 rounded"
+                              style={{
+                                color: row.color,
+                                background: `${row.color}18`,
+                                border: `1px solid ${row.color}40`,
+                                textShadow: `0 0 8px ${row.color}`,
+                                animation: `lvl-pop 0.4s ease-out ${i * 0.1 + 0.3}s both`,
+                              }}>
+                              LVL MAX ▲
+                            </span>
+                          </div>
                         </div>
-                        <span className="text-brand-muted text-xs">{stat.label}</span>
+                        <div className="h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.04)" }}>
+                          <div className="h-full rounded-full"
+                            style={{
+                              width: row.pct,
+                              background: `linear-gradient(90deg, ${row.color}99, ${row.color})`,
+                              boxShadow: `0 0 10px ${row.color}80`,
+                              animation: `xp-fill 1s cubic-bezier(0.22,1,0.36,1) ${i * 0.12 + 0.2}s both`,
+                              ["--xp-width" as string]: row.pct,
+                            }} />
+                        </div>
                       </div>
                     ))}
                   </div>
-                  <div className="rounded-xl bg-brand-surface border border-brand-border p-4 flex items-center justify-between">
-                    <div>
-                      <p className="text-brand-text text-sm font-medium">Website Live</p>
-                      <p className="text-brand-muted text-xs mt-0.5">Launched in 4 days</p>
+
+                  {/* Footer */}
+                  <div className="mt-6 pt-5 flex items-center justify-between"
+                    style={{ borderTop: "1px solid rgba(0,194,255,0.12)" }}>
+                    <span className="text-brand-muted text-[10px] font-mono tracking-widest uppercase">Status</span>
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+                      style={{ background: "rgba(57,255,20,0.08)", border: "1px solid rgba(57,255,20,0.25)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-green" style={{ animation: "pulse-dot 1.5s infinite", boxShadow: "0 0 6px #39FF14" }} />
+                      <span className="text-brand-green text-[10px] font-bold tracking-[0.2em]">LEVELED UP</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-brand-green" style={{ animation: "pulse-dot 2s infinite" }} />
-                      <span className="text-brand-green text-xs font-semibold">ACTIVE</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8 pt-6 border-t border-brand-border flex items-center justify-between relative z-10">
-                  <span className="text-brand-muted text-xs">Business Status</span>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-brand-green"
-                      style={{ animation: "pulse-dot 2s infinite" }} />
-                    <span className="text-brand-green text-xs font-semibold tracking-wider">LEVELED UP</span>
                   </div>
                 </div>
               </div>
