@@ -31,6 +31,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${inter.variable}`}>
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+      </head>
       <body className="min-h-screen flex flex-col bg-brand-bg text-brand-text antialiased">
         <Navigation />
         <main className="flex-1">{children}</main>

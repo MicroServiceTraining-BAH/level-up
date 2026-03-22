@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -39,13 +38,11 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/logo.png"
             alt="LevelUp Local"
-            width={120}
-            height={120}
-            className="h-16 w-auto object-contain"
-            priority
+            className="h-14 w-auto object-contain"
           />
         </Link>
 
