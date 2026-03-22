@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "LevelUp Local — Get Your Business Online",
   description:
     "We build professional websites for local service businesses and turn them into customer-generating machines. Book a free website audit today.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
