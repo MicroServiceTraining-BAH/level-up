@@ -20,9 +20,21 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("loading");
-    // Simulate submission — replace with real API call
-    await new Promise((r) => setTimeout(r, 1200));
-    setState("success");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json() as { error?: string };
+        throw new Error(data.error ?? "Something went wrong.");
+      }
+      setState("success");
+    } catch (err) {
+      console.error(err);
+      setState("error");
+    }
   };
 
   if (state === "success") {
@@ -38,6 +50,29 @@ export default function ContactForm() {
         <p className="text-brand-muted text-sm leading-[1.7] max-w-xs">
           Thanks for reaching out. We&apos;ll get back to you within one business day.
         </p>
+      </div>
+    );
+  }
+
+  if (state === "error") {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+          style={{ background: "rgba(255,60,60,0.1)", border: "1px solid rgba(255,60,60,0.3)" }}>
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#ff3c3c" strokeWidth={2.5}>
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </div>
+        <h3 className="font-heading font-black text-2xl text-brand-text mb-3">Something went wrong.</h3>
+        <p className="text-brand-muted text-sm leading-[1.7] max-w-xs mb-6">
+          We couldn&apos;t send your message. Please try again or email us directly.
+        </p>
+        <button
+          onClick={() => setState("idle")}
+          className="px-6 py-2.5 rounded-xl bg-brand-blue text-brand-bg font-bold text-sm hover:bg-brand-blue/90 transition-all"
+        >
+          Try Again
+        </button>
       </div>
     );
   }
