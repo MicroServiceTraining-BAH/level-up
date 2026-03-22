@@ -92,7 +92,7 @@ export default function BookingPage() {
                   {/* Calendly embed area */}
                   <div
                     className="calendly-inline-widget w-full"
-                    data-url="https://calendly.com/leveluplocal/free-audit"
+                    data-url="https://calendly.com/jcphilipps-lvluplocal/30min"
                     style={{ minWidth: "320px", height: "700px" }}
                   />
 
