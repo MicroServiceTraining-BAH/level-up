@@ -17,12 +17,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lvluplocal.co"),
   title: "LevelUp Local — Get Your Business Online",
   description:
     "We build professional websites for local service businesses and turn them into customer-generating machines. Book a free website audit today.",
   icons: {
     icon: "/favicon-logo.png",
     apple: "/favicon-logo.png",
+  },
+  openGraph: {
+    title: "LevelUp Local — Get Your Business Online",
+    description:
+      "We build professional websites for local service businesses and turn them into customer-generating machines. Book a free website audit today.",
+    url: "https://lvluplocal.co",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LevelUp Local — Get Your Business Online",
+    description:
+      "We build professional websites for local service businesses and turn them into customer-generating machines. Book a free website audit today.",
+  },
+  alternates: {
+    canonical: "https://lvluplocal.co",
   },
 };
 
