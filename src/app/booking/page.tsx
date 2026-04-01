@@ -100,7 +100,7 @@ export default function BookingPage() {
                   <noscript>
                     <div className="p-10 text-center">
                       <p className="text-brand-muted text-sm mb-4">Please enable JavaScript to use the scheduling widget.</p>
-                      <a href="mailto:hello@leveluplocal.com"
+                      <a href="mailto:sales@lvluplocal.co"
                         className="text-brand-blue underline text-sm">
                         Or email us to schedule directly
                       </a>

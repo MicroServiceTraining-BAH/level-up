@@ -51,9 +51,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-brand-muted text-xs uppercase tracking-wider mb-0.5">Email</p>
-                        <a href="mailto:hello@leveluplocal.com"
+                        <a href="mailto:sales@lvluplocal.co"
                           className="text-brand-text text-sm font-medium hover:text-brand-blue focus-visible:text-brand-blue transition-colors">
-                          hello@leveluplocal.com
+                          sales@lvluplocal.co
                         </a>
                       </div>
                     </div>
