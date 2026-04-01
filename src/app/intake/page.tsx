@@ -27,7 +27,7 @@ export default function IntakePage() {
   if (unlocked) {
     return (
       <section className="min-h-screen py-16 px-4">
-        <div className="max-w-[620px] mx-auto">
+        <div className="max-w-[920px] mx-auto">
           <div className="mb-8 text-center">
             <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-[rgba(0,194,255,0.08)] border border-[rgba(0,194,255,0.2)] text-[#00C2FF]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#39FF14] animate-pulse" aria-hidden="true" />

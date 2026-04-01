@@ -183,7 +183,7 @@ export default function IntakeForm() {
 
   if (submitted) {
     return (
-      <div style={{ ...CSS_VARS, maxWidth: 580, margin: '0 auto', padding: '3rem 1rem', textAlign: 'center' } as React.CSSProperties}>
+      <div style={{ ...CSS_VARS, maxWidth: 860, margin: '0 auto', padding: '3rem 1rem', textAlign: 'center' } as React.CSSProperties}>
         <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'var(--color-background-success)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontSize: 28, border: '1px solid rgba(57,255,20,0.2)' }}>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <polyline points="20 6 9 17 4 12" />
@@ -211,7 +211,7 @@ export default function IntakeForm() {
   }
 
   return (
-    <div style={{ ...CSS_VARS, maxWidth: 580, margin: '0 auto', padding: '1.5rem 1rem 2rem' } as React.CSSProperties}>
+    <div style={{ ...CSS_VARS, maxWidth: 860, margin: '0 auto', padding: '1.5rem 1rem 2rem' } as React.CSSProperties}>
       {/* Progress header */}
       <div style={{ marginBottom: '1.75rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
@@ -228,9 +228,9 @@ export default function IntakeForm() {
       <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 1.75rem', lineHeight: 1.6 }}>{current.subtitle}</p>
 
       {/* Fields */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
         {current.fields.map((field) => (
-          <div key={field.id}>
+          <div key={field.id} style={{ gridColumn: field.type === 'textarea' ? '1 / -1' : 'auto' }}>
             <label
               htmlFor={field.id}
               style={{ display: 'block', fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: 5 }}
