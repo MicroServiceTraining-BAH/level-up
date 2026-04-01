@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 // Replace this with your actual Formspree endpoint (e.g. https://formspree.io/f/abcdefgh)
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjozyye';
 
 type FieldType = 'text' | 'tel' | 'email' | 'url' | 'textarea' | 'select';
 
