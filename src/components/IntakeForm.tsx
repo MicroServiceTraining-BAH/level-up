@@ -228,59 +228,73 @@ export default function IntakeForm() {
       <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 1.75rem', lineHeight: 1.6 }}>{current.subtitle}</p>
 
       {/* Fields */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px 24px' }}>
         {current.fields.map((field) => (
-          <div key={field.id} style={{ gridColumn: field.type === 'textarea' ? '1 / -1' : 'auto' }}>
-            <label
-              htmlFor={field.id}
-              style={{ display: 'block', fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: 5 }}
-            >
-              {field.label}
-              {field.required && <span style={{ color: '#FF4D4D', marginLeft: 3 }} aria-hidden="true">*</span>}
-            </label>
-            {field.hint && (
-              <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '0 0 6px', lineHeight: 1.5 }}>{field.hint}</p>
-            )}
-            {field.type === 'textarea' ? (
-              <textarea
-                id={field.id}
-                value={data[field.id] || ''}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-                rows={4}
-                aria-required={field.required}
-                aria-invalid={errors[field.id] ? 'true' : 'false'}
-                style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: 'var(--color-text-primary)', fontSize: 14, lineHeight: 1.6, resize: 'vertical', boxSizing: 'border-box', fontFamily: 'inherit', outline: 'none' }}
-              />
-            ) : field.type === 'select' ? (
-              <select
-                id={field.id}
-                value={data[field.id] || ''}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-                aria-required={field.required}
-                aria-invalid={errors[field.id] ? 'true' : 'false'}
-                style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: data[field.id] ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)', fontSize: 14, boxSizing: 'border-box', outline: 'none' }}
+          <div
+            key={field.id}
+            style={{
+              gridColumn: field.type === 'textarea' ? '1 / -1' : 'auto',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            {/* Label + hint stay at top */}
+            <div>
+              <label
+                htmlFor={field.id}
+                style={{ display: 'block', fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: 4 }}
               >
-                <option value="" disabled>Select an option</option>
-                {field.options?.map((o) => (
-                  <option key={o} value={o}>{o}</option>
-                ))}
-              </select>
-            ) : (
-              <input
-                id={field.id}
-                type={field.type}
-                value={data[field.id] || ''}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-                aria-required={field.required}
-                aria-invalid={errors[field.id] ? 'true' : 'false'}
-                style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: 'var(--color-text-primary)', fontSize: 14, boxSizing: 'border-box', fontFamily: 'inherit', outline: 'none' }}
-              />
-            )}
-            {errors[field.id] && (
-              <p role="alert" style={{ fontSize: 12, color: 'var(--color-text-danger)', margin: '4px 0 0' }}>
-                This field is required.
-              </p>
-            )}
+                {field.label}
+                {field.required && <span style={{ color: '#FF4D4D', marginLeft: 3 }} aria-hidden="true">*</span>}
+              </label>
+              {field.hint && (
+                <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>{field.hint}</p>
+              )}
+            </div>
+
+            {/* Input pinned to bottom of cell so all inputs in a row align */}
+            <div style={{ marginTop: 'auto', paddingTop: 8 }}>
+              {field.type === 'textarea' ? (
+                <textarea
+                  id={field.id}
+                  value={data[field.id] || ''}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                  rows={4}
+                  aria-required={field.required}
+                  aria-invalid={errors[field.id] ? 'true' : 'false'}
+                  style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: 'var(--color-text-primary)', fontSize: 14, lineHeight: 1.6, resize: 'vertical', boxSizing: 'border-box', fontFamily: 'inherit', outline: 'none' }}
+                />
+              ) : field.type === 'select' ? (
+                <select
+                  id={field.id}
+                  value={data[field.id] || ''}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                  aria-required={field.required}
+                  aria-invalid={errors[field.id] ? 'true' : 'false'}
+                  style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: data[field.id] ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)', fontSize: 14, boxSizing: 'border-box', outline: 'none' }}
+                >
+                  <option value="" disabled>Select an option</option>
+                  {field.options?.map((o) => (
+                    <option key={o} value={o}>{o}</option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  id={field.id}
+                  type={field.type}
+                  value={data[field.id] || ''}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                  aria-required={field.required}
+                  aria-invalid={errors[field.id] ? 'true' : 'false'}
+                  style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: 'var(--color-text-primary)', fontSize: 14, boxSizing: 'border-box', fontFamily: 'inherit', outline: 'none' }}
+                />
+              )}
+              {errors[field.id] && (
+                <p role="alert" style={{ fontSize: 12, color: 'var(--color-text-danger)', margin: '4px 0 0' }}>
+                  This field is required.
+                </p>
+              )}
+            </div>
           </div>
         ))}
       </div>
