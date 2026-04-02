@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 
 import IntakeForm from '@/components/IntakeForm';
 
-const ACCESS_CODE = 'lvlup2025';
+const ACCESS_CODE = 'lvlup2026';
 
 export default function IntakePage() {
   const [code, setCode] = useState('');
