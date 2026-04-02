@@ -93,7 +93,7 @@ const SECTIONS: Section[] = [
     fields: [
       { id: 'primaryGoal', label: "What's the #1 thing you want the website to do for you?", type: 'textarea', required: true, hint: 'More calls, more bookings, show up on Google, look more professional — there\'s no wrong answer.' },
       { id: 'timeline', label: 'Do you have a target launch date?', type: 'text', required: false, hint: "If there's an event, opening date, or urgency — let us know." },
-      { id: 'budget', label: 'Selected package', type: 'select', required: true, options: ['🟢 Launch — $700 setup + $99/mo', '🔵 Growth — $700 setup + $249/mo (most popular)', '🔴 Authority — $700 setup + $399/mo'] },
+      { id: 'budget', label: 'Selected package', type: 'select', required: true, options: ['🟢 Launch — $700 setup + $99/mo', '🔵 Growth — $1,000 setup + $149/mo', '🔴 Authority — $1,300 setup + $200/mo'] },
     ],
   },
   {
