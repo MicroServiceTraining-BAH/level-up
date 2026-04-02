@@ -124,11 +124,40 @@ const CSS_VARS: Record<string, string> = {
   '--border-radius-lg': '12px',
 };
 
+// Per-field validation — returns an error message or empty string
+function validateField(field: Field, value: string): string {
+  const v = value?.trim() ?? '';
+
+  if (field.required && !v) {
+    if (field.type === 'select') return 'Please select an option.';
+    return 'This field is required.';
+  }
+
+  // Format checks (only when a value is present)
+  if (v) {
+    if (field.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))
+        return 'Enter a valid email address.';
+    }
+    if (field.type === 'tel') {
+      if (v.replace(/[\s\-().+]/g, '').replace(/\D/g, '').length < 7)
+        return 'Enter a valid phone number.';
+    }
+    if (field.type === 'url') {
+      if (!/^https?:\/\/.+\..+/.test(v))
+        return 'Enter a valid URL starting with https://';
+    }
+  }
+
+  return '';
+}
+
 export default function IntakeForm() {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormData>({});
   const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState<Record<string, boolean>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
@@ -138,15 +167,37 @@ export default function IntakeForm() {
 
   function handleChange(id: string, value: string) {
     setData((d) => ({ ...d, [id]: value }));
-    if (errors[id]) setErrors((e) => ({ ...e, [id]: false }));
+    // Live re-validation once a field has been touched
+    if (touched[id]) {
+      const field = current.fields.find((f) => f.id === id);
+      if (field) {
+        const msg = validateField(field, value);
+        setErrors((e) => ({ ...e, [id]: msg }));
+      }
+    }
   }
 
+  function handleBlur(id: string) {
+    if (touched[id]) return; // already touched, live validation handles it
+    setTouched((t) => ({ ...t, [id]: true }));
+    const field = current.fields.find((f) => f.id === id);
+    if (field) {
+      const msg = validateField(field, data[id] ?? '');
+      setErrors((e) => ({ ...e, [id]: msg }));
+    }
+  }
+
+  // Validates all fields in the current section, marks all as touched
   function validate() {
-    const newErrors: Record<string, boolean> = {};
+    const newErrors: Record<string, string> = {};
+    const newTouched: Record<string, boolean> = {};
     current.fields.forEach((f) => {
-      if (f.required && !data[f.id]?.trim()) newErrors[f.id] = true;
+      newTouched[f.id] = true;
+      const msg = validateField(f, data[f.id] ?? '');
+      if (msg) newErrors[f.id] = msg;
     });
-    setErrors(newErrors);
+    setTouched((t) => ({ ...t, ...newTouched }));
+    setErrors((e) => ({ ...e, ...newErrors }));
     return Object.keys(newErrors).length === 0;
   }
 
@@ -156,7 +207,7 @@ export default function IntakeForm() {
 
   function handleBack() {
     setStep((s) => s - 1);
-    setErrors({});
+    // Don't clear errors/touched — preserve state if user goes back
   }
 
   async function handleSubmit() {
@@ -254,46 +305,85 @@ export default function IntakeForm() {
 
             {/* Input pinned to bottom of cell so all inputs in a row align */}
             <div style={{ marginTop: 'auto', paddingTop: 8 }}>
-              {field.type === 'textarea' ? (
-                <textarea
-                  id={field.id}
-                  value={data[field.id] || ''}
-                  onChange={(e) => handleChange(field.id, e.target.value)}
-                  rows={4}
-                  aria-required={field.required}
-                  aria-invalid={errors[field.id] ? 'true' : 'false'}
-                  style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: 'var(--color-text-primary)', fontSize: 14, lineHeight: 1.6, resize: 'vertical', boxSizing: 'border-box', fontFamily: 'inherit', outline: 'none' }}
-                />
-              ) : field.type === 'select' ? (
-                <select
-                  id={field.id}
-                  value={data[field.id] || ''}
-                  onChange={(e) => handleChange(field.id, e.target.value)}
-                  aria-required={field.required}
-                  aria-invalid={errors[field.id] ? 'true' : 'false'}
-                  style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: data[field.id] ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)', fontSize: 14, boxSizing: 'border-box', outline: 'none' }}
-                >
-                  <option value="" disabled>Select an option</option>
-                  {field.options?.map((o) => (
-                    <option key={o} value={o}>{o}</option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  id={field.id}
-                  type={field.type}
-                  value={data[field.id] || ''}
-                  onChange={(e) => handleChange(field.id, e.target.value)}
-                  aria-required={field.required}
-                  aria-invalid={errors[field.id] ? 'true' : 'false'}
-                  style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--border-radius-md)', border: errors[field.id] ? '1px solid var(--color-border-danger)' : '1px solid var(--color-border-secondary)', background: 'var(--color-background-primary)', color: 'var(--color-text-primary)', fontSize: 14, boxSizing: 'border-box', fontFamily: 'inherit', outline: 'none' }}
-                />
-              )}
-              {errors[field.id] && (
-                <p role="alert" style={{ fontSize: 12, color: 'var(--color-text-danger)', margin: '4px 0 0' }}>
-                  This field is required.
-                </p>
-              )}
+              {(() => {
+                const hasError = !!errors[field.id];
+                const isValid = touched[field.id] && !hasError && !!data[field.id]?.trim();
+                const borderColor = hasError
+                  ? '#FF4D4D'
+                  : isValid
+                  ? 'rgba(57,255,20,0.45)'
+                  : '#252535';
+                const inputStyle: React.CSSProperties = {
+                  width: '100%',
+                  padding: '8px 12px',
+                  borderRadius: 'var(--border-radius-md)',
+                  border: `1px solid ${borderColor}`,
+                  background: 'var(--color-background-primary)',
+                  color: 'var(--color-text-primary)',
+                  fontSize: 14,
+                  boxSizing: 'border-box',
+                  fontFamily: 'inherit',
+                  outline: 'none',
+                  transition: 'border-color 0.2s',
+                };
+                return (
+                  <>
+                    {field.type === 'textarea' ? (
+                      <textarea
+                        id={field.id}
+                        value={data[field.id] || ''}
+                        onChange={(e) => handleChange(field.id, e.target.value)}
+                        onBlur={() => handleBlur(field.id)}
+                        rows={4}
+                        aria-required={field.required}
+                        aria-invalid={hasError ? 'true' : 'false'}
+                        aria-describedby={hasError ? `${field.id}-error` : undefined}
+                        style={{ ...inputStyle, lineHeight: 1.6, resize: 'vertical' }}
+                      />
+                    ) : field.type === 'select' ? (
+                      <select
+                        id={field.id}
+                        value={data[field.id] || ''}
+                        onChange={(e) => handleChange(field.id, e.target.value)}
+                        onBlur={() => handleBlur(field.id)}
+                        aria-required={field.required}
+                        aria-invalid={hasError ? 'true' : 'false'}
+                        aria-describedby={hasError ? `${field.id}-error` : undefined}
+                        style={{ ...inputStyle, color: data[field.id] ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)' }}
+                      >
+                        <option value="" disabled>Select an option</option>
+                        {field.options?.map((o) => (
+                          <option key={o} value={o}>{o}</option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        id={field.id}
+                        type={field.type}
+                        value={data[field.id] || ''}
+                        onChange={(e) => handleChange(field.id, e.target.value)}
+                        onBlur={() => handleBlur(field.id)}
+                        aria-required={field.required}
+                        aria-invalid={hasError ? 'true' : 'false'}
+                        aria-describedby={hasError ? `${field.id}-error` : undefined}
+                        style={inputStyle}
+                      />
+                    )}
+                    {hasError && (
+                      <p
+                        id={`${field.id}-error`}
+                        role="alert"
+                        style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: '#FF4D4D', margin: '5px 0 0' }}
+                      >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        {errors[field.id]}
+                      </p>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
         ))}
