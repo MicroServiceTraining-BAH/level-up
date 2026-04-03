@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
+
+export const metadata: Metadata = {
+  title: "Local SEO Services That Bring You More Customers | LevelUp Local",
+  description:
+    "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google — free audit today.",
+  alternates: {
+    canonical: "https://lvluplocal.co",
+  },
+};
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -155,9 +165,9 @@ export default function HomePage() {
             </div>
 
             <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[1.0] tracking-[-0.01em] text-brand-text mb-7">
-              Don&apos;t Have a Website?{" "}
-              <span className="text-brand-blue glow-blue-text">You&apos;re Losing Customers</span>{" "}
-              Every Day.
+              Local SEO Services That{" "}
+              <span className="text-brand-blue glow-blue-text">Bring You More Customers</span>{" "}
+              in Northern Virginia.
             </h1>
 
             <p className="text-lg md:text-xl text-brand-muted leading-[1.75] max-w-2xl mb-10">
@@ -530,6 +540,101 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICE AREA ─── */}
+      <section className="bg-brand-bg py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateIn className="text-center max-w-2xl mx-auto mb-14">
+            <Eyebrow>Service Area</Eyebrow>
+            <SectionHeading>
+              Serving All of{" "}
+              <span className="text-brand-blue">Northern Virginia</span>
+            </SectionHeading>
+            <p className="text-brand-muted text-lg leading-[1.75] mt-5">
+              We work with local businesses across NOVA — from Stafford to Arlington and everywhere in between.
+            </p>
+          </AnimateIn>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            {[
+              { city: "Stafford", slug: "stafford-va" },
+              { city: "Fredericksburg", slug: "fredericksburg-va" },
+              { city: "Woodbridge", slug: "woodbridge-va" },
+              { city: "Manassas", slug: "manassas-va" },
+              { city: "Arlington", slug: "arlington-va" },
+              { city: "Alexandria", slug: "alexandria-va" },
+              { city: "Fairfax", slug: "fairfax-va" },
+            ].map((loc, i) => (
+              <AnimateIn key={loc.city} delay={i * 40}>
+                <Link
+                  href={`/locations/${loc.slug}`}
+                  className="px-4 py-3.5 rounded-xl bg-brand-elevated border border-brand-border text-center text-sm font-medium text-brand-muted hover:text-brand-blue hover:border-brand-blue/30 transition-all duration-200 block"
+                >
+                  {loc.city}, VA
+                </Link>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn className="text-center mt-8">
+            <Link href="/locations" className="text-brand-blue text-sm font-medium hover:underline focus-visible:outline-none focus-visible:underline">
+              View all service areas →
+            </Link>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ─── BLOG PREVIEW ─── */}
+      <section className="bg-brand-surface py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateIn className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+            <div>
+              <Eyebrow>Local SEO Tips</Eyebrow>
+              <SectionHeading>
+                Learn How to <span className="text-brand-blue">Rank Locally</span>
+              </SectionHeading>
+            </div>
+            <Link href="/blog" className="text-brand-blue text-sm font-medium hover:underline focus-visible:outline-none focus-visible:underline whitespace-nowrap">
+              View all posts →
+            </Link>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                slug: "how-to-rank-cleaning-business",
+                category: "Local SEO",
+                title: "How to Rank Your Cleaning Business on Google (2025 Guide)",
+                desc: "A step-by-step guide to getting your cleaning business in front of local customers searching on Google.",
+              },
+              {
+                slug: "why-youre-not-showing-on-google-maps",
+                category: "Google Maps",
+                title: "Why Your Business Isn't Showing Up on Google Maps",
+                desc: "The most common reasons local businesses get buried in search results — and exactly how to fix them.",
+              },
+              {
+                slug: "seo-vs-ads-local-business",
+                category: "Strategy",
+                title: "SEO vs. Paid Ads: What's Better for Local Businesses?",
+                desc: "Breaking down the real difference between SEO and Google Ads for small local businesses in 2025.",
+              },
+            ].map((post, i) => (
+              <AnimateIn key={post.slug} delay={i * 80}>
+                <Link href={`/blog/${post.slug}`} className="block group h-full">
+                  <div className="p-7 rounded-2xl bg-brand-elevated border border-brand-border hover:border-brand-blue/30 transition-all duration-300 h-full flex flex-col"
+                    style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.3)" }}>
+                    <span className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-4 block">{post.category}</span>
+                    <h3 className="font-heading font-bold text-brand-text text-lg leading-snug mb-3 group-hover:text-brand-blue transition-colors duration-200">{post.title}</h3>
+                    <p className="text-brand-muted text-sm leading-[1.75] flex-1">{post.desc}</p>
+                    <div className="mt-5 text-brand-blue text-sm font-medium flex items-center gap-1.5">
+                      Read more
+                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    </div>
+                  </div>
+                </Link>
               </AnimateIn>
             ))}
           </div>

@@ -3,9 +3,9 @@ import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Builder for Local Businesses — Services",
+  title: "Local SEO Services & Web Design for Small Businesses",
   description:
-    "Custom website design, lead capture systems, and local SEO for small and local service businesses. No templates — built from scratch and live in 3–5 days.",
+    "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google — free audit.",
   alternates: {
     canonical: "https://lvluplocal.co/services",
   },
@@ -99,11 +99,11 @@ export default function ServicesPage() {
           <AnimateIn className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">What We Do</p>
             <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
-              Everything You Need to Get Online and{" "}
-              <span className="text-brand-blue">Start Growing</span>
+              Local SEO Services &amp; Web Design for{" "}
+              <span className="text-brand-blue">Small Businesses</span>
             </h1>
             <p className="text-xl text-brand-muted leading-[1.75] max-w-2xl mb-10">
-              We focus on one thing: helping local service businesses get online quickly and start generating real customers — without the tech headache.
+              We help local service businesses across Northern Virginia get found on Google — with professional websites, local SEO, and lead generation systems built to convert.
             </p>
             <Link href="/booking"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-brand-bg font-bold text-base hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg transition-all duration-200"
@@ -181,6 +181,82 @@ export default function ServicesPage() {
               </AnimateIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* How We Help You Rank on Google */}
+      <section className="bg-brand-bg py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateIn className="max-w-3xl mb-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Local SEO Strategy</p>
+            <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.01em] text-brand-text mb-5">
+              How We Help You <span className="text-brand-blue">Rank on Google</span>
+            </h2>
+            <p className="text-brand-muted text-lg leading-[1.75]">
+              Ranking on Google isn&apos;t magic — it&apos;s a system. We implement every piece of that system for your business.
+            </p>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                step: "01",
+                title: "Turn Your Website Into a Lead Machine",
+                desc: "We build your site with conversion-optimized pages, fast load times, proper heading structure, and schema markup so Google understands what you do and where you do it.",
+                color: "#00C2FF",
+              },
+              {
+                step: "02",
+                title: "Google Business Profile Optimization",
+                desc: "Your Google Business Profile is your most important local ranking tool. We optimize it with accurate categories, service areas, photos, and posts to maximize your local pack visibility.",
+                color: "#39FF14",
+              },
+              {
+                step: "03",
+                title: "Local Keyword Targeting",
+                desc: "We research exactly what your customers are searching for in your city and build your pages around those terms — so you show up when it counts most.",
+                color: "#00C2FF",
+              },
+            ].map((item) => (
+              <AnimateIn key={item.step}>
+                <div className="p-8 rounded-2xl bg-brand-elevated border border-brand-border h-full"
+                  style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.3)" }}>
+                  <div className="font-heading font-black text-4xl mb-4" style={{ color: item.color, opacity: 0.3 }}>{item.step}</div>
+                  <h3 className="font-heading font-bold text-brand-text text-xl mb-3 leading-snug">{item.title}</h3>
+                  <p className="text-brand-muted text-sm leading-[1.8]">{item.desc}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="bg-brand-surface py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateIn className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-3">Service Area</p>
+            <h2 className="font-heading font-black text-3xl text-brand-text">
+              Serving All of <span className="text-brand-blue">Northern Virginia</span>
+            </h2>
+          </AnimateIn>
+          <AnimateIn className="flex flex-wrap justify-center gap-3">
+            {[
+              { city: "Stafford, VA", slug: "stafford-va" },
+              { city: "Fredericksburg, VA", slug: "fredericksburg-va" },
+              { city: "Woodbridge, VA", slug: "woodbridge-va" },
+              { city: "Manassas, VA", slug: "manassas-va" },
+              { city: "Arlington, VA", slug: "arlington-va" },
+              { city: "Alexandria, VA", slug: "alexandria-va" },
+              { city: "Fairfax, VA", slug: "fairfax-va" },
+              { city: "Reston, VA", slug: "reston-va" },
+              { city: "Herndon, VA", slug: "herndon-va" },
+            ].map((loc) => (
+              <Link key={loc.slug} href={`/locations/${loc.slug}`}
+                className="px-5 py-2.5 rounded-full bg-brand-elevated border border-brand-border text-sm text-brand-muted hover:text-brand-blue hover:border-brand-blue/30 transition-all duration-200">
+                {loc.city}
+              </Link>
+            ))}
+          </AnimateIn>
         </div>
       </section>
 
