@@ -3,8 +3,12 @@ import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio — LevelUp Local",
-  description: "Example websites built by LevelUp Local for local service businesses.",
+  title: "Portfolio — Website Design for Local Businesses",
+  description:
+    "See websites built by LevelUp Local for local service businesses — contractors, flooring, cleaning, landscaping, and more. Custom designs that generate real customers.",
+  alternates: {
+    canonical: "https://lvluplocal.co/portfolio",
+  },
 };
 
 const projects = [

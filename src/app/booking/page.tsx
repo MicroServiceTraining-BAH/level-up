@@ -2,8 +2,12 @@ import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book a Free Website Audit — LevelUp Local",
-  description: "Schedule your free 15-minute website audit call with LevelUp Local.",
+  title: "Book a Free Website Audit — Get Your Business Online",
+  description:
+    "Schedule your free 15-minute website audit with LevelUp Local. We'll show you exactly what your local business needs to get a professional website and start ranking on Google.",
+  alternates: {
+    canonical: "https://lvluplocal.co/booking",
+  },
 };
 
 const whatToExpect = [

@@ -4,8 +4,12 @@ import ContactForm from "./ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — LevelUp Local",
-  description: "Get in touch with LevelUp Local. We help local service businesses get online.",
+  title: "Contact — Get a Custom Website for Your Business",
+  description:
+    "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast — custom design, lead capture, and local SEO included.",
+  alternates: {
+    canonical: "https://lvluplocal.co/contact",
+  },
 };
 
 export default function ContactPage() {
