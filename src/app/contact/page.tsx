@@ -10,6 +10,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lvluplocal.co/contact",
   },
+  openGraph: {
+    title: "Contact LevelUp Local — Get a Custom Website for Your Business",
+    description:
+      "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast — custom design, lead capture, and local SEO included.",
+    url: "https://lvluplocal.co/contact",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "Contact LevelUp Local" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact LevelUp Local — Get a Custom Website for Your Business",
+    description:
+      "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast — custom design, lead capture, and local SEO included.",
+    images: ["https://lvluplocal.co/logo.png"],
+  },
 };
 
 export default function ContactPage() {

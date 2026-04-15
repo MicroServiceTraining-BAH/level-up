@@ -9,6 +9,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lvluplocal.co/services",
   },
+  openGraph: {
+    title: "Local SEO Services & Web Design for Small Businesses | LevelUp Local",
+    description:
+      "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google — free audit.",
+    url: "https://lvluplocal.co/services",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Local SEO & Web Design Services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Local SEO Services & Web Design for Small Businesses | LevelUp Local",
+    description:
+      "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google — free audit.",
+    images: ["https://lvluplocal.co/logo.png"],
+  },
 };
 
 const services = [

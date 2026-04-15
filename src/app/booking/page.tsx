@@ -8,6 +8,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lvluplocal.co/booking",
   },
+  openGraph: {
+    title: "Book a Free Website Audit — LevelUp Local",
+    description:
+      "Schedule your free 15-minute website audit with LevelUp Local. We'll show you exactly what your local business needs to get a professional website and start ranking on Google.",
+    url: "https://lvluplocal.co/booking",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "Book a Free Website Audit — LevelUp Local" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Free Website Audit — LevelUp Local",
+    description:
+      "Schedule your free 15-minute website audit with LevelUp Local. We'll show you exactly what your local business needs to get a professional website and start ranking on Google.",
+    images: ["https://lvluplocal.co/logo.png"],
+  },
 };
 
 const whatToExpect = [

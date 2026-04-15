@@ -9,6 +9,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lvluplocal.co/portfolio",
   },
+  openGraph: {
+    title: "Portfolio — Website Design for Local Businesses | LevelUp Local",
+    description:
+      "See websites built by LevelUp Local for local service businesses — contractors, flooring, cleaning, landscaping, and more. Custom designs that generate real customers.",
+    url: "https://lvluplocal.co/portfolio",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local Portfolio — Web Design for Local Businesses" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio — Website Design for Local Businesses | LevelUp Local",
+    description:
+      "See websites built by LevelUp Local for local service businesses — contractors, flooring, cleaning, landscaping, and more. Custom designs that generate real customers.",
+    images: ["https://lvluplocal.co/logo.png"],
+  },
 };
 
 const projects = [

@@ -3,11 +3,28 @@ import LocationPage from "@/components/LocationPage";
 import type { LocationData } from "@/components/LocationPage";
 
 export const metadata: Metadata = {
-  title: "Local SEO Services in Arlington, VA | LevelUp Local",
+  title: "Web Design & Local SEO Services in Arlington, VA | LevelUp Local",
   description:
-    "Stand out in Arlington, VA's competitive market with professional local SEO and website design. More Google visibility, more customers. Free audit today.",
+    "Stand out in Arlington, VA's competitive market with professional website design and local SEO. More Google visibility, more customers. Free audit today.",
   alternates: {
     canonical: "https://lvluplocal.co/locations/arlington-va",
+  },
+  openGraph: {
+    title: "Web Design & Local SEO Services in Arlington, VA | LevelUp Local",
+    description:
+      "Stand out in Arlington, VA's competitive market with professional website design and local SEO. More Google visibility, more customers. Free audit today.",
+    url: "https://lvluplocal.co/locations/arlington-va",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Arlington, VA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design & Local SEO Services in Arlington, VA | LevelUp Local",
+    description:
+      "Stand out in Arlington, VA's competitive market with professional website design and local SEO. More Google visibility, more customers. Free audit today.",
+    images: ["https://lvluplocal.co/logo.png"],
   },
 };
 

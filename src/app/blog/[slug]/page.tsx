@@ -23,8 +23,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.title,
       description: post.description,
+      url: `https://lvluplocal.co/blog/${post.slug}`,
+      siteName: "LevelUp Local",
       type: "article",
       publishedTime: post.date,
+      images: [
+        {
+          url: "https://lvluplocal.co/logo.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: ["https://lvluplocal.co/logo.png"],
     },
   };
 }

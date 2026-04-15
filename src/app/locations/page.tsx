@@ -9,6 +9,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lvluplocal.co/locations",
   },
+  openGraph: {
+    title: "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
+    description:
+      "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia — Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
+    url: "https://lvluplocal.co/locations",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Northern Virginia Local SEO & Web Design" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
+    description:
+      "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia — Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
+    images: ["https://lvluplocal.co/logo.png"],
+  },
 };
 
 const locations = [

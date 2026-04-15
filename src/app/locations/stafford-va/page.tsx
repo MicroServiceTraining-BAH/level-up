@@ -3,11 +3,28 @@ import LocationPage from "@/components/LocationPage";
 import type { LocationData } from "@/components/LocationPage";
 
 export const metadata: Metadata = {
-  title: "Local SEO Services in Stafford, VA | LevelUp Local",
+  title: "Web Design & Local SEO Services in Stafford, VA | LevelUp Local",
   description:
-    "Professional local SEO services and website design for small businesses in Stafford, VA. Get found on Google by local customers — free audit today.",
+    "Professional website design and local SEO for small businesses in Stafford, VA. Rank on Google, get more calls, and grow your customer base. Free audit today.",
   alternates: {
     canonical: "https://lvluplocal.co/locations/stafford-va",
+  },
+  openGraph: {
+    title: "Web Design & Local SEO Services in Stafford, VA | LevelUp Local",
+    description:
+      "Professional website design and local SEO for small businesses in Stafford, VA. Rank on Google, get more calls, and grow your customer base. Free audit today.",
+    url: "https://lvluplocal.co/locations/stafford-va",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Stafford, VA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design & Local SEO Services in Stafford, VA | LevelUp Local",
+    description:
+      "Professional website design and local SEO for small businesses in Stafford, VA. Rank on Google, get more calls, and grow your customer base. Free audit today.",
+    images: ["https://lvluplocal.co/logo.png"],
   },
 };
 

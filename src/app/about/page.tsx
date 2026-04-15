@@ -9,6 +9,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lvluplocal.co/about",
   },
+  openGraph: {
+    title: "About LevelUp Local — Web Design Agency for Local Businesses",
+    description:
+      "Meet the team behind LevelUp Local — a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
+    url: "https://lvluplocal.co/about",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design Agency for Local Businesses" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About LevelUp Local — Web Design Agency for Local Businesses",
+    description:
+      "Meet the team behind LevelUp Local — a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
+    images: ["https://lvluplocal.co/logo.png"],
+  },
 };
 
 const values = [

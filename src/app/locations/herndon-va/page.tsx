@@ -3,11 +3,28 @@ import LocationPage from "@/components/LocationPage";
 import type { LocationData } from "@/components/LocationPage";
 
 export const metadata: Metadata = {
-  title: "Local SEO Services in Herndon, VA | LevelUp Local",
+  title: "Web Design & Local SEO Services in Herndon, VA | LevelUp Local",
   description:
-    "Professional local SEO and website design for small businesses in Herndon, VA. Rank on Google, attract more customers. Free audit from LevelUp Local.",
+    "Professional website design and local SEO for small businesses in Herndon, VA. Rank on Google, attract more customers. Free audit from LevelUp Local.",
   alternates: {
     canonical: "https://lvluplocal.co/locations/herndon-va",
+  },
+  openGraph: {
+    title: "Web Design & Local SEO Services in Herndon, VA | LevelUp Local",
+    description:
+      "Professional website design and local SEO for small businesses in Herndon, VA. Rank on Google, attract more customers. Free audit from LevelUp Local.",
+    url: "https://lvluplocal.co/locations/herndon-va",
+    siteName: "LevelUp Local",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Herndon, VA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design & Local SEO Services in Herndon, VA | LevelUp Local",
+    description:
+      "Professional website design and local SEO for small businesses in Herndon, VA. Rank on Google, attract more customers. Free audit from LevelUp Local.",
+    images: ["https://lvluplocal.co/logo.png"],
   },
 };
 

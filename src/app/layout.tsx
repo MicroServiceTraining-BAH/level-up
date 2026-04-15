@@ -55,12 +55,21 @@ export const metadata: Metadata = {
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://lvluplocal.co/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "LevelUp Local — Local SEO & Web Design for Small Businesses",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Local SEO & Web Design for Small Businesses | LevelUp Local",
     description:
       "LevelUp Local helps local businesses rank on Google with professional websites and local SEO. Serving all of Northern Virginia. Free audit today.",
+    images: ["https://lvluplocal.co/logo.png"],
   },
   alternates: {
     canonical: "https://lvluplocal.co",
@@ -90,7 +99,6 @@ export default function RootLayout({
               image: "https://lvluplocal.co/logo.png",
               description:
                 "LevelUp Local helps local businesses in Northern Virginia rank on Google with professional websites and local SEO services. Website design, Google Business Profile optimization, and lead generation — live in 3–5 days.",
-              telephone: "",
               email: "Jcphilipps@lvluplocal.co",
               address: {
                 "@type": "PostalAddress",
@@ -125,7 +133,6 @@ export default function RootLayout({
                 "Small Business Marketing",
               ],
               priceRange: "$$",
-              sameAs: [],
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
                 name: "Local SEO & Web Design Services",
