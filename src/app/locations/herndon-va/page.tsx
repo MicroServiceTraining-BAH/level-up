@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Herndon, VA" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design & SEO in Herndon, VA" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -36,7 +36,7 @@ const data: LocationData = {
   subheadline:
     "Help your Herndon business show up on Google when local customers are searching. We build the websites and local SEO strategies that drive consistent leads.",
   intro:
-    "Herndon is a growing town in Fairfax County with a diverse business community serving the broader NOVA corridor. With Silver Line expansion and continued development, the customer base continues to grow — and so does the competition for local search visibility.",
+    "Herndon is a growing town in Fairfax County with a diverse business community serving the broader NOVA corridor. With Silver Line expansion and continued development, the customer base continues to grow - and so does the competition for local search visibility.",
   about:
     "LevelUp Local builds the digital presence Herndon businesses need to stay competitive: a fast, professional website designed to convert, a fully optimized Google Business Profile, and local keyword targeting that puts you in front of the right customers at the right moment.",
   neighborhoods: [
@@ -67,7 +67,7 @@ const data: LocationData = {
   faqs: [
     {
       q: "How does local SEO help a Herndon business attract more customers?",
-      a: "Local SEO ensures your business appears in Google search results and Google Maps when customers nearby search for what you offer. The vast majority of local customers use Google to find businesses before making a purchase decision — local SEO puts you in front of them at that critical moment.",
+      a: "Local SEO ensures your business appears in Google search results and Google Maps when customers nearby search for what you offer. The vast majority of local customers use Google to find businesses before making a purchase decision - local SEO puts you in front of them at that critical moment.",
     },
     {
       q: "Can you target both Herndon and nearby Reston or Sterling with the same campaign?",

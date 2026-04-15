@@ -5,14 +5,14 @@ import AnimateIn from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "Local SEO Services That Bring You More Customers | LevelUp Local",
   description:
-    "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google — free audit today.",
+    "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google - free audit today.",
   alternates: {
     canonical: "https://lvluplocal.co",
   },
   openGraph: {
     title: "Local SEO Services That Bring You More Customers | LevelUp Local",
     description:
-      "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google — free audit today.",
+      "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google - free audit today.",
     url: "https://lvluplocal.co",
     siteName: "LevelUp Local",
     locale: "en_US",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "https://lvluplocal.co/logo.png",
         width: 1200,
         height: 630,
-        alt: "LevelUp Local — Local SEO & Web Design for Small Businesses in Northern Virginia",
+        alt: "LevelUp Local - Local SEO & Web Design for Small Businesses in Northern Virginia",
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Local SEO Services That Bring You More Customers | LevelUp Local",
     description:
-      "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google — free audit today.",
+      "LevelUp Local delivers local SEO services and professional websites for small businesses in Northern Virginia. Get found on Google - free audit today.",
     images: ["https://lvluplocal.co/logo.png"],
   },
 };
@@ -78,7 +78,7 @@ const problems = [
       </svg>
     ),
     title: "You're Missing Calls & Opportunities",
-    desc: "Every day without a website is revenue lost. Customers tried to find you — and when they couldn't, they moved on.",
+    desc: "Every day without a website is revenue lost. Customers tried to find you - and when they couldn't, they moved on.",
   },
   {
     icon: (
@@ -140,7 +140,7 @@ const features = [
 ];
 
 const steps = [
-  { level: "01", title: "Book a Free Call", desc: "Schedule a quick 15-minute call. No pressure, no jargon — just a conversation about your business." },
+  { level: "01", title: "Book a Free Call", desc: "Schedule a quick 15-minute call. No pressure, no jargon - just a conversation about your business." },
   { level: "02", title: "We Learn Your Business", desc: "We ask the right questions to understand your goals, your customers, and what makes you different." },
   { level: "03", title: "We Build Your Website", desc: "Our team designs and builds your professional site while you focus on running your business." },
   { level: "04", title: "You Get Customers", desc: "Go live and start capturing leads, receiving calls, and growing your business online." },
@@ -160,7 +160,7 @@ const testimonials = [
     initials: "DR",
   },
   {
-    quote: "Customers tell me they found me on Google now. That never happened before. LevelUp Local got my business on the map — literally.",
+    quote: "Customers tell me they found me on Google now. That never happened before. LevelUp Local got my business on the map - literally.",
     name: "Carlos V.",
     role: "Owner, GreenLawn Landscapes",
     initials: "CV",
@@ -185,7 +185,7 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-brand-blue/20 bg-brand-blue/5 mb-10">
               <span className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0"
                 style={{ animation: "pulse-dot 2s ease-in-out infinite" }} />
-              <span className="text-brand-blue text-sm font-medium">Now accepting new clients — limited spots available</span>
+              <span className="text-brand-blue text-sm font-medium">Now accepting new clients - limited spots available</span>
             </div>
 
             <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[1.0] tracking-[-0.01em] text-brand-text mb-7">
@@ -195,7 +195,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg md:text-xl text-brand-muted leading-[1.75] max-w-2xl mb-10">
-              We build your business a professional website and turn it into a system that brings you new customers consistently — no tech knowledge needed.
+              We build your business a professional website and turn it into a system that brings you new customers consistently - no tech knowledge needed.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
@@ -262,17 +262,17 @@ export default function HomePage() {
               <Eyebrow>The Solution</Eyebrow>
               <SectionHeading>
                 We Build Your Online Presence{" "}
-                <span className="text-brand-blue">From Scratch</span> — And Make It Work
+                <span className="text-brand-blue">From Scratch</span> - And Make It Work
               </SectionHeading>
               <p className="text-brand-muted text-lg leading-[1.75] mt-6 mb-8">
-                LevelUp Local builds you a complete online presence: a professional website, a lead capture system, and ongoing support — so you can focus on doing the work, not chasing customers.
+                LevelUp Local builds you a complete online presence: a professional website, a lead capture system, and ongoing support - so you can focus on doing the work, not chasing customers.
               </p>
               <div className="space-y-4">
                 {[
                   "Custom website that represents your business professionally",
                   "Built-in contact and inquiry system to capture leads",
                   "Set up so customers can find you on Google",
-                  "Ongoing support — we're your tech partner",
+                  "Ongoing support - we're your tech partner",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-brand-green/15 border border-brand-green/30 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -478,7 +478,7 @@ export default function HomePage() {
             <Link href="/booking"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-brand-bg font-bold text-base hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface transition-all duration-200"
               style={{ boxShadow: "0 0 28px rgba(0,194,255,0.3), 0 4px 12px rgba(0,0,0,0.4)" }}>
-              Start at Level 1 — Book Free Call
+              Start at Level 1 - Book Free Call
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
           </AnimateIn>
@@ -515,7 +515,7 @@ export default function HomePage() {
               { title: "More Calls & Inquiries", desc: "Customers can find your number and reach you directly from your website." },
               { title: "More Booked Jobs", desc: "Convert website visitors into paying customers on autopilot." },
               { title: "Professional Presence", desc: "Look like a trustworthy business that customers want to hire." },
-              { title: "Long-Term Growth", desc: "Your website works for you every hour of every day — even while you sleep." },
+              { title: "Long-Term Growth", desc: "Your website works for you every hour of every day - even while you sleep." },
             ].map((item, i) => (
               <AnimateIn key={item.title} delay={i * 70}>
                 <div className="flex gap-4 p-6 rounded-2xl bg-brand-surface border border-brand-border">
@@ -580,7 +580,7 @@ export default function HomePage() {
               <span className="text-brand-blue">Northern Virginia</span>
             </SectionHeading>
             <p className="text-brand-muted text-lg leading-[1.75] mt-5">
-              We work with local businesses across NOVA — from Stafford to Arlington and everywhere in between.
+              We work with local businesses across NOVA - from Stafford to Arlington and everywhere in between.
             </p>
           </AnimateIn>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
@@ -637,7 +637,7 @@ export default function HomePage() {
                 slug: "why-youre-not-showing-on-google-maps",
                 category: "Google Maps",
                 title: "Why Your Business Isn't Showing Up on Google Maps",
-                desc: "The most common reasons local businesses get buried in search results — and exactly how to fix them.",
+                desc: "The most common reasons local businesses get buried in search results - and exactly how to fix them.",
               },
               {
                 slug: "seo-vs-ads-local-business",
@@ -676,7 +676,7 @@ export default function HomePage() {
             Let&apos;s Get Your Business <span className="text-brand-blue">Online</span>
           </SectionHeading>
           <p className="text-brand-muted text-lg leading-[1.75] mt-6 mb-10 max-w-xl mx-auto">
-            Stop losing customers to competitors with websites. Book your free 15-minute audit and let&apos;s build your online presence — fast.
+            Stop losing customers to competitors with websites. Book your free 15-minute audit and let&apos;s build your online presence - fast.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/booking"

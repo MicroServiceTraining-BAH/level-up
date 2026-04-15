@@ -3,27 +3,27 @@ import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Web Design Agency for Local Businesses",
+  title: "About - Web Design Agency for Local Businesses",
   description:
-    "Meet the team behind LevelUp Local — a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
+    "Meet the team behind LevelUp Local - a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
   alternates: {
     canonical: "https://lvluplocal.co/about",
   },
   openGraph: {
-    title: "About LevelUp Local — Web Design Agency for Local Businesses",
+    title: "About LevelUp Local - Web Design Agency for Local Businesses",
     description:
-      "Meet the team behind LevelUp Local — a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
+      "Meet the team behind LevelUp Local - a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
     url: "https://lvluplocal.co/about",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design Agency for Local Businesses" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design Agency for Local Businesses" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About LevelUp Local — Web Design Agency for Local Businesses",
+    title: "About LevelUp Local - Web Design Agency for Local Businesses",
     description:
-      "Meet the team behind LevelUp Local — a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
+      "Meet the team behind LevelUp Local - a web design agency helping local service businesses get a professional website, show up on Google, and start generating customers.",
     images: ["https://lvluplocal.co/logo.png"],
   },
 };
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Results Over Aesthetics",
-    desc: "A beautiful website that doesn't bring in customers is just decoration. We build for outcomes — calls, leads, and booked jobs.",
+    desc: "A beautiful website that doesn't bring in customers is just decoration. We build for outcomes - calls, leads, and booked jobs.",
   },
   {
     title: "Speed Matters",
@@ -43,7 +43,7 @@ const values = [
   },
   {
     title: "Long-Term Partnership",
-    desc: "We don't disappear after launch. We're your ongoing tech partner — there when you need us.",
+    desc: "We don't disappear after launch. We're your ongoing tech partner - there when you need us.",
   },
 ];
 
@@ -52,7 +52,7 @@ const team = [
     name: "Jean Carlo Philipps",
     role: "Sales & Client Strategy",
     initials: "JC",
-    bio: "Jean Carlo leads client relationships and growth strategy. With a background in sales and local business development, he understands what it takes to help service businesses win more customers. He's the first person you'll talk to — and he makes sure every client feels heard.",
+    bio: "Jean Carlo leads client relationships and growth strategy. With a background in sales and local business development, he understands what it takes to help service businesses win more customers. He's the first person you'll talk to - and he makes sure every client feels heard.",
     color: "#00C2FF",
   },
   {
@@ -98,13 +98,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-brand-muted text-base leading-[1.8]">
                 <p>
-                  We kept seeing the same pattern: incredible local service businesses — skilled contractors, dedicated landscapers, talented barbers — losing customers every single day simply because they didn&apos;t have an online presence.
+                  We kept seeing the same pattern: incredible local service businesses - skilled contractors, dedicated landscapers, talented barbers - losing customers every single day simply because they didn&apos;t have an online presence.
                 </p>
                 <p>
                   These business owners are experts at what they do. They&apos;re not tech people, and they shouldn&apos;t have to be. But the internet is where customers go to find services, and without a website, these businesses were completely invisible.
                 </p>
                 <p>
-                  We founded LevelUp Local to solve exactly this problem — fast, focused website builds for local businesses that want more customers, not more complexity.
+                  We founded LevelUp Local to solve exactly this problem - fast, focused website builds for local businesses that want more customers, not more complexity.
                 </p>
               </div>
             </AnimateIn>
@@ -201,7 +201,7 @@ export default function AboutPage() {
             Ready to Get <span className="text-brand-blue">Your Business Online?</span>
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">
-            Book a free 15-minute call with Jean Carlo. He&apos;ll listen to your situation and tell you exactly how we can help — no pressure, no pitch.
+            Book a free 15-minute call with Jean Carlo. He&apos;ll listen to your situation and tell you exactly how we can help - no pressure, no pitch.
           </p>
           <Link href="/booking"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-brand-blue text-brand-bg font-bold text-lg hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg transition-all duration-200"

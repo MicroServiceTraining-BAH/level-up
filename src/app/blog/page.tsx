@@ -4,25 +4,25 @@ import AnimateIn from "@/components/AnimateIn";
 import { blogPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Local SEO Blog — Tips for Small Businesses in Northern Virginia",
+  title: "Local SEO Blog - Tips for Small Businesses in Northern Virginia",
   description:
     "Practical local SEO tips, Google Maps guides, and marketing advice for small businesses in Northern Virginia. Learn how to get found on Google.",
   alternates: {
     canonical: "https://lvluplocal.co/blog",
   },
   openGraph: {
-    title: "Local SEO Blog — Tips for Small Businesses in Northern Virginia | LevelUp Local",
+    title: "Local SEO Blog - Tips for Small Businesses in Northern Virginia | LevelUp Local",
     description:
       "Practical local SEO tips, Google Maps guides, and marketing advice for small businesses in Northern Virginia. Learn how to get found on Google.",
     url: "https://lvluplocal.co/blog",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local Blog — Local SEO Tips for Northern Virginia Small Businesses" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local Blog - Local SEO Tips for Northern Virginia Small Businesses" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Local SEO Blog — Tips for Small Businesses in Northern Virginia | LevelUp Local",
+    title: "Local SEO Blog - Tips for Small Businesses in Northern Virginia | LevelUp Local",
     description:
       "Practical local SEO tips, Google Maps guides, and marketing advice for small businesses in Northern Virginia. Learn how to get found on Google.",
     images: ["https://lvluplocal.co/logo.png"],
@@ -116,7 +116,7 @@ export default function BlogPage() {
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">
             Book a free 15-minute audit and we&apos;ll show you exactly where your
-            business stands — and what it will take to rank in your area.
+            business stands - and what it will take to rank in your area.
           </p>
           <Link
             href="/booking"

@@ -37,7 +37,7 @@ export default function IntakePage() {
               Let&apos;s build your website.
             </h1>
             <p className="mt-2 text-sm text-[#70708A] leading-relaxed max-w-md mx-auto">
-              Take your time — every answer helps us build something that actually works for your business.
+              Take your time - every answer helps us build something that actually works for your business.
             </p>
           </div>
           <div className="rounded-2xl border border-[#252535] bg-[#111118] p-6 sm:p-8">

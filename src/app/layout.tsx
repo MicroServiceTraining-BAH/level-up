@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | LevelUp Local",
   },
   description:
-    "LevelUp Local helps local businesses rank on Google with professional websites and local SEO. Serving Northern Virginia — Stafford, Fredericksburg, Woodbridge, Manassas & more. Free audit today.",
+    "LevelUp Local helps local businesses rank on Google with professional websites and local SEO. Serving Northern Virginia - Stafford, Fredericksburg, Woodbridge, Manassas & more. Free audit today.",
   keywords: [
     "local SEO services Northern Virginia",
     "small business SEO Northern Virginia",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
         url: "https://lvluplocal.co/logo.png",
         width: 1200,
         height: 630,
-        alt: "LevelUp Local — Local SEO & Web Design for Small Businesses",
+        alt: "LevelUp Local - Local SEO & Web Design for Small Businesses",
       },
     ],
   },
@@ -109,7 +109,7 @@ export default function RootLayout({
               logo: "https://lvluplocal.co/favicon-logo.png",
               image: "https://lvluplocal.co/logo.png",
               description:
-                "LevelUp Local helps local businesses in Northern Virginia rank on Google with professional websites and local SEO services. Website design, Google Business Profile optimization, and lead generation — live in 3–5 days.",
+                "LevelUp Local helps local businesses in Northern Virginia rank on Google with professional websites and local SEO services. Website design, Google Business Profile optimization, and lead generation - live in 3–5 days.",
               email: "Jcphilipps@lvluplocal.co",
               address: {
                 "@type": "PostalAddress",

@@ -17,7 +17,7 @@ export async function POST(req: Request) {
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
-          <h2 style="color:#00c2ff;">New Message — LevelUp Local</h2>
+          <h2 style="color:#00c2ff;">New Message - LevelUp Local</h2>
           <table style="width:100%;border-collapse:collapse;">
             <tr><td style="padding:8px 0;color:#888;font-size:13px;">Name</td><td style="padding:8px 0;font-size:14px;">${name}</td></tr>
             <tr><td style="padding:8px 0;color:#888;font-size:13px;">Email</td><td style="padding:8px 0;font-size:14px;"><a href="mailto:${email}">${email}</a></td></tr>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Fredericksburg, VA" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design & SEO in Fredericksburg, VA" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -36,9 +36,9 @@ const data: LocationData = {
   subheadline:
     "Help your Fredericksburg business show up on Google when local customers are searching. We build the websites and local SEO systems that drive real, consistent leads.",
   intro:
-    "Fredericksburg sits at the heart of a rapidly growing corridor between Richmond and the DC metro area. The city's blend of historic character and new development means a diverse, expanding customer base — and a competitive local market. If your business isn't ranking on Google, you're leaving customers to competitors who are.",
+    "Fredericksburg sits at the heart of a rapidly growing corridor between Richmond and the DC metro area. The city's blend of historic character and new development means a diverse, expanding customer base - and a competitive local market. If your business isn't ranking on Google, you're leaving customers to competitors who are.",
   about:
-    "LevelUp Local helps Fredericksburg businesses build a strong online presence: professional websites that load fast, convert visitors, and rank for the keywords your customers actually search. We combine technical SEO, Google Business Profile optimization, and compelling local content to put your business on the map — literally.",
+    "LevelUp Local helps Fredericksburg businesses build a strong online presence: professional websites that load fast, convert visitors, and rank for the keywords your customers actually search. We combine technical SEO, Google Business Profile optimization, and compelling local content to put your business on the map - literally.",
   neighborhoods: [
     "Downtown Fredericksburg",
     "Central Park",

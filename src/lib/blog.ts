@@ -20,18 +20,18 @@ export const blogPosts: BlogPost[] = [
     slug: 'how-to-rank-cleaning-business',
     title: 'How to Rank Your Cleaning Business on Google (2025 Guide)',
     description:
-      'A step-by-step guide to getting your cleaning business in front of local customers actively searching on Google — without spending a fortune on ads.',
+      'A step-by-step guide to getting your cleaning business in front of local customers actively searching on Google - without spending a fortune on ads.',
     date: '2025-03-10',
     category: 'Local SEO',
     readTime: '7 min read',
     content: [
       {
         type: 'p',
-        text: 'If you run a cleaning business in Northern Virginia, you already know how competitive the market is. Every neighborhood has multiple cleaning companies competing for the same customers. The businesses that win aren\'t always the best — they\'re the ones that show up first on Google when someone types "house cleaning near me."',
+        text: 'If you run a cleaning business in Northern Virginia, you already know how competitive the market is. Every neighborhood has multiple cleaning companies competing for the same customers. The businesses that win aren\'t always the best - they\'re the ones that show up first on Google when someone types "house cleaning near me."',
       },
       {
         type: 'p',
-        text: 'This guide walks you through exactly how to rank your cleaning business on Google — step by step, no tech background needed.',
+        text: 'This guide walks you through exactly how to rank your cleaning business on Google - step by step, no tech background needed.',
       },
       {
         type: 'h2',
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Over 90% of people searching for a local service never scroll past the first page of Google results. If you\'re not visible there, you don\'t exist to most potential customers. More specifically, the "Local Pack" — that map with three business listings at the top of search results — captures the majority of clicks for local searches.',
+        text: 'Over 90% of people searching for a local service never scroll past the first page of Google results. If you\'re not visible there, you don\'t exist to most potential customers. More specifically, the "Local Pack" - that map with three business listings at the top of search results - captures the majority of clicks for local searches.',
       },
       {
         type: 'p',
@@ -60,13 +60,13 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'ul',
         items: [
-          'Business name — use your real, consistent business name (no keyword stuffing)',
-          'Primary category — choose "House Cleaning Service" or "Janitorial Service" as appropriate',
-          'Service areas — list every city and neighborhood you serve in Northern Virginia',
-          'Business description — naturally include keywords like "residential cleaning in [city]" and "commercial cleaning [city]"',
-          'Photos — upload at least 10 high-quality photos of your team, equipment, and completed jobs',
-          'Services section — list every specific service you offer (deep clean, move-out cleaning, recurring maintenance, etc.)',
-          'Hours — keep them accurate and up to date',
+          'Business name - use your real, consistent business name (no keyword stuffing)',
+          'Primary category - choose "House Cleaning Service" or "Janitorial Service" as appropriate',
+          'Service areas - list every city and neighborhood you serve in Northern Virginia',
+          'Business description - naturally include keywords like "residential cleaning in [city]" and "commercial cleaning [city]"',
+          'Photos - upload at least 10 high-quality photos of your team, equipment, and completed jobs',
+          'Services section - list every specific service you offer (deep clean, move-out cleaning, recurring maintenance, etc.)',
+          'Hours - keep them accurate and up to date',
         ],
       },
       {
@@ -85,10 +85,10 @@ export const blogPosts: BlogPost[] = [
         type: 'ul',
         items: [
           'A clear H1 heading that includes your primary keyword and city (e.g., "Professional Cleaning Services in Stafford, VA")',
-          'Unique pages for each major service you offer — not everything crammed onto one page',
+          'Unique pages for each major service you offer - not everything crammed onto one page',
           'Location pages if you serve multiple cities across Northern Virginia',
-          'Fast load time — Google uses page speed as a ranking factor, especially on mobile',
-          'Schema markup — code that tells Google your business name, address, service area, and reviews',
+          'Fast load time - Google uses page speed as a ranking factor, especially on mobile',
+          'Schema markup - code that tells Google your business name, address, service area, and reviews',
           'Clear contact information and a phone number that clicks to call on mobile',
         ],
       },
@@ -102,14 +102,14 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'The most effective way to get reviews is simple: ask every happy customer. After you complete a job, send a follow-up text or email with a direct link to your Google review page. Make it as easy as possible — if they have to search for you, most won\'t bother.',
+        text: 'The most effective way to get reviews is simple: ask every happy customer. After you complete a job, send a follow-up text or email with a direct link to your Google review page. Make it as easy as possible - if they have to search for you, most won\'t bother.',
       },
       {
         type: 'ul',
         items: [
           'Ask within 24 hours of the completed job while satisfaction is highest',
-          'Respond to every review — positive and negative — professionally and promptly',
-          'Never buy fake reviews — Google detects and penalizes this',
+          'Respond to every review - positive and negative - professionally and promptly',
+          'Never buy fake reviews - Google detects and penalizes this',
           'Aim for at least 1–2 new reviews per month consistently',
         ],
       },
@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Include these naturally in your page titles, headings, body content, and image alt text. Don\'t stuff keywords unnaturally — write for humans first, and Google will reward you for it.',
+        text: 'Include these naturally in your page titles, headings, body content, and image alt text. Don\'t stuff keywords unnaturally - write for humans first, and Google will reward you for it.',
       },
       {
         type: 'h2',
@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'The key is consistency — your business name, address, and phone number must be identical across every listing. Even small variations (Street vs. St., for example) can dilute your ranking signals.',
+        text: 'The key is consistency - your business name, address, and phone number must be identical across every listing. Even small variations (Street vs. St., for example) can dilute your ranking signals.',
       },
       {
         type: 'h2',
@@ -184,7 +184,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'why-youre-not-showing-on-google-maps',
     title: "Why Your Business Isn't Showing Up on Google Maps",
     description:
-      'The most common reasons local businesses get buried in Google Maps — and the exact fixes you can implement today to start appearing in front of local customers.',
+      'The most common reasons local businesses get buried in Google Maps - and the exact fixes you can implement today to start appearing in front of local customers.',
     date: '2025-03-24',
     category: 'Google Maps',
     readTime: '6 min read',
@@ -195,7 +195,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'The reality is that simply having a Google Business Profile isn\'t enough. Google Maps rankings are competitive, and there are specific signals Google looks for before it decides to show your business to searchers. Here are the most common reasons you\'re not showing up — and what to do about it.',
+        text: 'The reality is that simply having a Google Business Profile isn\'t enough. Google Maps rankings are competitive, and there are specific signals Google looks for before it decides to show your business to searchers. Here are the most common reasons you\'re not showing up - and what to do about it.',
       },
       {
         type: 'h2',
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Google wants to show users the most useful, accurate results. If your profile is missing information — no photos, no description, incomplete hours, no services listed — Google treats it as less trustworthy than a fully filled-out competitor profile.',
+        text: 'Google wants to show users the most useful, accurate results. If your profile is missing information - no photos, no description, incomplete hours, no services listed - Google treats it as less trustworthy than a fully filled-out competitor profile.',
       },
       {
         type: 'ul',
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'If you\'re a service-area business (you go to the customer, rather than customers coming to you), you need to set up your service area in Google Business Profile correctly. Many businesses either skip this step or set it too narrow — only listing their city when they actually serve the whole region.',
+        text: 'If you\'re a service-area business (you go to the customer, rather than customers coming to you), you need to set up your service area in Google Business Profile correctly. Many businesses either skip this step or set it too narrow - only listing their city when they actually serve the whole region.',
       },
       {
         type: 'p',
@@ -233,7 +233,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Google Maps uses reviews as a major ranking signal — both the number of reviews and how recently you received them. A business with 50 reviews but none in the past year will often rank below a business with 20 reviews and one from last week.',
+        text: 'Google Maps uses reviews as a major ranking signal - both the number of reviews and how recently you received them. A business with 50 reviews but none in the past year will often rank below a business with 20 reviews and one from last week.',
       },
       {
         type: 'p',
@@ -251,7 +251,7 @@ export const blogPosts: BlogPost[] = [
         type: 'ul',
         items: [
           'Use the exact same business name everywhere online',
-          'Use the same phone number format (XXX-XXX-XXXX vs (XXX) XXX-XXXX — pick one)',
+          'Use the same phone number format (XXX-XXX-XXXX vs (XXX) XXX-XXXX - pick one)',
           'If you move or change your number, update every single listing',
           'Audit your citations on Yelp, Bing, Facebook, Apple Maps, and industry directories',
         ],
@@ -262,7 +262,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Your Google Business Profile and your website work together. Google looks at your website to verify and reinforce what your GBP says. If your website doesn\'t mention the cities you serve, doesn\'t include schema markup, or loads slowly — it weakens your local rankings even if your GBP is perfect.',
+        text: 'Your Google Business Profile and your website work together. Google looks at your website to verify and reinforce what your GBP says. If your website doesn\'t mention the cities you serve, doesn\'t include schema markup, or loads slowly - it weakens your local rankings even if your GBP is perfect.',
       },
       {
         type: 'h3',
@@ -273,7 +273,7 @@ export const blogPosts: BlogPost[] = [
         items: [
           'Your city and service area mentioned naturally in your content',
           'LocalBusiness schema markup with your name, address, phone, and service area',
-          'Fast page speed — under 3 seconds on mobile',
+          'Fast page speed - under 3 seconds on mobile',
           'A mobile-friendly design (over 70% of local searches happen on phones)',
           'Consistent NAP information matching your GBP exactly',
         ],
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Google Maps rankings are heavily influenced by proximity — where the searcher is located relative to your business address or service area. If someone is searching from a city you haven\'t listed in your service area, you simply won\'t appear.',
+        text: 'Google Maps rankings are heavily influenced by proximity - where the searcher is located relative to your business address or service area. If someone is searching from a city you haven\'t listed in your service area, you simply won\'t appear.',
       },
       {
         type: 'p',
@@ -296,7 +296,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Google can suspend profiles that violate their guidelines — keyword stuffing in your business name, fake reviews, mismatched addresses, or multiple profiles for the same location are common causes. If you\'re not showing up at all, check whether your profile is suspended in your Google Business Profile dashboard.',
+        text: 'Google can suspend profiles that violate their guidelines - keyword stuffing in your business name, fake reviews, mismatched addresses, or multiple profiles for the same location are common causes. If you\'re not showing up at all, check whether your profile is suspended in your Google Business Profile dashboard.',
       },
       {
         type: 'h2',
@@ -312,7 +312,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'cta',
-        text: 'We help Northern Virginia businesses fix their local SEO from the ground up — website, Google Business Profile, and everything in between.',
+        text: 'We help Northern Virginia businesses fix their local SEO from the ground up - website, Google Business Profile, and everything in between.',
         label: 'Get a Free Local SEO Audit',
         href: '/booking',
       },
@@ -322,7 +322,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'seo-vs-ads-local-business',
     title: 'SEO vs. Paid Ads: What\'s Better for Local Businesses?',
     description:
-      'Breaking down the real difference between SEO and Google Ads for small local businesses in 2025 — including which one is right for your situation.',
+      'Breaking down the real difference between SEO and Google Ads for small local businesses in 2025 - including which one is right for your situation.',
     date: '2025-04-01',
     category: 'Strategy',
     readTime: '8 min read',
@@ -333,7 +333,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Here\'s an honest breakdown of both — what they are, how they work, what they cost, and which one makes more sense for your business right now.',
+        text: 'Here\'s an honest breakdown of both - what they are, how they work, what they cost, and which one makes more sense for your business right now.',
       },
       {
         type: 'h2',
@@ -345,7 +345,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'SEO is not something you pay Google for. You invest in the work — either your own time or hiring someone like us — and Google rewards that work with rankings.',
+        text: 'SEO is not something you pay Google for. You invest in the work - either your own time or hiring someone like us - and Google rewards that work with rankings.',
       },
       {
         type: 'h2',
@@ -357,7 +357,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'For local service businesses, Google Local Services Ads (LSAs) are often a better fit than traditional Google Ads — they show up above everything else, show your reviews, and you only pay when someone calls you directly from the ad.',
+        text: 'For local service businesses, Google Local Services Ads (LSAs) are often a better fit than traditional Google Ads - they show up above everything else, show your reviews, and you only pay when someone calls you directly from the ad.',
       },
       {
         type: 'h2',
@@ -369,7 +369,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'SEO has a higher upfront cost in time and money — building a solid SEO foundation takes months. But once you\'re ranking, traffic is essentially free. Paid ads have a lower barrier to entry but an ongoing cost: you pay for every single click, every single day. For competitive service categories in Northern Virginia, Google Ads can run $15–$50+ per click. If your conversion rate is 10%, that\'s $150–$500 per lead.',
+        text: 'SEO has a higher upfront cost in time and money - building a solid SEO foundation takes months. But once you\'re ranking, traffic is essentially free. Paid ads have a lower barrier to entry but an ongoing cost: you pay for every single click, every single day. For competitive service categories in Northern Virginia, Google Ads can run $15–$50+ per click. If your conversion rate is 10%, that\'s $150–$500 per lead.',
       },
       {
         type: 'h3',
@@ -385,7 +385,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Organic search results are trusted more than ads by most users. Studies consistently show that a significant portion of searchers skip the ads entirely and go straight to organic results. A business ranking organically is seen as more legitimate than one that\'s paying for placement. That said, top-of-page ad placement still captures meaningful traffic — especially for users in a buying mindset.',
+        text: 'Organic search results are trusted more than ads by most users. Studies consistently show that a significant portion of searchers skip the ads entirely and go straight to organic results. A business ranking organically is seen as more legitimate than one that\'s paying for placement. That said, top-of-page ad placement still captures meaningful traffic - especially for users in a buying mindset.',
       },
       {
         type: 'h3',
@@ -393,7 +393,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'SEO compounds over time. A page that earns strong rankings today will often hold those rankings for months or years with minimal additional investment. Ads provide no such equity — the moment your budget runs out, you vanish. Businesses that rely entirely on paid traffic are perpetually dependent on that spend.',
+        text: 'SEO compounds over time. A page that earns strong rankings today will often hold those rankings for months or years with minimal additional investment. Ads provide no such equity - the moment your budget runs out, you vanish. Businesses that rely entirely on paid traffic are perpetually dependent on that spend.',
       },
       {
         type: 'h2',
@@ -429,7 +429,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'For most established local businesses in Northern Virginia, the smartest strategy is to use both — but in a specific order and proportion. Start with SEO as your foundation. Build a strong website, optimize your Google Business Profile, and create content that targets local keywords. Layer in paid ads strategically when you need a volume boost or want to test new markets.',
+        text: 'For most established local businesses in Northern Virginia, the smartest strategy is to use both - but in a specific order and proportion. Start with SEO as your foundation. Build a strong website, optimize your Google Business Profile, and create content that targets local keywords. Layer in paid ads strategically when you need a volume boost or want to test new markets.',
       },
       {
         type: 'p',
@@ -441,7 +441,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Facebook and Instagram ads can work for local businesses, but they\'re fundamentally different from Google — you\'re interrupting people who weren\'t searching for you, rather than showing up for people actively looking. For most local service businesses, Google SEO and Google Ads will outperform social media ads on a cost-per-customer basis.',
+        text: 'Facebook and Instagram ads can work for local businesses, but they\'re fundamentally different from Google - you\'re interrupting people who weren\'t searching for you, rather than showing up for people actively looking. For most local service businesses, Google SEO and Google Ads will outperform social media ads on a cost-per-customer basis.',
       },
       {
         type: 'h2',
@@ -449,7 +449,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'SEO is the better long-term investment for almost every local service business. It builds equity, compounds over time, and captures customers at the exact moment they\'re searching for what you offer. Paid ads are a useful accelerant — but they\'re a tap, not a well. Turn them off and the water stops flowing.',
+        text: 'SEO is the better long-term investment for almost every local service business. It builds equity, compounds over time, and captures customers at the exact moment they\'re searching for what you offer. Paid ads are a useful accelerant - but they\'re a tap, not a well. Turn them off and the water stops flowing.',
       },
       {
         type: 'p',
@@ -457,7 +457,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'cta',
-        text: 'Ready to build your SEO foundation? We help local businesses across Northern Virginia rank on Google with professional websites and local SEO — starting with a free audit.',
+        text: 'Ready to build your SEO foundation? We help local businesses across Northern Virginia rank on Google with professional websites and local SEO - starting with a free audit.',
         label: 'Book Your Free Audit',
         href: '/booking',
       },

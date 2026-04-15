@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Fairfax, VA" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design & SEO in Fairfax, VA" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -36,7 +36,7 @@ const data: LocationData = {
   subheadline:
     "Fairfax County is one of the largest and wealthiest markets in all of Northern Virginia. We help local businesses rank on Google and capture their share of a massive customer base.",
   intro:
-    "Fairfax County is home to over 1.1 million residents and thousands of small businesses. The sheer size of the market is both an opportunity and a challenge — there's an enormous customer base, but the competition for local search visibility is intense. Businesses that invest in local SEO consistently outperform those that don't.",
+    "Fairfax County is home to over 1.1 million residents and thousands of small businesses. The sheer size of the market is both an opportunity and a challenge - there's an enormous customer base, but the competition for local search visibility is intense. Businesses that invest in local SEO consistently outperform those that don't.",
   about:
     "LevelUp Local builds the digital marketing foundation Fairfax businesses need to compete: professional websites engineered for speed and local search, complete Google Business Profile optimization across Fairfax's neighborhoods and zip codes, and local keyword strategies that match exactly what your customers are searching for in their specific area of the county.",
   neighborhoods: [
@@ -70,16 +70,16 @@ const data: LocationData = {
   ],
   faqs: [
     {
-      q: "Fairfax County is huge — can you target specific areas within the county?",
-      a: "Yes. Fairfax County includes many distinct communities — Reston, Herndon, Vienna, Springfield, Burke, Centreville, Chantilly, and more. We build location-targeted pages and optimize your service areas so you rank in the specific zip codes and neighborhoods where your customers live.",
+      q: "Fairfax County is huge - can you target specific areas within the county?",
+      a: "Yes. Fairfax County includes many distinct communities - Reston, Herndon, Vienna, Springfield, Burke, Centreville, Chantilly, and more. We build location-targeted pages and optimize your service areas so you rank in the specific zip codes and neighborhoods where your customers live.",
     },
     {
       q: "How do I compete with larger businesses for local SEO in Fairfax?",
-      a: "Larger businesses often have weak local SEO because they focus on broad, national strategies. As a local business, you have an inherent advantage in hyper-local search — your proximity, your reviews, and your community connections all work in your favor. We build on those strengths strategically.",
+      a: "Larger businesses often have weak local SEO because they focus on broad, national strategies. As a local business, you have an inherent advantage in hyper-local search - your proximity, your reviews, and your community connections all work in your favor. We build on those strengths strategically.",
     },
     {
       q: "Does my Fairfax business need separate pages for Reston, Herndon, and Vienna?",
-      a: "If you actively serve multiple distinct communities within Fairfax County, having individual location pages for each significantly improves your ranking in those specific areas. We create these pages with unique, genuine content — not duplicate pages with the city name swapped.",
+      a: "If you actively serve multiple distinct communities within Fairfax County, having individual location pages for each significantly improves your ranking in those specific areas. We create these pages with unique, genuine content - not duplicate pages with the city name swapped.",
     },
     {
       q: "What results can I realistically expect from local SEO in Fairfax?",

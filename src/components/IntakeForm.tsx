@@ -25,15 +25,15 @@ type Section = {
 const SECTIONS: Section[] = [
   {
     title: 'Business Information',
-    subtitle: "The basics — let's get the details right.",
+    subtitle: "The basics - let's get the details right.",
     fields: [
       { id: 'businessName', label: 'Business name', type: 'text', required: true, hint: 'The legal or trading name of your business.' },
       { id: 'contactName', label: 'Your name', type: 'text', required: true, hint: 'First and last name of the main contact.' },
       { id: 'phone', label: 'Phone number', type: 'tel', required: true, hint: 'Best number to reach you directly.' },
-      { id: 'email', label: 'Email address', type: 'email', required: true, hint: "Work email preferred — this is where we'll send updates." },
+      { id: 'email', label: 'Email address', type: 'email', required: true, hint: "Work email preferred - this is where we'll send updates." },
       { id: 'address', label: 'Business address', type: 'text', required: false, hint: 'Full address if you have a physical location. Service-area businesses can leave this blank.' },
       { id: 'publicPhone', label: 'Public phone number', type: 'tel', required: false, hint: 'The phone number you want displayed on your website.' },
-      { id: 'currentWebsite', label: 'Current website URL', type: 'url', required: false, hint: 'If you have one — paste the full link (https://...)' },
+      { id: 'currentWebsite', label: 'Current website URL', type: 'url', required: false, hint: 'If you have one - paste the full link (https://...)' },
       {
         id: 'industry', label: 'Industry / type of business', type: 'select', required: true,
         options: ['Restaurant / Food', 'Home Services (plumbing, HVAC, electrical, etc.)', 'Health & Wellness', 'Retail / Shop', 'Professional Services (legal, finance, consulting)', 'Beauty & Personal Care', 'Auto Services', 'Contractor / Construction', 'Other'],
@@ -54,7 +54,7 @@ const SECTIONS: Section[] = [
     subtitle: 'What do you offer? Be as specific as you can.',
     fields: [
       { id: 'services', label: 'List your main services or products', type: 'textarea', required: true, hint: 'One per line is fine. Include prices if you want them on the site.' },
-      { id: 'uniqueValue', label: 'What makes you different?', type: 'textarea', required: true, hint: 'Why should someone choose you over a competitor? Awards, experience, price, speed — anything.' },
+      { id: 'uniqueValue', label: 'What makes you different?', type: 'textarea', required: true, hint: 'Why should someone choose you over a competitor? Awards, experience, price, speed - anything.' },
       { id: 'callToAction', label: 'What do you want visitors to do first?', type: 'select', required: true, options: ['Call you', 'Fill out a contact form', 'Book an appointment', 'Get a quote', 'Visit your location', 'Other'] },
     ],
   },
@@ -63,7 +63,7 @@ const SECTIONS: Section[] = [
     subtitle: "We'll design something that fits your business personality.",
     fields: [
       { id: 'colors', label: 'Do you have brand colors?', type: 'text', required: false, hint: "List them (e.g. 'dark green and gold') or paste hex codes if you have them." },
-      { id: 'logoStatus', label: 'Do you have a logo?', type: 'select', required: true, options: ['Yes — I\'ll send it', 'No — please create a simple one', 'Not sure'] },
+      { id: 'logoStatus', label: 'Do you have a logo?', type: 'select', required: true, options: ['Yes - I\'ll send it', 'No - please create a simple one', 'Not sure'] },
       { id: 'styleVibes', label: 'How would you describe the feel you want?', type: 'textarea', required: false, hint: "Words like 'professional', 'friendly', 'luxury', 'rustic', 'modern', 'clean' all help. Website examples you like are even better." },
     ],
   },
@@ -74,16 +74,16 @@ const SECTIONS: Section[] = [
       { id: 'businessStory', label: 'Tell us your story', type: 'textarea', required: false, hint: 'How long have you been in business? Why did you start? Anything personal or memorable?' },
       { id: 'photos', label: 'Photos / media available', type: 'select', required: true, options: ['I have photos I can share', 'I need you to use stock photos for now', 'I can get photos taken', 'No photos yet'] },
       { id: 'testimonials', label: 'Do you have customer reviews or testimonials?', type: 'textarea', required: false, hint: 'Paste them here or let us know if we should pull from your Google listing.' },
-      { id: 'certifications', label: 'Any awards, certifications, or credentials?', type: 'textarea', required: false, hint: 'Licensed, insured, BBB rated, years in business, industry associations — anything that builds trust.' },
+      { id: 'certifications', label: 'Any awards, certifications, or credentials?', type: 'textarea', required: false, hint: 'Licensed, insured, BBB rated, years in business, industry associations - anything that builds trust.' },
     ],
   },
   {
     title: 'Technical Details',
     subtitle: 'If you already have accounts set up, we\'ll connect to them.',
     fields: [
-      { id: 'googleBusiness', label: 'Google Business Profile', type: 'select', required: true, options: ['Yes — it\'s set up and verified', 'Yes — but it\'s not verified', 'No — I don\'t have one', 'Not sure'] },
+      { id: 'googleBusiness', label: 'Google Business Profile', type: 'select', required: true, options: ['Yes - it\'s set up and verified', 'Yes - but it\'s not verified', 'No - I don\'t have one', 'Not sure'] },
       { id: 'socialMedia', label: 'Social media accounts', type: 'textarea', required: false, hint: 'List any Facebook, Instagram, TikTok, Yelp, or other profile links you want connected to your site.' },
-      { id: 'bookingTool', label: 'Do you use any booking or scheduling tool?', type: 'text', required: false, hint: 'e.g. Calendly, Square, Vagaro, Mindbody — or leave blank if not.' },
+      { id: 'bookingTool', label: 'Do you use any booking or scheduling tool?', type: 'text', required: false, hint: 'e.g. Calendly, Square, Vagaro, Mindbody - or leave blank if not.' },
       { id: 'additionalTools', label: 'Any other tools or software we should know about?', type: 'textarea', required: false, hint: 'Point of sale, loyalty programs, email lists, etc.' },
     ],
   },
@@ -91,17 +91,17 @@ const SECTIONS: Section[] = [
     title: 'Your Goals',
     subtitle: 'Help us measure success.',
     fields: [
-      { id: 'primaryGoal', label: "What's the #1 thing you want the website to do for you?", type: 'textarea', required: true, hint: 'More calls, more bookings, show up on Google, look more professional — there\'s no wrong answer.' },
-      { id: 'timeline', label: 'Do you have a target launch date?', type: 'text', required: false, hint: "If there's an event, opening date, or urgency — let us know." },
-      { id: 'budget', label: 'Selected package', type: 'select', required: true, options: ['🟢 Launch — $700 setup + $99/mo', '🔵 Growth — $1,000 setup + $149/mo', '🔴 Authority — $1,300 setup + $200/mo'] },
+      { id: 'primaryGoal', label: "What's the #1 thing you want the website to do for you?", type: 'textarea', required: true, hint: 'More calls, more bookings, show up on Google, look more professional - there\'s no wrong answer.' },
+      { id: 'timeline', label: 'Do you have a target launch date?', type: 'text', required: false, hint: "If there's an event, opening date, or urgency - let us know." },
+      { id: 'budget', label: 'Selected package', type: 'select', required: true, options: ['🟢 Launch - $700 setup + $99/mo', '🔵 Growth - $1,000 setup + $149/mo', '🔴 Authority - $1,300 setup + $200/mo'] },
     ],
   },
   {
     title: 'Anything Else',
-    subtitle: 'Last chance — anything we should know?',
+    subtitle: 'Last chance - anything we should know?',
     fields: [
       { id: 'extraInfo', label: 'Additional notes or requests', type: 'textarea', required: false, hint: "Questions, concerns, special requests, or anything that didn't fit above." },
-      { id: 'referral', label: 'How did you hear about LvL Up Local?', type: 'text', required: false, hint: "Word of mouth, social media, Google — helps us know what's working." },
+      { id: 'referral', label: 'How did you hear about LvL Up Local?', type: 'text', required: false, hint: "Word of mouth, social media, Google - helps us know what's working." },
     ],
   },
 ];
@@ -124,7 +124,7 @@ const CSS_VARS: Record<string, string> = {
   '--border-radius-lg': '12px',
 };
 
-// Per-field validation — returns an error message or empty string
+// Per-field validation - returns an error message or empty string
 function validateField(field: Field, value: string): string {
   const v = value?.trim() ?? '';
 
@@ -207,7 +207,7 @@ export default function IntakeForm() {
 
   function handleBack() {
     setStep((s) => s - 1);
-    // Don't clear errors/touched — preserve state if user goes back
+    // Don't clear errors/touched - preserve state if user goes back
   }
 
   async function handleSubmit() {

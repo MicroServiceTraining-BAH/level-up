@@ -5,25 +5,25 @@ import AnimateIn from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "Local SEO Services in Northern Virginia | LevelUp Local",
   description:
-    "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia — Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
+    "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia - Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
   alternates: {
     canonical: "https://lvluplocal.co/locations",
   },
   openGraph: {
     title: "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
     description:
-      "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia — Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
+      "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia - Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
     url: "https://lvluplocal.co/locations",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Northern Virginia Local SEO & Web Design" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Northern Virginia Local SEO & Web Design" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
     description:
-      "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia — Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
+      "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia - Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
     images: ["https://lvluplocal.co/logo.png"],
   },
 };
@@ -32,7 +32,7 @@ const locations = [
   {
     city: "Stafford",
     slug: "stafford-va",
-    desc: "SEO services and web design for local businesses in Stafford, VA — helping you show up when customers search.",
+    desc: "SEO services and web design for local businesses in Stafford, VA - helping you show up when customers search.",
   },
   {
     city: "Fredericksburg",
@@ -62,7 +62,7 @@ const locations = [
   {
     city: "Fairfax",
     slug: "fairfax-va",
-    desc: "Local SEO and web design for Fairfax small businesses — rank higher, get more calls, and grow your customer base.",
+    desc: "Local SEO and web design for Fairfax small businesses - rank higher, get more calls, and grow your customer base.",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function LocationsPage() {
               {
                 stat: "46%",
                 title: "of all Google searches are local",
-                desc: "Nearly half of every Google search has local intent — people looking for businesses, services, or products near them.",
+                desc: "Nearly half of every Google search has local intent - people looking for businesses, services, or products near them.",
               },
               {
                 stat: "88%",

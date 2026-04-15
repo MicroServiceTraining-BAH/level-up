@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Web Design & SEO in Arlington, VA" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design & SEO in Arlington, VA" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -32,7 +32,7 @@ const data: LocationData = {
   city: "Arlington",
   state: "VA",
   slug: "arlington-va",
-  headline: "Local SEO Services in Arlington, VA — Stand Out From the Competition",
+  headline: "Local SEO Services in Arlington, VA - Stand Out From the Competition",
   subheadline:
     "Arlington is one of the most competitive markets in Northern Virginia. We help small businesses cut through the noise with professional websites and local SEO that drives real customer leads.",
   intro:
@@ -71,7 +71,7 @@ const data: LocationData = {
   faqs: [
     {
       q: "Is local SEO worth it for an Arlington, VA business given how competitive the market is?",
-      a: "Absolutely — and in fact, the higher the competition, the more important SEO becomes. In a market like Arlington where customers are constantly searching online, being on page one of Google gives you a massive, sustainable advantage over businesses that rely only on referrals or social media.",
+      a: "Absolutely - and in fact, the higher the competition, the more important SEO becomes. In a market like Arlington where customers are constantly searching online, being on page one of Google gives you a massive, sustainable advantage over businesses that rely only on referrals or social media.",
     },
     {
       q: "How do you approach SEO differently for an urban market like Arlington vs. a suburban area?",
@@ -83,7 +83,7 @@ const data: LocationData = {
     },
     {
       q: "How long does it take to see results from local SEO in Arlington?",
-      a: "Arlington is competitive, so significant ranking movements typically take 4–6 months. That said, many of our clients start seeing increased profile views and calls within the first few weeks of a fully optimized Google Business Profile — even before the website is fully indexed.",
+      a: "Arlington is competitive, so significant ranking movements typically take 4–6 months. That said, many of our clients start seeing increased profile views and calls within the first few weeks of a fully optimized Google Business Profile - even before the website is fully indexed.",
     },
   ],
 };

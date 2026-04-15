@@ -2,25 +2,25 @@ import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book a Free Website Audit — Get Your Business Online",
+  title: "Book a Free Website Audit - Get Your Business Online",
   description:
     "Schedule your free 15-minute website audit with LevelUp Local. We'll show you exactly what your local business needs to get a professional website and start ranking on Google.",
   alternates: {
     canonical: "https://lvluplocal.co/booking",
   },
   openGraph: {
-    title: "Book a Free Website Audit — LevelUp Local",
+    title: "Book a Free Website Audit - LevelUp Local",
     description:
       "Schedule your free 15-minute website audit with LevelUp Local. We'll show you exactly what your local business needs to get a professional website and start ranking on Google.",
     url: "https://lvluplocal.co/booking",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "Book a Free Website Audit — LevelUp Local" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "Book a Free Website Audit - LevelUp Local" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book a Free Website Audit — LevelUp Local",
+    title: "Book a Free Website Audit - LevelUp Local",
     description:
       "Schedule your free 15-minute website audit with LevelUp Local. We'll show you exactly what your local business needs to get a professional website and start ranking on Google.",
     images: ["https://lvluplocal.co/logo.png"],
@@ -47,7 +47,7 @@ export default function BookingPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-blue/20 bg-brand-blue/5 mb-8">
               <span className="w-2 h-2 rounded-full bg-brand-green"
                 style={{ animation: "pulse-dot 2s infinite" }} />
-              <span className="text-brand-blue text-sm font-medium">Free — No credit card required</span>
+              <span className="text-brand-blue text-sm font-medium">Free - No credit card required</span>
             </div>
             <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.01em] text-brand-text mb-6">
               Book Your Free <span className="text-brand-blue">Website Audit</span>
@@ -107,7 +107,7 @@ export default function BookingPage() {
                   {/* Calendly inline embed placeholder */}
                   <div className="p-8 border-b border-brand-border">
                     <h3 className="font-heading font-bold text-brand-text text-xl mb-1">Schedule Your Call</h3>
-                    <p className="text-brand-muted text-sm">Pick a time that works for you — we&apos;ll confirm right away.</p>
+                    <p className="text-brand-muted text-sm">Pick a time that works for you - we&apos;ll confirm right away.</p>
                   </div>
 
                   {/* Calendly embed area */}

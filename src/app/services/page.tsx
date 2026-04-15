@@ -5,25 +5,25 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Local SEO Services & Web Design for Small Businesses",
   description:
-    "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google — free audit.",
+    "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google - free audit.",
   alternates: {
     canonical: "https://lvluplocal.co/services",
   },
   openGraph: {
     title: "Local SEO Services & Web Design for Small Businesses | LevelUp Local",
     description:
-      "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google — free audit.",
+      "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google - free audit.",
     url: "https://lvluplocal.co/services",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local — Local SEO & Web Design Services" }],
+    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Local SEO & Web Design Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Local SEO Services & Web Design for Small Businesses | LevelUp Local",
     description:
-      "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google — free audit.",
+      "Professional websites, local SEO, Google Business Profile optimization, and lead generation for small businesses in Northern Virginia. Get found on Google - free audit.",
     images: ["https://lvluplocal.co/logo.png"],
   },
 };
@@ -35,7 +35,7 @@ const services = [
         <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
-    title: "Website Setup — From Scratch",
+    title: "Website Setup - From Scratch",
     tag: "Core Service",
     tagColor: "#00C2FF",
     desc: "We build your business a complete, professional website from the ground up. No templates. No generic designs. A real site that looks like your business and works hard to bring you customers.",
@@ -56,7 +56,7 @@ const services = [
     title: "Lead Capture Systems",
     tag: "Convert Visitors",
     tagColor: "#39FF14",
-    desc: "A pretty website isn't enough — you need systems that capture leads and get them into your hands. We set up everything so that when someone visits your site, they become a real inquiry.",
+    desc: "A pretty website isn't enough - you need systems that capture leads and get them into your hands. We set up everything so that when someone visits your site, they become a real inquiry.",
     bullets: [
       "Optimized contact and quote request forms",
       "Strategic CTA placement throughout every page",
@@ -93,13 +93,13 @@ const services = [
     title: "Ongoing Support & Updates",
     tag: "Long-Term Partner",
     tagColor: "#39FF14",
-    desc: "We don't disappear after your site goes live. We're your ongoing tech partner — keeping your site up-to-date, making changes when your business evolves, and answering questions when you need help.",
+    desc: "We don't disappear after your site goes live. We're your ongoing tech partner - keeping your site up-to-date, making changes when your business evolves, and answering questions when you need help.",
     bullets: [
       "Content updates and page changes",
       "New service or team member additions",
       "Performance monitoring and fixes",
       "Security and software updates",
-      "Direct access to your team — no ticketing system",
+      "Direct access to your team - no ticketing system",
     ],
   },
 ];
@@ -120,7 +120,7 @@ export default function ServicesPage() {
               <span className="text-brand-blue">Small Businesses</span>
             </h1>
             <p className="text-xl text-brand-muted leading-[1.75] max-w-2xl mb-10">
-              We help local service businesses across Northern Virginia get found on Google — with professional websites, local SEO, and lead generation systems built to convert.
+              We help local service businesses across Northern Virginia get found on Google - with professional websites, local SEO, and lead generation systems built to convert.
             </p>
             <Link href="/booking"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-brand-bg font-bold text-base hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg transition-all duration-200"
@@ -210,7 +210,7 @@ export default function ServicesPage() {
               How We Help You <span className="text-brand-blue">Rank on Google</span>
             </h2>
             <p className="text-brand-muted text-lg leading-[1.75]">
-              Ranking on Google isn&apos;t magic — it&apos;s a system. We implement every piece of that system for your business.
+              Ranking on Google isn&apos;t magic - it&apos;s a system. We implement every piece of that system for your business.
             </p>
           </AnimateIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -230,7 +230,7 @@ export default function ServicesPage() {
               {
                 step: "03",
                 title: "Local Keyword Targeting",
-                desc: "We research exactly what your customers are searching for in your city and build your pages around those terms — so you show up when it counts most.",
+                desc: "We research exactly what your customers are searching for in your city and build your pages around those terms - so you show up when it counts most.",
                 color: "#00C2FF",
               },
             ].map((item) => (

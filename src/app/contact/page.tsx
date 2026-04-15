@@ -4,16 +4,16 @@ import ContactForm from "./ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Get a Custom Website for Your Business",
+  title: "Contact - Get a Custom Website for Your Business",
   description:
-    "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast — custom design, lead capture, and local SEO included.",
+    "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast - custom design, lead capture, and local SEO included.",
   alternates: {
     canonical: "https://lvluplocal.co/contact",
   },
   openGraph: {
-    title: "Contact LevelUp Local — Get a Custom Website for Your Business",
+    title: "Contact LevelUp Local - Get a Custom Website for Your Business",
     description:
-      "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast — custom design, lead capture, and local SEO included.",
+      "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast - custom design, lead capture, and local SEO included.",
     url: "https://lvluplocal.co/contact",
     siteName: "LevelUp Local",
     locale: "en_US",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact LevelUp Local — Get a Custom Website for Your Business",
+    title: "Contact LevelUp Local - Get a Custom Website for Your Business",
     description:
-      "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast — custom design, lead capture, and local SEO included.",
+      "Ready to get a professional website for your local business? Contact LevelUp Local and we'll get you online fast - custom design, lead capture, and local SEO included.",
     images: ["https://lvluplocal.co/logo.png"],
   },
 };
