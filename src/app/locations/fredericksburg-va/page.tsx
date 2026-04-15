@@ -3,7 +3,7 @@ import LocationPage from "@/components/LocationPage";
 import type { LocationData } from "@/components/LocationPage";
 
 export const metadata: Metadata = {
-  title: "Web Design & Local SEO Services in Fredericksburg, VA | LevelUp Local",
+  title: "Web Design & Local SEO Services in Fredericksburg, VA",
   description:
     "Professional website design and local SEO for small businesses in Fredericksburg, VA. Rank higher on Google, get more calls, and grow your customer base. Free audit today.",
   alternates: {

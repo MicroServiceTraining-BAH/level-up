@@ -3,7 +3,7 @@ import LocationPage from "@/components/LocationPage";
 import type { LocationData } from "@/components/LocationPage";
 
 export const metadata: Metadata = {
-  title: "Web Design & Local SEO Services in Manassas, VA | LevelUp Local",
+  title: "Web Design & Local SEO Services in Manassas, VA",
   description:
     "Professional website design and local SEO for small businesses in Manassas, VA. Get more customers from Google — free audit from LevelUp Local today.",
   alternates: {
