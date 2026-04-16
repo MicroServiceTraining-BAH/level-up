@@ -1,20 +1,24 @@
 # CLAUDE.md — Frontend Website Rules
 
 ## Always Do First
+
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
 
 ## Reference Images
+
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
 - If no reference image: design from scratch with high craft (see guardrails below).
 - Screenshot your output, compare against reference, fix mismatches, re-screenshot. Do at least 2 comparison rounds. Stop only when no visible differences remain or user says so.
 
 ## Local Server
+
 - **Always serve on localhost** — never screenshot a `file:///` URL.
 - Start the dev server: `npm run dev` (serves the Next.js app at `http://localhost:3000`)
 - Start it in the background before taking any screenshots.
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow
+
 - Puppeteer is installed locally. Chrome will be downloaded on first run if needed.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
@@ -25,16 +29,19 @@
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
 ## Output Defaults
+
 - Next.js App Router project with TypeScript and Tailwind CSS
 - Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
 - Mobile-first responsive
 
 ## Brand Assets
+
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
 - If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
 
 ## Anti-Generic Guardrails
+
 - **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
 - **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
 - **Typography:** Never use the same font for headings and body. Pair a display/serif with a clean sans. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
@@ -46,6 +53,7 @@
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
 ## Hard Rules
+
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
 - Do not stop after one screenshot pass

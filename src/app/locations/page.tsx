@@ -10,18 +10,27 @@ export const metadata: Metadata = {
     canonical: "https://lvluplocal.co/locations",
   },
   openGraph: {
-    title: "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
+    title:
+      "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
     description:
       "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia - Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
     url: "https://lvluplocal.co/locations",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Northern Virginia Local SEO & Web Design" }],
+    images: [
+      {
+        url: "https://lvluplocal.co/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "LevelUp Local - Northern Virginia Local SEO & Web Design",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
+    title:
+      "Local SEO & Web Design Services Across Northern Virginia | LevelUp Local",
     description:
       "LevelUp Local provides local SEO and web design for small businesses across Northern Virginia - Stafford, Fredericksburg, Woodbridge, Manassas, Arlington, Alexandria, Fairfax & more.",
     images: ["https://lvluplocal.co/logo.png"],
@@ -89,8 +98,9 @@ export default function LocationsPage() {
               <span className="text-brand-blue">Northern Virginia</span>
             </h1>
             <p className="text-xl text-brand-muted leading-[1.75] max-w-2xl mb-10">
-              We help small businesses across NOVA rank on Google, get found by local
-              customers, and turn their website into a lead generation machine.
+              We help small businesses across NOVA rank on Google, get found by
+              local customers, and turn their website into a lead generation
+              machine.
             </p>
             <Link
               href="/booking"
@@ -117,7 +127,10 @@ export default function LocationsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((loc, i) => (
               <AnimateIn key={loc.slug} delay={i * 70}>
-                <Link href={`/locations/${loc.slug}`} className="block group h-full">
+                <Link
+                  href={`/locations/${loc.slug}`}
+                  className="block group h-full"
+                >
                   <div
                     className="p-8 rounded-2xl bg-brand-elevated border border-brand-border hover:border-brand-blue/30 transition-all duration-300 h-full flex flex-col"
                     style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.3)" }}
@@ -208,7 +221,9 @@ export default function LocationsPage() {
                   <h3 className="font-heading font-bold text-brand-text text-lg mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-brand-muted text-sm leading-[1.8]">{item.desc}</p>
+                  <p className="text-brand-muted text-sm leading-[1.8]">
+                    {item.desc}
+                  </p>
                 </div>
               </AnimateIn>
             ))}
@@ -234,8 +249,8 @@ export default function LocationsPage() {
             <span className="text-brand-blue">Northern Virginia</span> City?
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">
-            Book a free 15-minute audit call and we&apos;ll map out exactly what your
-            business needs to start showing up on Google in your area.
+            Book a free 15-minute audit call and we&apos;ll map out exactly what
+            your business needs to start showing up on Google in your area.
           </p>
           <Link
             href="/booking"

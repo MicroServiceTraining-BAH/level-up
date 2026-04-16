@@ -39,7 +39,12 @@ export default function LocationPage({ data }: Props) {
       name: data.city,
       containedInPlace: { "@type": "State", name: "Virginia" },
     },
-    serviceType: ["Local SEO", "Website Design", "Google Business Profile Optimization", "Lead Generation"],
+    serviceType: [
+      "Local SEO",
+      "Website Design",
+      "Google Business Profile Optimization",
+      "Lead Generation",
+    ],
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://lvluplocal.co/locations/${data.slug}`,
@@ -58,13 +63,24 @@ export default function LocationPage({ data }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       {/* Hero */}
       <section className="relative bg-brand-bg pt-36 pb-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at 30% 50%, rgba(0,194,255,0.09) 0%, transparent 60%)" }} />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 30% 50%, rgba(0,194,255,0.09) 0%, transparent 60%)",
+          }}
+        />
         <div className="absolute inset-0 grid-bg" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <AnimateIn className="max-w-3xl">
@@ -78,13 +94,17 @@ export default function LocationPage({ data }: Props) {
               {data.subheadline}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/booking"
+              <Link
+                href="/booking"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-blue text-brand-bg font-bold text-base hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg transition-all duration-200"
-                style={{ boxShadow: "0 0 28px rgba(0,194,255,0.35)" }}>
+                style={{ boxShadow: "0 0 28px rgba(0,194,255,0.35)" }}
+              >
                 Get a Free SEO Audit →
               </Link>
-              <Link href="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-brand-border text-brand-text font-bold text-base hover:border-brand-blue/40 hover:text-brand-blue active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg transition-all duration-200">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-brand-border text-brand-text font-bold text-base hover:border-brand-blue/40 hover:text-brand-blue active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg transition-all duration-200"
+              >
                 View Our Services
               </Link>
             </div>
@@ -104,8 +124,12 @@ export default function LocationPage({ data }: Props) {
                 Local SEO Services Built for{" "}
                 <span className="text-brand-blue">{data.city}</span>
               </h2>
-              <p className="text-brand-muted text-lg leading-[1.8] mb-6">{data.intro}</p>
-              <p className="text-brand-muted text-base leading-[1.85]">{data.about}</p>
+              <p className="text-brand-muted text-lg leading-[1.8] mb-6">
+                {data.intro}
+              </p>
+              <p className="text-brand-muted text-base leading-[1.85]">
+                {data.about}
+              </p>
             </AnimateIn>
             <AnimateIn from="right">
               <div className="space-y-4">
@@ -114,13 +138,18 @@ export default function LocationPage({ data }: Props) {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {data.neighborhoods.map((n) => (
-                    <span key={n} className="px-4 py-2 rounded-xl bg-brand-elevated border border-brand-border text-brand-muted text-sm">
+                    <span
+                      key={n}
+                      className="px-4 py-2 rounded-xl bg-brand-elevated border border-brand-border text-brand-muted text-sm"
+                    >
                       {n}
                     </span>
                   ))}
                 </div>
-                <div className="mt-8 p-6 rounded-2xl bg-brand-elevated border border-brand-blue/15"
-                  style={{ boxShadow: "0 0 32px rgba(0,194,255,0.05)" }}>
+                <div
+                  className="mt-8 p-6 rounded-2xl bg-brand-elevated border border-brand-blue/15"
+                  style={{ boxShadow: "0 0 32px rgba(0,194,255,0.05)" }}
+                >
                   <p className="text-brand-text font-semibold text-base mb-4">
                     What You Get With LevelUp Local
                   </p>
@@ -134,13 +163,27 @@ export default function LocationPage({ data }: Props) {
                       "Ongoing support from a real team",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                          style={{ background: "rgba(0,194,255,0.08)", border: "1px solid rgba(0,194,255,0.25)" }}>
-                          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#00C2FF" strokeWidth={3}>
+                        <div
+                          className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                          style={{
+                            background: "rgba(0,194,255,0.08)",
+                            border: "1px solid rgba(0,194,255,0.25)",
+                          }}
+                        >
+                          <svg
+                            width="10"
+                            height="10"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="#00C2FF"
+                            strokeWidth={3}
+                          >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </div>
-                        <span className="text-brand-muted text-sm leading-[1.7]">{item}</span>
+                        <span className="text-brand-muted text-sm leading-[1.7]">
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -155,7 +198,9 @@ export default function LocationPage({ data }: Props) {
       <section className="bg-brand-bg py-20">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Who We Help</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">
+              Who We Help
+            </p>
             <h2 className="font-heading font-black text-4xl md:text-[44px] leading-[1.06] tracking-[-0.01em] text-brand-text">
               Local Businesses in{" "}
               <span className="text-brand-blue">{data.city}</span> We Serve
@@ -177,7 +222,9 @@ export default function LocationPage({ data }: Props) {
       <section className="bg-brand-surface py-24">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn className="text-center mb-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">FAQ</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">
+              FAQ
+            </p>
             <h2 className="font-heading font-black text-4xl leading-[1.06] tracking-[-0.01em] text-brand-text">
               Common Questions from{" "}
               <span className="text-brand-blue">{data.city}</span> Businesses
@@ -186,10 +233,16 @@ export default function LocationPage({ data }: Props) {
           <div className="space-y-4">
             {data.faqs.map((faq, i) => (
               <AnimateIn key={i} delay={i * 60}>
-                <div className="p-7 rounded-2xl bg-brand-elevated border border-brand-border"
-                  style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.25)" }}>
-                  <h3 className="font-heading font-bold text-brand-text text-lg mb-3">{faq.q}</h3>
-                  <p className="text-brand-muted text-sm leading-[1.85]">{faq.a}</p>
+                <div
+                  className="p-7 rounded-2xl bg-brand-elevated border border-brand-border"
+                  style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.25)" }}
+                >
+                  <h3 className="font-heading font-bold text-brand-text text-lg mb-3">
+                    {faq.q}
+                  </h3>
+                  <p className="text-brand-muted text-sm leading-[1.85]">
+                    {faq.a}
+                  </p>
                 </div>
               </AnimateIn>
             ))}
@@ -201,7 +254,9 @@ export default function LocationPage({ data }: Props) {
       <section className="bg-brand-bg py-16">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn className="text-center mb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-3">Service Area</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-3">
+              Service Area
+            </p>
             <h2 className="font-heading font-bold text-2xl text-brand-text">
               We Also Serve These Northern Virginia Cities
             </h2>
@@ -210,8 +265,11 @@ export default function LocationPage({ data }: Props) {
             {otherLocations
               .filter((l) => l.slug !== data.slug)
               .map((loc) => (
-                <Link key={loc.slug} href={`/locations/${loc.slug}`}
-                  className="px-5 py-2.5 rounded-full bg-brand-elevated border border-brand-border text-sm text-brand-muted hover:text-brand-blue hover:border-brand-blue/30 transition-all duration-200">
+                <Link
+                  key={loc.slug}
+                  href={`/locations/${loc.slug}`}
+                  className="px-5 py-2.5 rounded-full bg-brand-elevated border border-brand-border text-sm text-brand-muted hover:text-brand-blue hover:border-brand-blue/30 transition-all duration-200"
+                >
                   {loc.city}, VA
                 </Link>
               ))}
@@ -221,22 +279,40 @@ export default function LocationPage({ data }: Props) {
 
       {/* CTA */}
       <section className="relative bg-brand-surface py-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(0,194,255,0.05) 0%, transparent 60%)" }} />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 50%, rgba(0,194,255,0.05) 0%, transparent 60%)",
+          }}
+        />
         <AnimateIn className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">Ready?</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-blue mb-4">
+            Ready?
+          </p>
           <h2 className="font-heading font-black text-4xl md:text-5xl leading-[1.06] tracking-[-0.01em] text-brand-text mb-6">
-            Grow Your {data.city} Business <span className="text-brand-blue">Online</span>
+            Grow Your {data.city} Business{" "}
+            <span className="text-brand-blue">Online</span>
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">
-            Book a free 15-minute audit and find out exactly what it will take to rank your {data.city}{" "}
-            business on Google and start generating more local customers.
+            Book a free 15-minute audit and find out exactly what it will take
+            to rank your {data.city} business on Google and start generating
+            more local customers.
           </p>
-          <Link href="/booking"
+          <Link
+            href="/booking"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-brand-blue text-brand-bg font-bold text-lg hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface transition-all duration-200"
-            style={{ boxShadow: "0 0 32px rgba(0,194,255,0.35)" }}>
+            style={{ boxShadow: "0 0 32px rgba(0,194,255,0.35)" }}
+          >
             Book Your Free SEO Audit
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>

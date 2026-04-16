@@ -13,7 +13,9 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -27,7 +29,7 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       });
       if (!res.ok) {
-        const data = await res.json() as { error?: string };
+        const data = (await res.json()) as { error?: string };
         throw new Error(data.error ?? "Something went wrong.");
       }
       setState("success");
@@ -40,15 +42,30 @@ export default function ContactForm() {
   if (state === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-          style={{ background: "rgba(57,255,20,0.1)", border: "1px solid rgba(57,255,20,0.3)" }}>
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#39FF14" strokeWidth={2.5}>
+        <div
+          className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+          style={{
+            background: "rgba(57,255,20,0.1)",
+            border: "1px solid rgba(57,255,20,0.3)",
+          }}
+        >
+          <svg
+            width="28"
+            height="28"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#39FF14"
+            strokeWidth={2.5}
+          >
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="font-heading font-black text-2xl text-brand-text mb-3">Message Sent!</h3>
+        <h3 className="font-heading font-black text-2xl text-brand-text mb-3">
+          Message Sent!
+        </h3>
         <p className="text-brand-muted text-sm leading-[1.7] max-w-xs">
-          Thanks for reaching out. We&apos;ll get back to you within one business day.
+          Thanks for reaching out. We&apos;ll get back to you within one
+          business day.
         </p>
       </div>
     );
@@ -57,15 +74,30 @@ export default function ContactForm() {
   if (state === "error") {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-          style={{ background: "rgba(255,60,60,0.1)", border: "1px solid rgba(255,60,60,0.3)" }}>
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#ff3c3c" strokeWidth={2.5}>
+        <div
+          className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+          style={{
+            background: "rgba(255,60,60,0.1)",
+            border: "1px solid rgba(255,60,60,0.3)",
+          }}
+        >
+          <svg
+            width="28"
+            height="28"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#ff3c3c"
+            strokeWidth={2.5}
+          >
             <path d="M18 6 6 18M6 6l12 12" />
           </svg>
         </div>
-        <h3 className="font-heading font-black text-2xl text-brand-text mb-3">Something went wrong.</h3>
+        <h3 className="font-heading font-black text-2xl text-brand-text mb-3">
+          Something went wrong.
+        </h3>
         <p className="text-brand-muted text-sm leading-[1.7] max-w-xs mb-6">
-          We couldn&apos;t send your message. Please try again or email us directly.
+          We couldn&apos;t send your message. Please try again or email us
+          directly.
         </p>
         <button
           onClick={() => setState("idle")}
@@ -77,13 +109,17 @@ export default function ContactForm() {
     );
   }
 
-  const inputClass = "w-full bg-brand-elevated border border-brand-border rounded-xl px-4 py-3.5 text-brand-text text-sm placeholder:text-brand-muted/60 focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/30 transition-all duration-200";
+  const inputClass =
+    "w-full bg-brand-elevated border border-brand-border rounded-xl px-4 py-3.5 text-brand-text text-sm placeholder:text-brand-muted/60 focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/30 transition-all duration-200";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2">
+          <label
+            htmlFor="name"
+            className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2"
+          >
             Name <span className="text-brand-blue">*</span>
           </label>
           <input
@@ -98,7 +134,10 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2">
+          <label
+            htmlFor="email"
+            className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2"
+          >
             Email <span className="text-brand-blue">*</span>
           </label>
           <input
@@ -115,8 +154,14 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2">
-          Phone <span className="text-brand-muted font-normal normal-case tracking-normal">(optional)</span>
+        <label
+          htmlFor="phone"
+          className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2"
+        >
+          Phone{" "}
+          <span className="text-brand-muted font-normal normal-case tracking-normal">
+            (optional)
+          </span>
         </label>
         <input
           id="phone"
@@ -130,7 +175,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2">
+        <label
+          htmlFor="message"
+          className="block text-brand-text text-xs font-semibold uppercase tracking-wider mb-2"
+        >
           Message <span className="text-brand-blue">*</span>
         </label>
         <textarea

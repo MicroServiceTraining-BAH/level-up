@@ -1,29 +1,38 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import AnimateIn from "@/components/AnimateIn";
-import { blogPosts, getBlogPost, formatDate, type ContentBlock } from "@/lib/blog";
+import { getBlogPostBySlug, getAllBlogSlugs } from "@/sanity/queries";
+import {
+  blogPosts,
+  getBlogPost,
+  formatDate,
+  type ContentBlock,
+} from "@/lib/blog";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  const sanitySlugs = await getAllBlogSlugs();
+  const staticSlugs = blogPosts.map((p) => p.slug);
+  const all = Array.from(new Set([...sanitySlugs, ...staticSlugs]));
+  return all.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const sanityPost = await getBlogPostBySlug(slug);
+  const post = sanityPost ?? getBlogPost(slug);
   if (!post) return {};
   return {
     title: post.title,
     description: post.description,
-    alternates: {
-      canonical: `https://lvluplocal.co/blog/${post.slug}`,
-    },
+    alternates: { canonical: `https://lvluplocal.co/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://lvluplocal.co/blog/${post.slug}`,
+      url: `https://lvluplocal.co/blog/${slug}`,
       siteName: "LevelUp Local",
       type: "article",
       publishedTime: post.date,
@@ -45,7 +54,92 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function renderBlock(block: ContentBlock, i: number) {
+const portableTextComponents: PortableTextComponents = {
+  block: {
+    h2: ({ children }) => (
+      <h2 className="font-heading font-black text-2xl md:text-3xl text-brand-text mt-12 mb-4 tracking-tight">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="font-heading font-bold text-xl text-brand-text mt-8 mb-3">
+        {children}
+      </h3>
+    ),
+    normal: ({ children }) => (
+      <p className="text-brand-muted text-base leading-[1.9] mb-5">
+        {children}
+      </p>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="space-y-2.5 mb-6 ml-1">{children}</ul>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="flex items-start gap-3">
+        <div
+          className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border"
+          style={{
+            background: "rgba(0,194,255,0.08)",
+            borderColor: "rgba(0,194,255,0.25)",
+          }}
+        >
+          <svg
+            width="10"
+            height="10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#00C2FF"
+            strokeWidth={3}
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <span className="text-brand-muted text-sm leading-[1.8]">
+          {children}
+        </span>
+      </li>
+    ),
+  },
+  types: {
+    cta: ({
+      value,
+    }: {
+      value: { text: string; label: string; href: string };
+    }) => (
+      <div
+        className="mt-12 p-8 rounded-2xl border border-brand-blue/20 bg-brand-blue/5"
+        style={{ boxShadow: "0 0 40px rgba(0,194,255,0.06)" }}
+      >
+        <p className="text-brand-text text-base leading-[1.8] mb-6">
+          {value.text}
+        </p>
+        <Link
+          href={value.href}
+          className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-brand-blue text-brand-bg font-bold hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue transition-all duration-200"
+          style={{ boxShadow: "0 0 24px rgba(0,194,255,0.3)" }}
+        >
+          {value.label}
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+    ),
+  },
+};
+
+function renderStaticBlock(block: ContentBlock, i: number) {
   switch (block.type) {
     case "h2":
       return (
@@ -94,7 +188,9 @@ function renderBlock(block: ContentBlock, i: number) {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <span className="text-brand-muted text-sm leading-[1.8]">{item}</span>
+              <span className="text-brand-muted text-sm leading-[1.8]">
+                {item}
+              </span>
             </li>
           ))}
         </ul>
@@ -106,7 +202,9 @@ function renderBlock(block: ContentBlock, i: number) {
           className="mt-12 p-8 rounded-2xl border border-brand-blue/20 bg-brand-blue/5"
           style={{ boxShadow: "0 0 40px rgba(0,194,255,0.06)" }}
         >
-          <p className="text-brand-text text-base leading-[1.8] mb-6">{block.text}</p>
+          <p className="text-brand-text text-base leading-[1.8] mb-6">
+            {block.text}
+          </p>
           <Link
             href={block.href}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-brand-blue text-brand-bg font-bold hover:bg-brand-blue/90 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue transition-all duration-200"
@@ -133,8 +231,13 @@ function renderBlock(block: ContentBlock, i: number) {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
-  if (!post) notFound();
+
+  const sanityPost = await getBlogPostBySlug(slug);
+  const staticPost = getBlogPost(slug);
+
+  if (!sanityPost && !staticPost) notFound();
+
+  const post = sanityPost ?? staticPost!;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -157,7 +260,7 @@ export default async function BlogPostPage({ params }: Props) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://lvluplocal.co/blog/${post.slug}`,
+      "@id": `https://lvluplocal.co/blog/${slug}`,
     },
   };
 
@@ -201,7 +304,9 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.category}
               </span>
               <span className="text-brand-muted text-xs">{post.readTime}</span>
-              <span className="text-brand-muted text-xs">{formatDate(post.date)}</span>
+              <span className="text-brand-muted text-xs">
+                {formatDate(post.date)}
+              </span>
             </div>
             <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-[56px] leading-[1.06] tracking-[-0.01em] text-brand-text">
               {post.title}
@@ -217,12 +322,19 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="text-brand-muted text-lg leading-[1.9] mb-8 border-l-2 border-brand-blue pl-6">
               {post.description}
             </p>
-            {post.content.map((block, i) => renderBlock(block, i))}
+            {sanityPost?.body ? (
+              <PortableText
+                value={sanityPost.body}
+                components={portableTextComponents}
+              />
+            ) : (
+              staticPost?.content.map((block, i) => renderStaticBlock(block, i))
+            )}
           </AnimateIn>
         </div>
       </section>
 
-      {/* Related / Nav */}
+      {/* Nav */}
       <section className="bg-brand-bg py-16">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center pt-8 border-t border-brand-border">
@@ -230,7 +342,14 @@ export default async function BlogPostPage({ params }: Props) {
               href="/blog"
               className="text-brand-muted hover:text-brand-blue text-sm font-medium flex items-center gap-2 transition-colors duration-200"
             >
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
               All Articles
@@ -240,7 +359,14 @@ export default async function BlogPostPage({ params }: Props) {
               className="text-brand-blue text-sm font-medium flex items-center gap-2 hover:underline transition-colors duration-200"
             >
               View Our SEO Services
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>

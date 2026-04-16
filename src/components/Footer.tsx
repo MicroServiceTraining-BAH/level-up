@@ -19,8 +19,14 @@ const locationLinks = [
 ];
 
 const blogLinks = [
-  { href: "/blog/how-to-rank-cleaning-business", label: "Rank Your Cleaning Business" },
-  { href: "/blog/why-youre-not-showing-on-google-maps", label: "Google Maps Visibility" },
+  {
+    href: "/blog/how-to-rank-cleaning-business",
+    label: "Rank Your Cleaning Business",
+  },
+  {
+    href: "/blog/why-youre-not-showing-on-google-maps",
+    label: "Google Maps Visibility",
+  },
   { href: "/blog/seo-vs-ads-local-business", label: "SEO vs. Paid Ads" },
 ];
 
@@ -43,10 +49,12 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-brand-muted text-sm leading-[1.8] max-w-xs mb-4">
-              Local SEO and web design for small businesses across Northern Virginia.
+              Local SEO and web design for small businesses across Northern
+              Virginia.
             </p>
             <p className="text-brand-muted text-xs leading-[1.8]">
-              Serving Stafford · Fredericksburg · Woodbridge · Manassas · Arlington · Alexandria · Fairfax
+              Serving Stafford · Fredericksburg · Woodbridge · Manassas ·
+              Arlington · Alexandria · Fairfax
             </p>
           </div>
 
@@ -117,7 +125,8 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-brand-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-brand-muted text-xs">
-            © {new Date().getFullYear()} LevelUp Local. All rights reserved. · Northern Virginia Local SEO &amp; Web Design
+            © {new Date().getFullYear()} LevelUp Local. All rights reserved. ·
+            Northern Virginia Local SEO &amp; Web Design
           </p>
           <p className="text-brand-muted text-xs">
             Built by Jean Carlo Philipps &amp; Gabriel Cajigas

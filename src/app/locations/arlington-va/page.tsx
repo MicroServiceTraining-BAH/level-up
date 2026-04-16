@@ -17,7 +17,14 @@ export const metadata: Metadata = {
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design & SEO in Arlington, VA" }],
+    images: [
+      {
+        url: "https://lvluplocal.co/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "LevelUp Local - Web Design & SEO in Arlington, VA",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -32,7 +39,8 @@ const data: LocationData = {
   city: "Arlington",
   state: "VA",
   slug: "arlington-va",
-  headline: "Local SEO Services in Arlington, VA - Stand Out From the Competition",
+  headline:
+    "Local SEO Services in Arlington, VA - Stand Out From the Competition",
   subheadline:
     "Arlington is one of the most competitive markets in Northern Virginia. We help small businesses cut through the noise with professional websites and local SEO that drives real customer leads.",
   intro:

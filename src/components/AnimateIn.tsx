@@ -26,7 +26,7 @@ export default function AnimateIn({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -36,10 +36,10 @@ export default function AnimateIn({
     from === "bottom"
       ? "translateY(32px)"
       : from === "left"
-      ? "translateX(-32px)"
-      : from === "right"
-      ? "translateX(32px)"
-      : "translateY(0)";
+        ? "translateX(-32px)"
+        : from === "right"
+          ? "translateX(32px)"
+          : "translateY(0)";
 
   return (
     <div

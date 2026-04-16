@@ -10,18 +10,27 @@ export const metadata: Metadata = {
     canonical: "https://lvluplocal.co/locations/fredericksburg-va",
   },
   openGraph: {
-    title: "Web Design & Local SEO Services in Fredericksburg, VA | LevelUp Local",
+    title:
+      "Web Design & Local SEO Services in Fredericksburg, VA | LevelUp Local",
     description:
       "Professional website design and local SEO for small businesses in Fredericksburg, VA. Rank higher on Google, get more calls, and grow your customer base. Free audit today.",
     url: "https://lvluplocal.co/locations/fredericksburg-va",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local - Web Design & SEO in Fredericksburg, VA" }],
+    images: [
+      {
+        url: "https://lvluplocal.co/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "LevelUp Local - Web Design & SEO in Fredericksburg, VA",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Design & Local SEO Services in Fredericksburg, VA | LevelUp Local",
+    title:
+      "Web Design & Local SEO Services in Fredericksburg, VA | LevelUp Local",
     description:
       "Professional website design and local SEO for small businesses in Fredericksburg, VA. Rank higher on Google, get more calls, and grow your customer base. Free audit today.",
     images: ["https://lvluplocal.co/logo.png"],

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
-import { blogPosts, formatDate } from "@/lib/blog";
+import { getAllBlogPosts } from "@/sanity/queries";
+import { blogPosts as staticPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Local SEO Blog - Tips for Small Businesses in Northern Virginia",
@@ -11,25 +12,48 @@ export const metadata: Metadata = {
     canonical: "https://lvluplocal.co/blog",
   },
   openGraph: {
-    title: "Local SEO Blog - Tips for Small Businesses in Northern Virginia | LevelUp Local",
+    title:
+      "Local SEO Blog - Tips for Small Businesses in Northern Virginia | LevelUp Local",
     description:
       "Practical local SEO tips, Google Maps guides, and marketing advice for small businesses in Northern Virginia. Learn how to get found on Google.",
     url: "https://lvluplocal.co/blog",
     siteName: "LevelUp Local",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://lvluplocal.co/logo.png", width: 1200, height: 630, alt: "LevelUp Local Blog - Local SEO Tips for Northern Virginia Small Businesses" }],
+    images: [
+      {
+        url: "https://lvluplocal.co/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "LevelUp Local Blog - Local SEO Tips for Northern Virginia Small Businesses",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Local SEO Blog - Tips for Small Businesses in Northern Virginia | LevelUp Local",
+    title:
+      "Local SEO Blog - Tips for Small Businesses in Northern Virginia | LevelUp Local",
     description:
       "Practical local SEO tips, Google Maps guides, and marketing advice for small businesses in Northern Virginia. Learn how to get found on Google.",
     images: ["https://lvluplocal.co/logo.png"],
   },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const sanityPosts = await getAllBlogPosts();
+  const posts =
+    sanityPosts.length > 0
+      ? sanityPosts
+      : staticPosts.map((p) => ({
+          _id: p.slug,
+          title: p.title,
+          slug: p.slug,
+          description: p.description,
+          date: p.date,
+          category: p.category,
+          readTime: p.readTime,
+        }));
+
   return (
     <>
       {/* Hero */}
@@ -63,16 +87,23 @@ export default function BlogPage() {
       <section className="bg-brand-surface py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, i) => (
+            {posts.map((post, i) => (
               <AnimateIn key={post.slug} delay={i * 80}>
-                <Link href={`/blog/${post.slug}`} className="block group h-full">
-                  <article className="p-8 rounded-2xl bg-brand-elevated border border-brand-border hover:border-brand-blue/30 transition-all duration-300 h-full flex flex-col"
-                    style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.3)" }}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="block group h-full"
+                >
+                  <article
+                    className="p-8 rounded-2xl bg-brand-elevated border border-brand-border hover:border-brand-blue/30 transition-all duration-300 h-full flex flex-col"
+                    style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
+                  >
                     <div className="flex items-center gap-3 mb-5">
                       <span className="text-xs font-bold uppercase tracking-widest text-brand-blue px-3 py-1 rounded-full border border-brand-blue/20 bg-brand-blue/5">
                         {post.category}
                       </span>
-                      <span className="text-brand-muted text-xs">{post.readTime}</span>
+                      <span className="text-brand-muted text-xs">
+                        {post.readTime}
+                      </span>
                     </div>
                     <h2 className="font-heading font-bold text-brand-text text-xl leading-snug mb-4 group-hover:text-brand-blue transition-colors duration-200">
                       {post.title}
@@ -81,10 +112,19 @@ export default function BlogPage() {
                       {post.description}
                     </p>
                     <div className="flex items-center justify-between pt-5 border-t border-brand-border">
-                      <span className="text-brand-muted text-xs">{formatDate(post.date)}</span>
+                      <span className="text-brand-muted text-xs">
+                        {formatDate(post.date)}
+                      </span>
                       <span className="text-brand-blue text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
                         Read article
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <svg
+                          width="14"
+                          height="14"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                        >
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                       </span>
@@ -115,8 +155,8 @@ export default function BlogPage() {
             <span className="text-brand-blue">Local SEO</span>
           </h2>
           <p className="text-brand-muted text-lg leading-[1.75] mb-10">
-            Book a free 15-minute audit and we&apos;ll show you exactly where your
-            business stands - and what it will take to rank in your area.
+            Book a free 15-minute audit and we&apos;ll show you exactly where
+            your business stands - and what it will take to rank in your area.
           </p>
           <Link
             href="/booking"
@@ -124,7 +164,14 @@ export default function BlogPage() {
             style={{ boxShadow: "0 0 32px rgba(0,194,255,0.35)" }}
           >
             Book Free SEO Audit
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>

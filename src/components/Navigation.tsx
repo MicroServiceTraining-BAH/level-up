@@ -64,7 +64,10 @@ export default function Navigation() {
           <Link
             href="/booking"
             className="px-5 py-2.5 rounded-lg bg-brand-blue text-brand-bg font-semibold text-sm hover:bg-brand-blue/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg active:scale-95 transition-all duration-200"
-            style={{ boxShadow: "0 0 20px rgba(0,194,255,0.3), 0 4px 12px rgba(0,0,0,0.4)" }}
+            style={{
+              boxShadow:
+                "0 0 20px rgba(0,194,255,0.3), 0 4px 12px rgba(0,0,0,0.4)",
+            }}
           >
             Book Free Audit
           </Link>
