@@ -40,7 +40,7 @@ const staticProjects = [
   {
     name: "Pacheco's Hardwood Floors",
     category: "Flooring Contractor",
-    desc: "A premium, conversion-focused website for a family-owned hardwood flooring company serving Northern Virginia since 2021. Built to showcase their craftsmanship and drive free quote requests from homeowners.",
+    description: "A premium, conversion-focused website for a family-owned hardwood flooring company serving Northern Virginia since 2021. Built to showcase their craftsmanship and drive free quote requests from homeowners.",
     highlights: [
       "Free quote request form",
       "Project photo gallery",
@@ -165,7 +165,7 @@ export default async function PortfolioPage() {
                         {project.name}
                       </h2>
                       <p className="text-brand-muted text-sm leading-[1.8] mb-5">
-                        {project.desc}
+                        {project.description}
                       </p>
                       <a
                         href={project.live}
