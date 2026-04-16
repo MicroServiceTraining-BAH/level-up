@@ -18,18 +18,6 @@ const locationLinks = [
   { href: "/locations/fairfax-va", label: "Fairfax, VA" },
 ];
 
-const blogLinks = [
-  {
-    href: "/blog/how-to-rank-cleaning-business",
-    label: "Rank Your Cleaning Business",
-  },
-  {
-    href: "/blog/why-youre-not-showing-on-google-maps",
-    label: "Google Maps Visibility",
-  },
-  { href: "/blog/seo-vs-ads-local-business", label: "SEO vs. Paid Ads" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-brand-surface border-t border-brand-border">
@@ -96,23 +84,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Blog + CTA */}
-          <div className="md:col-span-4">
-            <h4 className="text-brand-text font-semibold text-xs uppercase tracking-widest mb-5">
-              SEO Resources
-            </h4>
-            <ul className="space-y-3 mb-8">
-              {blogLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-brand-muted hover:text-brand-blue text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:text-brand-blue"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* CTA */}
+          <div className="md:col-span-4 flex items-start">
             <Link
               href="/booking"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-blue text-brand-bg font-semibold text-sm hover:bg-brand-blue/90 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface"
