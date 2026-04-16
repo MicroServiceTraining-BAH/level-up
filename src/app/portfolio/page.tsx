@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
+import { getPortfolioItems } from "@/sanity/queries";
 
 export const metadata: Metadata = {
   title: "Portfolio - Website Design for Local Businesses",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
+const staticProjects = [
   {
     name: "Pacheco's Hardwood Floors",
     category: "Flooring Contractor",
@@ -53,7 +54,13 @@ const projects = [
   },
 ];
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const sanityItems = await getPortfolioItems();
+  const projects =
+    sanityItems.length > 0
+      ? sanityItems.map((p) => ({ ...p, img: p.imageUrl }))
+      : staticProjects;
+
   return (
     <>
       {/* Hero */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
+import { getServices } from "@/sanity/queries";
 
 export const metadata: Metadata = {
   title: "Local SEO Services & Web Design for Small Businesses",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-const services = [
+const staticServices = [
   {
     icon: (
       <svg
@@ -145,7 +146,13 @@ const services = [
   },
 ];
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const sanityServices = await getServices();
+  const services =
+    sanityServices.length > 0
+      ? sanityServices.map((s) => ({ ...s, icon: null, bullets: s.bullets ?? [] }))
+      : staticServices;
+
   return (
     <>
       {/* Hero */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import type { Metadata } from "next";
+import { getTeamMembers, getValues } from "@/sanity/queries";
 
 export const metadata: Metadata = {
   title: "About - Web Design Agency for Local Businesses",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-const values = [
+const staticValues = [
   {
     title: "Results Over Aesthetics",
     desc: "A beautiful website that doesn't bring in customers is just decoration. We build for outcomes - calls, leads, and booked jobs.",
@@ -54,7 +55,7 @@ const values = [
   },
 ];
 
-const team = [
+const staticTeam = [
   {
     name: "Jean Carlo Philipps",
     role: "Sales & Client Strategy",
@@ -71,7 +72,10 @@ const team = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const [sanityTeam, sanityValues] = await Promise.all([getTeamMembers(), getValues()]);
+  const team = sanityTeam.length > 0 ? sanityTeam : staticTeam;
+  const values = sanityValues.length > 0 ? sanityValues : staticValues;
   return (
     <>
       {/* Hero */}
