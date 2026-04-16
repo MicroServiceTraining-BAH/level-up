@@ -68,15 +68,11 @@ export type SanityPortfolioItem = {
   order: number;
 };
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-const isSanityConfigured = !!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-
 // ─── Blog ─────────────────────────────────────────────────────────────────────
 
 export async function getAllBlogPosts(): Promise<SanityBlogPost[]> {
-  if (!isSanityConfigured) return [];
-  return client!.fetch(
+  if (!client) return [];
+  return client.fetch(
     `*[_type == "blogPost"] | order(date desc) {
       _id, title, "slug": slug.current, description, date, category, readTime
     }`,
@@ -86,8 +82,8 @@ export async function getAllBlogPosts(): Promise<SanityBlogPost[]> {
 export async function getBlogPostBySlug(
   slug: string,
 ): Promise<SanityBlogPost | null> {
-  if (!isSanityConfigured) return null;
-  return client!.fetch(
+  if (!client) return null;
+  return client.fetch(
     `*[_type == "blogPost" && slug.current == $slug][0] {
       _id, title, "slug": slug.current, description, date, category, readTime, body
     }`,
@@ -96,8 +92,8 @@ export async function getBlogPostBySlug(
 }
 
 export async function getAllBlogSlugs(): Promise<string[]> {
-  if (!isSanityConfigured) return [];
-  const posts = await client!.fetch<Array<{ slug: string }>>(
+  if (!client) return [];
+  const posts = await client.fetch<Array<{ slug: string }>>(
     `*[_type == "blogPost"] { "slug": slug.current }`,
   );
   return posts.map((p) => p.slug);
@@ -106,8 +102,8 @@ export async function getAllBlogSlugs(): Promise<string[]> {
 // ─── Testimonials ─────────────────────────────────────────────────────────────
 
 export async function getTestimonials(): Promise<SanityTestimonial[]> {
-  if (!isSanityConfigured) return [];
-  return client!.fetch(
+  if (!client) return [];
+  return client.fetch(
     `*[_type == "testimonial"] | order(order asc) {
       _id, quote, name, role, initials
     }`,
@@ -117,8 +113,8 @@ export async function getTestimonials(): Promise<SanityTestimonial[]> {
 // ─── Services ─────────────────────────────────────────────────────────────────
 
 export async function getServices(): Promise<SanityService[]> {
-  if (!isSanityConfigured) return [];
-  return client!.fetch(
+  if (!client) return [];
+  return client.fetch(
     `*[_type == "service"] | order(order asc) {
       _id, title, tag, tagColor, description, bullets, order
     }`,
@@ -128,8 +124,8 @@ export async function getServices(): Promise<SanityService[]> {
 // ─── Team ─────────────────────────────────────────────────────────────────────
 
 export async function getTeamMembers(): Promise<SanityTeamMember[]> {
-  if (!isSanityConfigured) return [];
-  return client!.fetch(
+  if (!client) return [];
+  return client.fetch(
     `*[_type == "teamMember"] | order(order asc) {
       _id, name, role, initials, bio, color
     }`,
@@ -137,8 +133,8 @@ export async function getTeamMembers(): Promise<SanityTeamMember[]> {
 }
 
 export async function getValues(): Promise<SanityValue[]> {
-  if (!isSanityConfigured) return [];
-  return client!.fetch(
+  if (!client) return [];
+  return client.fetch(
     `*[_type == "value"] | order(order asc) {
       _id, title, description
     }`,
@@ -148,8 +144,8 @@ export async function getValues(): Promise<SanityValue[]> {
 // ─── Portfolio ────────────────────────────────────────────────────────────────
 
 export async function getPortfolioItems(): Promise<SanityPortfolioItem[]> {
-  if (!isSanityConfigured) return [];
-  return client!.fetch(
+  if (!client) return [];
+  return client.fetch(
     `*[_type == "portfolioItem"] | order(order asc) {
       _id, name, category, description, highlights, accentColor, url, live, imageUrl
     }`,
