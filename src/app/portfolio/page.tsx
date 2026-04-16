@@ -40,7 +40,8 @@ const staticProjects = [
   {
     name: "Pacheco's Hardwood Floors",
     category: "Flooring Contractor",
-    description: "A premium, conversion-focused website for a family-owned hardwood flooring company serving Northern Virginia since 2021. Built to showcase their craftsmanship and drive free quote requests from homeowners.",
+    description:
+      "A premium, conversion-focused website for a family-owned hardwood flooring company serving Northern Virginia since 2021. Built to showcase their craftsmanship and drive free quote requests from homeowners.",
     highlights: [
       "Free quote request form",
       "Project photo gallery",

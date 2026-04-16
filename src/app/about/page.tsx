@@ -39,19 +39,23 @@ export const metadata: Metadata = {
 const staticValues = [
   {
     title: "Results Over Aesthetics",
-    description: "A beautiful website that doesn't bring in customers is just decoration. We build for outcomes - calls, leads, and booked jobs.",
+    description:
+      "A beautiful website that doesn't bring in customers is just decoration. We build for outcomes - calls, leads, and booked jobs.",
   },
   {
     title: "Speed Matters",
-    description: "Every day your business isn't online is revenue lost. We move fast because we know how much it matters to you.",
+    description:
+      "Every day your business isn't online is revenue lost. We move fast because we know how much it matters to you.",
   },
   {
     title: "Plain English, Always",
-    description: "No jargon, no confusing tech talk. We explain everything in plain language and make the process simple.",
+    description:
+      "No jargon, no confusing tech talk. We explain everything in plain language and make the process simple.",
   },
   {
     title: "Long-Term Partnership",
-    description: "We don't disappear after launch. We're your ongoing tech partner - there when you need us.",
+    description:
+      "We don't disappear after launch. We're your ongoing tech partner - there when you need us.",
   },
 ];
 

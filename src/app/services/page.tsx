@@ -57,7 +57,8 @@ const staticServices = [
     title: "Website Setup - From Scratch",
     tag: "Core Service",
     tagColor: "#00C2FF",
-    description: "We build your business a complete, professional website from the ground up. No templates. No generic designs. A real site that looks like your business and works hard to bring you customers.",
+    description:
+      "We build your business a complete, professional website from the ground up. No templates. No generic designs. A real site that looks like your business and works hard to bring you customers.",
     bullets: [
       "3–5 custom pages (Home, Services, About, Contact, + more)",
       "Professional design tailored to your industry",
@@ -83,7 +84,8 @@ const staticServices = [
     title: "Lead Capture Systems",
     tag: "Convert Visitors",
     tagColor: "#39FF14",
-    description: "A pretty website isn't enough - you need systems that capture leads and get them into your hands. We set up everything so that when someone visits your site, they become a real inquiry.",
+    description:
+      "A pretty website isn't enough - you need systems that capture leads and get them into your hands. We set up everything so that when someone visits your site, they become a real inquiry.",
     bullets: [
       "Optimized contact and quote request forms",
       "Strategic CTA placement throughout every page",
@@ -110,7 +112,8 @@ const staticServices = [
     title: "Local Visibility (Google Presence)",
     tag: "Get Found",
     tagColor: "#00C2FF",
-    description: "Your website needs to show up when people in your area search for what you do. We build your site with local SEO in mind and help get you in front of customers actively looking for your services.",
+    description:
+      "Your website needs to show up when people in your area search for what you do. We build your site with local SEO in mind and help get you in front of customers actively looking for your services.",
     bullets: [
       "Local SEO-optimized page structure and content",
       "Google Business Profile guidance and setup",
@@ -135,7 +138,8 @@ const staticServices = [
     title: "Ongoing Support & Updates",
     tag: "Long-Term Partner",
     tagColor: "#39FF14",
-    description: "We don't disappear after your site goes live. We're your ongoing tech partner - keeping your site up-to-date, making changes when your business evolves, and answering questions when you need help.",
+    description:
+      "We don't disappear after your site goes live. We're your ongoing tech partner - keeping your site up-to-date, making changes when your business evolves, and answering questions when you need help.",
     bullets: [
       "Content updates and page changes",
       "New service or team member additions",
