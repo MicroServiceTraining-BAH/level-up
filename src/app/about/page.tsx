@@ -73,7 +73,10 @@ const staticTeam = [
 ];
 
 export default async function AboutPage() {
-  const [sanityTeam, sanityValues] = await Promise.all([getTeamMembers(), getValues()]);
+  const [sanityTeam, sanityValues] = await Promise.all([
+    getTeamMembers(),
+    getValues(),
+  ]);
   const team = sanityTeam.length > 0 ? sanityTeam : staticTeam;
   const values = sanityValues.length > 0 ? sanityValues : staticValues;
   return (

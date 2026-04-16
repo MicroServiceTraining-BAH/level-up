@@ -42,7 +42,8 @@ export const portfolioItem = defineType({
       name: "url",
       title: "Display URL",
       type: "string",
-      description: 'Shown in the browser bar e.g. "pachecoshardwoodfloor.vercel.app"',
+      description:
+        'Shown in the browser bar e.g. "pachecoshardwoodfloor.vercel.app"',
     }),
     defineField({
       name: "live",

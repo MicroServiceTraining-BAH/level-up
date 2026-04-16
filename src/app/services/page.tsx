@@ -150,7 +150,11 @@ export default async function ServicesPage() {
   const sanityServices = await getServices();
   const services =
     sanityServices.length > 0
-      ? sanityServices.map((s) => ({ ...s, icon: null, bullets: s.bullets ?? [] }))
+      ? sanityServices.map((s) => ({
+          ...s,
+          icon: null,
+          bullets: s.bullets ?? [],
+        }))
       : staticServices;
 
   return (
