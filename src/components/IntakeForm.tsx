@@ -2,10 +2,17 @@
 
 import { useState } from "react";
 
-// Replace this with your actual Formspree endpoint (e.g. https://formspree.io/f/abcdefgh)
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjozyye";
 
-type FieldType = "text" | "tel" | "email" | "url" | "textarea" | "select";
+type FieldType =
+  | "text"
+  | "tel"
+  | "email"
+  | "url"
+  | "textarea"
+  | "select"
+  | "radio"
+  | "checkbox";
 
 type Field = {
   id: string;
@@ -13,307 +20,258 @@ type Field = {
   type: FieldType;
   required: boolean;
   hint?: string;
+  placeholder?: string;
   options?: string[];
 };
 
 type Section = {
   title: string;
   subtitle: string;
+  notice?: string;
   fields: Field[];
 };
 
 const SECTIONS: Section[] = [
   {
-    title: "Business Information",
-    subtitle: "The basics - let's get the details right.",
+    title: "Business info",
+    subtitle: "The basics — let's get the details right.",
     fields: [
       {
-        id: "businessName",
+        id: "business_name",
         label: "Business name",
         type: "text",
         required: true,
-        hint: "The legal or trading name of your business.",
-      },
-      {
-        id: "contactName",
-        label: "Your name",
-        type: "text",
-        required: true,
-        hint: "First and last name of the main contact.",
+        placeholder: "e.g. Smith's Plumbing",
       },
       {
         id: "phone",
         label: "Phone number",
         type: "tel",
         required: true,
-        hint: "Best number to reach you directly.",
+        placeholder: "(555) 123-4567",
       },
       {
         id: "email",
-        label: "Email address",
+        label: "Business email",
         type: "email",
         required: true,
-        hint: "Work email preferred - this is where we'll send updates.",
+        placeholder: "you@yourbusiness.com",
+      },
+      {
+        id: "service_area",
+        label: "Service area",
+        type: "text",
+        required: true,
+        placeholder: "e.g. Dallas & surrounding 30mi",
       },
       {
         id: "address",
-        label: "Business address",
+        label: "Physical address",
         type: "text",
         required: false,
-        hint: "Full address if you have a physical location. Service-area businesses can leave this blank.",
+        hint: "Only if you want it displayed. Leave blank if service-area only.",
+        placeholder: "123 Main St, City, State, ZIP",
       },
       {
-        id: "publicPhone",
-        label: "Public phone number",
-        type: "tel",
+        id: "hours",
+        label: "Hours of operation",
+        type: "text",
         required: false,
-        hint: "The phone number you want displayed on your website.",
+        placeholder: "e.g. Mon–Fri 8am–6pm, Sat 9am–2pm",
       },
+    ],
+  },
+  {
+    title: "Your content",
+    subtitle: "What you're providing before we can build.",
+    notice:
+      "You must supply all content before your site can launch. We do not write copy, source photos, or design logos.",
+    fields: [
       {
-        id: "currentWebsite",
-        label: "Current website URL",
-        type: "url",
-        required: false,
-        hint: "If you have one - paste the full link (https://...)",
-      },
-      {
-        id: "industry",
-        label: "Industry / type of business",
-        type: "select",
+        id: "logo_ready",
+        label: "Do you have a logo ready to send?",
+        type: "radio",
         required: true,
         options: [
-          "Restaurant / Food",
-          "Home Services (plumbing, HVAC, electrical, etc.)",
-          "Health & Wellness",
-          "Retail / Shop",
-          "Professional Services (legal, finance, consulting)",
-          "Beauty & Personal Care",
-          "Auto Services",
-          "Contractor / Construction",
-          "Other",
+          "Yes — I'll send the file (PNG, SVG, or AI preferred)",
+          "No — I need to get one made before launch",
         ],
       },
-    ],
-  },
-  {
-    title: "Your Customers",
-    subtitle: "Help us understand who you're trying to reach.",
-    fields: [
       {
-        id: "targetCustomers",
-        label: "Who are your ideal customers?",
-        type: "textarea",
+        id: "photos_ready",
+        label: "Do you have photos ready?",
+        type: "radio",
         required: true,
-        hint: "Age range, location, what problem they have that you solve.",
+        hint: "Photos of your work, team, storefront, or products. Stock photos are not provided by us.",
+        options: [
+          "Yes — I'll send them",
+          "No — I'll source or take them before launch",
+        ],
       },
       {
-        id: "serviceArea",
-        label: "Service area or location",
+        id: "copy_ready",
+        label: "Do you have written content ready?",
+        type: "radio",
+        required: true,
+        hint: "About blurb, service descriptions, anything you want on the site.",
+        options: ["Yes — I'll send it", "No — I'll write it before launch"],
+      },
+      {
+        id: "content_deadline",
+        label: "Content delivery date",
         type: "text",
-        required: true,
-        hint: "City, zip code, or radius (e.g. 'Northern Virginia' or 'within 30 miles of Manassas').",
-      },
-      {
-        id: "competitors",
-        label: "Who are your main competitors?",
-        type: "textarea",
         required: false,
-        hint: "Business names or websites. This helps us position you differently.",
+        hint: "What date can you have everything (logo, photos, copy) to us by? We can't start building until we have it.",
+        placeholder: "e.g. By March 15",
       },
     ],
   },
   {
-    title: "Your Services",
-    subtitle: "What do you offer? Be as specific as you can.",
+    title: "Site goal & pages",
+    subtitle: "What you want visitors to do and which pages you need.",
     fields: [
       {
-        id: "services",
-        label: "List your main services or products",
-        type: "textarea",
-        required: true,
-        hint: "One per line is fine. Include prices if you want them on the site.",
-      },
-      {
-        id: "uniqueValue",
-        label: "What makes you different?",
-        type: "textarea",
-        required: true,
-        hint: "Why should someone choose you over a competitor? Awards, experience, price, speed - anything.",
-      },
-      {
-        id: "callToAction",
-        label: "What do you want visitors to do first?",
-        type: "select",
+        id: "site_goal",
+        label: "What's the #1 action you want visitors to take?",
+        type: "radio",
         required: true,
         options: [
           "Call you",
-          "Fill out a contact form",
+          "Submit a contact or quote request form",
           "Book an appointment",
-          "Get a quote",
-          "Visit your location",
-          "Other",
+          "Visit in person / get directions",
+        ],
+      },
+      {
+        id: "pages",
+        label: "Which pages do you need?",
+        type: "checkbox",
+        required: true,
+        hint: "Select all that apply.",
+        options: [
+          "Home",
+          "Services",
+          "Contact",
+          "About",
+          "Gallery",
+          "FAQ",
+          "Testimonials",
+          "Blog",
+          "Menu / pricing",
         ],
       },
     ],
   },
   {
-    title: "Branding & Style",
-    subtitle: "We'll design something that fits your business personality.",
+    title: "Systems & functionality",
+    subtitle: "Tools and forms you need on your site.",
     fields: [
       {
-        id: "colors",
-        label: "Do you have brand colors?",
+        id: "scheduling",
+        label: "Do you need an online scheduling / booking system?",
+        type: "radio",
+        required: true,
+        options: ["Yes", "No", "Not sure — let's talk about it"],
+      },
+      {
+        id: "intake_form",
+        label: "Do you need a contact / lead intake form?",
+        type: "radio",
+        required: true,
+        options: ["Yes", "No"],
+      },
+      {
+        id: "form_destination",
+        label: "Where should form submissions be sent?",
         type: "text",
         required: false,
-        hint: "List them (e.g. 'dark green and gold') or paste hex codes if you have them.",
+        hint: "Email address or phone number for SMS notifications.",
+        placeholder: "e.g. you@business.com or (555) 123-4567",
       },
       {
-        id: "logoStatus",
-        label: "Do you have a logo?",
-        type: "select",
-        required: true,
-        options: [
-          "Yes - I'll send it",
-          "No - please create a simple one",
-          "Not sure",
-        ],
-      },
-      {
-        id: "styleVibes",
-        label: "How would you describe the feel you want?",
-        type: "textarea",
-        required: false,
-        hint: "Words like 'professional', 'friendly', 'luxury', 'rustic', 'modern', 'clean' all help. Website examples you like are even better.",
-      },
-    ],
-  },
-  {
-    title: "Website Content",
-    subtitle:
-      "We'll write copy for you, but the more context you give us, the better.",
-    fields: [
-      {
-        id: "businessStory",
-        label: "Tell us your story",
-        type: "textarea",
-        required: false,
-        hint: "How long have you been in business? Why did you start? Anything personal or memorable?",
-      },
-      {
-        id: "photos",
-        label: "Photos / media available",
-        type: "select",
-        required: true,
-        options: [
-          "I have photos I can share",
-          "I need you to use stock photos for now",
-          "I can get photos taken",
-          "No photos yet",
-        ],
-      },
-      {
-        id: "testimonials",
-        label: "Do you have customer reviews or testimonials?",
-        type: "textarea",
-        required: false,
-        hint: "Paste them here or let us know if we should pull from your Google listing.",
-      },
-      {
-        id: "certifications",
-        label: "Any awards, certifications, or credentials?",
-        type: "textarea",
-        required: false,
-        hint: "Licensed, insured, BBB rated, years in business, industry associations - anything that builds trust.",
-      },
-    ],
-  },
-  {
-    title: "Technical Details",
-    subtitle: "If you already have accounts set up, we'll connect to them.",
-    fields: [
-      {
-        id: "googleBusiness",
-        label: "Google Business Profile",
-        type: "select",
-        required: true,
-        options: [
-          "Yes - it's set up and verified",
-          "Yes - but it's not verified",
-          "No - I don't have one",
-          "Not sure",
-        ],
-      },
-      {
-        id: "socialMedia",
-        label: "Social media accounts",
-        type: "textarea",
-        required: false,
-        hint: "List any Facebook, Instagram, TikTok, Yelp, or other profile links you want connected to your site.",
-      },
-      {
-        id: "bookingTool",
-        label: "Do you use any booking or scheduling tool?",
+        id: "existing_tools",
+        label: "Tools or software you currently use",
         type: "text",
         required: false,
-        hint: "e.g. Calendly, Square, Vagaro, Mindbody - or leave blank if not.",
-      },
-      {
-        id: "additionalTools",
-        label: "Any other tools or software we should know about?",
-        type: "textarea",
-        required: false,
-        hint: "Point of sale, loyalty programs, email lists, etc.",
+        hint: "e.g. Calendly, Jobber, HouseCall Pro, Square. We'll check if we can connect them.",
+        placeholder: "List any tools you already use",
       },
     ],
   },
   {
-    title: "Your Goals",
-    subtitle: "Help us measure success.",
+    title: "Domain & access",
+    subtitle: "Your web presence and social profiles.",
     fields: [
       {
-        id: "primaryGoal",
-        label: "What's the #1 thing you want the website to do for you?",
-        type: "textarea",
+        id: "domain",
+        label: "Do you already own a domain?",
+        type: "radio",
         required: true,
-        hint: "More calls, more bookings, show up on Google, look more professional - there's no wrong answer.",
+        options: ["Yes — I own one", "No — I need one purchased", "Not sure"],
       },
       {
-        id: "timeline",
-        label: "Do you have a target launch date?",
+        id: "domain_name",
+        label: "Domain name if you have one",
         type: "text",
         required: false,
-        hint: "If there's an event, opening date, or urgency - let us know.",
+        placeholder: "e.g. smithsplumbing.com",
       },
       {
-        id: "budget",
-        label: "Selected package",
-        type: "select",
+        id: "google_business",
+        label: "Do you have a Google Business Profile?",
+        type: "radio",
         required: true,
-        options: [
-          "🟢 Launch - $700 setup + $99/mo",
-          "🔵 Growth - $1,000 setup + $149/mo",
-          "🔴 Authority - $1,300 setup + $200/mo",
-        ],
+        options: ["Yes", "No", "Not sure"],
+      },
+      {
+        id: "facebook",
+        label: "Facebook URL",
+        type: "text",
+        required: false,
+        placeholder: "Facebook URL",
+      },
+      {
+        id: "instagram",
+        label: "Instagram URL",
+        type: "text",
+        required: false,
+        placeholder: "Instagram URL",
+      },
+      {
+        id: "other_social",
+        label: "Other social profiles",
+        type: "text",
+        required: false,
+        placeholder: "Other (Yelp, TikTok, LinkedIn...)",
       },
     ],
   },
   {
-    title: "Anything Else",
-    subtitle: "Last chance - anything we should know?",
+    title: "Style preferences",
+    subtitle: "Help us match the look and feel you're going for.",
     fields: [
       {
-        id: "extraInfo",
-        label: "Additional notes or requests",
-        type: "textarea",
+        id: "style_inspo",
+        label: "A website whose look you like",
+        type: "url",
         required: false,
-        hint: "Questions, concerns, special requests, or anything that didn't fit above.",
+        hint: "Drop a URL. Helps us match the vibe you're going for.",
+        placeholder: "https://...",
       },
       {
-        id: "referral",
-        label: "How did you hear about LvL Up Local?",
+        id: "brand_colors",
+        label: "Brand colors",
         type: "text",
         required: false,
-        hint: "Word of mouth, social media, Google - helps us know what's working.",
+        placeholder: "e.g. Navy blue and white, or #003366",
+      },
+      {
+        id: "anything_else",
+        label: "Anything else we should know?",
+        type: "textarea",
+        required: false,
+        hint: "Special requests, things to avoid, hard launch deadline, etc.",
+        placeholder: "Type here...",
       },
     ],
   },
@@ -321,7 +279,6 @@ const SECTIONS: Section[] = [
 
 type FormData = Record<string, string>;
 
-// CSS variable values mapped to the site's brand tokens
 const CSS_VARS: Record<string, string> = {
   "--color-background-primary": "#111118",
   "--color-background-secondary": "#1C1C28",
@@ -332,21 +289,20 @@ const CSS_VARS: Record<string, string> = {
   "--color-text-success": "#39FF14",
   "--color-text-danger": "#FF4D4D",
   "--color-border-secondary": "#252535",
-  "--color-border-danger": "#FF4D4D",
   "--border-radius-md": "8px",
   "--border-radius-lg": "12px",
 };
 
-// Per-field validation - returns an error message or empty string
 function validateField(field: Field, value: string): string {
   const v = value?.trim() ?? "";
 
   if (field.required && !v) {
     if (field.type === "select") return "Please select an option.";
+    if (field.type === "radio") return "Please select an option.";
+    if (field.type === "checkbox") return "Please select at least one option.";
     return "This field is required.";
   }
 
-  // Format checks (only when a value is present)
   if (v) {
     if (field.type === "email") {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))
@@ -380,7 +336,6 @@ export default function IntakeForm() {
 
   function handleChange(id: string, value: string) {
     setData((d) => ({ ...d, [id]: value }));
-    // Live re-validation once a field has been touched
     if (touched[id]) {
       const field = current.fields.find((f) => f.id === id);
       if (field) {
@@ -390,8 +345,16 @@ export default function IntakeForm() {
     }
   }
 
+  function handleCheckboxChange(id: string, option: string, checked: boolean) {
+    const current_vals = data[id] ? data[id].split(", ") : [];
+    const next = checked
+      ? [...current_vals, option]
+      : current_vals.filter((v) => v !== option);
+    handleChange(id, next.join(", "));
+  }
+
   function handleBlur(id: string) {
-    if (touched[id]) return; // already touched, live validation handles it
+    if (touched[id]) return;
     setTouched((t) => ({ ...t, [id]: true }));
     const field = current.fields.find((f) => f.id === id);
     if (field) {
@@ -400,7 +363,6 @@ export default function IntakeForm() {
     }
   }
 
-  // Validates all fields in the current section, marks all as touched
   function validate() {
     const newErrors: Record<string, string> = {};
     const newTouched: Record<string, boolean> = {};
@@ -420,7 +382,6 @@ export default function IntakeForm() {
 
   function handleBack() {
     setStep((s) => s - 1);
-    // Don't clear errors/touched - preserve state if user goes back
   }
 
   async function handleSubmit() {
@@ -475,7 +436,6 @@ export default function IntakeForm() {
             alignItems: "center",
             justifyContent: "center",
             margin: "0 auto 1.5rem",
-            fontSize: 28,
             border: "1px solid rgba(57,255,20,0.2)",
           }}
         >
@@ -501,7 +461,7 @@ export default function IntakeForm() {
             color: "var(--color-text-primary)",
           }}
         >
-          You&apos;re all set, {data.contactName?.split(" ")[0] || "there"}!
+          You&apos;re all set!
         </h2>
         <p
           style={{
@@ -511,12 +471,12 @@ export default function IntakeForm() {
             margin: "0 0 2rem",
           }}
         >
-          We received your intake form for{" "}
+          We received your info for{" "}
           <strong style={{ color: "var(--color-text-primary)" }}>
-            {data.businessName}
+            {data.business_name || "your business"}
           </strong>
-          . Someone from LvL Up Local will be in touch within 24 hours to
-          confirm your details and kick things off.
+          . We&apos;ll follow up within 1 business day to confirm receipt and
+          schedule your kickoff call.
         </p>
         <div
           style={{
@@ -539,8 +499,8 @@ export default function IntakeForm() {
           </p>
           {[
             "We review your form and set up your accounts.",
+            "Send over your logo, photos, and written content.",
             "You'll get a preview link within 3–5 business days.",
-            "You review, request any changes, and we launch.",
           ].map((s, i) => (
             <div
               key={i}
@@ -585,6 +545,20 @@ export default function IntakeForm() {
       </div>
     );
   }
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "8px 12px",
+    borderRadius: "var(--border-radius-md)",
+    border: "1px solid #252535",
+    background: "var(--color-background-primary)",
+    color: "var(--color-text-primary)",
+    fontSize: 14,
+    boxSizing: "border-box",
+    fontFamily: "inherit",
+    outline: "none",
+    transition: "border-color 0.2s",
+  };
 
   return (
     <div
@@ -657,34 +631,55 @@ export default function IntakeForm() {
         style={{
           fontSize: 14,
           color: "var(--color-text-secondary)",
-          margin: "0 0 1.75rem",
+          margin: "0 0 1.5rem",
           lineHeight: 1.6,
         }}
       >
         {current.subtitle}
       </p>
 
+      {/* Notice banner */}
+      {current.notice && (
+        <div
+          style={{
+            background: "rgba(255, 193, 7, 0.08)",
+            border: "1px solid rgba(255, 193, 7, 0.25)",
+            borderRadius: "var(--border-radius-md)",
+            padding: "10px 14px",
+            fontSize: 13,
+            color: "#e6b800",
+            lineHeight: 1.5,
+            marginBottom: "1.5rem",
+          }}
+        >
+          {current.notice}
+        </div>
+      )}
+
       {/* Fields */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px 24px",
-        }}
-      >
-        {current.fields.map((field) => (
-          <div
-            key={field.id}
-            style={{
-              gridColumn: field.type === "textarea" ? "1 / -1" : "auto",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            {/* Label + hint stay at top */}
-            <div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        {current.fields.map((field) => {
+          const hasError = !!errors[field.id];
+          const isValid =
+            touched[field.id] && !hasError && !!data[field.id]?.trim();
+          const borderColor = hasError
+            ? "#FF4D4D"
+            : isValid
+              ? "rgba(57,255,20,0.45)"
+              : "#252535";
+          const fieldInputStyle: React.CSSProperties = {
+            ...inputStyle,
+            border: `1px solid ${borderColor}`,
+          };
+
+          return (
+            <div key={field.id}>
               <label
-                htmlFor={field.id}
+                htmlFor={
+                  field.type === "radio" || field.type === "checkbox"
+                    ? undefined
+                    : field.id
+                }
                 style={{
                   display: "block",
                   fontSize: 14,
@@ -703,142 +698,227 @@ export default function IntakeForm() {
                   </span>
                 )}
               </label>
+
               {field.hint && (
                 <p
                   style={{
                     fontSize: 12,
                     color: "var(--color-text-secondary)",
-                    margin: 0,
+                    margin: "0 0 8px",
                     lineHeight: 1.5,
                   }}
                 >
                   {field.hint}
                 </p>
               )}
-            </div>
 
-            {/* Input pinned to bottom of cell so all inputs in a row align */}
-            <div style={{ marginTop: "auto", paddingTop: 8 }}>
-              {(() => {
-                const hasError = !!errors[field.id];
-                const isValid =
-                  touched[field.id] && !hasError && !!data[field.id]?.trim();
-                const borderColor = hasError
-                  ? "#FF4D4D"
-                  : isValid
-                    ? "rgba(57,255,20,0.45)"
-                    : "#252535";
-                const inputStyle: React.CSSProperties = {
-                  width: "100%",
-                  padding: "8px 12px",
-                  borderRadius: "var(--border-radius-md)",
-                  border: `1px solid ${borderColor}`,
-                  background: "var(--color-background-primary)",
-                  color: "var(--color-text-primary)",
-                  fontSize: 14,
-                  boxSizing: "border-box",
-                  fontFamily: "inherit",
-                  outline: "none",
-                  transition: "border-color 0.2s",
-                };
-                return (
-                  <>
-                    {field.type === "textarea" ? (
-                      <textarea
-                        id={field.id}
-                        value={data[field.id] || ""}
-                        onChange={(e) => handleChange(field.id, e.target.value)}
-                        onBlur={() => handleBlur(field.id)}
-                        rows={4}
-                        aria-required={field.required}
-                        aria-invalid={hasError ? "true" : "false"}
-                        aria-describedby={
-                          hasError ? `${field.id}-error` : undefined
-                        }
-                        style={{
-                          ...inputStyle,
-                          lineHeight: 1.6,
-                          resize: "vertical",
-                        }}
-                      />
-                    ) : field.type === "select" ? (
-                      <select
-                        id={field.id}
-                        value={data[field.id] || ""}
-                        onChange={(e) => handleChange(field.id, e.target.value)}
-                        onBlur={() => handleBlur(field.id)}
-                        aria-required={field.required}
-                        aria-invalid={hasError ? "true" : "false"}
-                        aria-describedby={
-                          hasError ? `${field.id}-error` : undefined
-                        }
-                        style={{
-                          ...inputStyle,
-                          color: data[field.id]
-                            ? "var(--color-text-primary)"
-                            : "var(--color-text-tertiary)",
-                        }}
-                      >
-                        <option value="" disabled>
-                          Select an option
-                        </option>
-                        {field.options?.map((o) => (
-                          <option key={o} value={o}>
-                            {o}
-                          </option>
-                        ))}
-                      </select>
-                    ) : (
-                      <input
-                        id={field.id}
-                        type={field.type}
-                        value={data[field.id] || ""}
-                        onChange={(e) => handleChange(field.id, e.target.value)}
-                        onBlur={() => handleBlur(field.id)}
-                        aria-required={field.required}
-                        aria-invalid={hasError ? "true" : "false"}
-                        aria-describedby={
-                          hasError ? `${field.id}-error` : undefined
-                        }
-                        style={inputStyle}
-                      />
-                    )}
-                    {hasError && (
-                      <p
-                        id={`${field.id}-error`}
-                        role="alert"
+              {field.type === "radio" && (
+                <div
+                  role="radiogroup"
+                  aria-required={field.required}
+                  style={{ display: "flex", flexDirection: "column", gap: 6 }}
+                >
+                  {field.options?.map((option) => {
+                    const checked = data[field.id] === option;
+                    return (
+                      <label
+                        key={option}
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          gap: 4,
-                          fontSize: 12,
-                          color: "#FF4D4D",
-                          margin: "5px 0 0",
+                          gap: 10,
+                          padding: "10px 12px",
+                          border: `1px solid ${checked ? "rgba(0,194,255,0.5)" : "#252535"}`,
+                          borderRadius: "var(--border-radius-md)",
+                          cursor: "pointer",
+                          fontSize: 14,
+                          color: checked
+                            ? "var(--color-text-primary)"
+                            : "var(--color-text-secondary)",
+                          background: checked
+                            ? "rgba(0,194,255,0.06)"
+                            : "var(--color-background-primary)",
+                          transition: "border-color 0.15s, background 0.15s",
+                          userSelect: "none",
                         }}
                       >
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2.5}
-                          strokeLinecap="round"
-                          aria-hidden="true"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                          <line x1="12" y1="8" x2="12" y2="12" />
-                          <line x1="12" y1="16" x2="12.01" y2="16" />
-                        </svg>
-                        {errors[field.id]}
-                      </p>
-                    )}
-                  </>
-                );
-              })()}
+                        <input
+                          type="radio"
+                          name={field.id}
+                          value={option}
+                          checked={checked}
+                          onChange={() => handleChange(field.id, option)}
+                          style={{
+                            accentColor: "#00C2FF",
+                            width: 15,
+                            height: 15,
+                            flexShrink: 0,
+                          }}
+                        />
+                        {option}
+                      </label>
+                    );
+                  })}
+                </div>
+              )}
+
+              {field.type === "checkbox" && (
+                <div
+                  role="group"
+                  aria-required={field.required}
+                  style={{ display: "flex", flexDirection: "column", gap: 6 }}
+                >
+                  {field.options?.map((option) => {
+                    const selected = (data[field.id] || "")
+                      .split(", ")
+                      .filter(Boolean)
+                      .includes(option);
+                    return (
+                      <label
+                        key={option}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 10,
+                          padding: "10px 12px",
+                          border: `1px solid ${selected ? "rgba(0,194,255,0.5)" : "#252535"}`,
+                          borderRadius: "var(--border-radius-md)",
+                          cursor: "pointer",
+                          fontSize: 14,
+                          color: selected
+                            ? "var(--color-text-primary)"
+                            : "var(--color-text-secondary)",
+                          background: selected
+                            ? "rgba(0,194,255,0.06)"
+                            : "var(--color-background-primary)",
+                          transition: "border-color 0.15s, background 0.15s",
+                          userSelect: "none",
+                        }}
+                      >
+                        <input
+                          type="checkbox"
+                          value={option}
+                          checked={selected}
+                          onChange={(e) =>
+                            handleCheckboxChange(
+                              field.id,
+                              option,
+                              e.target.checked,
+                            )
+                          }
+                          style={{
+                            accentColor: "#00C2FF",
+                            width: 15,
+                            height: 15,
+                            flexShrink: 0,
+                          }}
+                        />
+                        {option}
+                      </label>
+                    );
+                  })}
+                </div>
+              )}
+
+              {field.type === "textarea" && (
+                <textarea
+                  id={field.id}
+                  value={data[field.id] || ""}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                  onBlur={() => handleBlur(field.id)}
+                  placeholder={field.placeholder}
+                  rows={4}
+                  aria-required={field.required}
+                  aria-invalid={hasError ? "true" : "false"}
+                  aria-describedby={hasError ? `${field.id}-error` : undefined}
+                  style={{
+                    ...fieldInputStyle,
+                    lineHeight: 1.6,
+                    resize: "vertical",
+                  }}
+                />
+              )}
+
+              {field.type === "select" && (
+                <select
+                  id={field.id}
+                  value={data[field.id] || ""}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                  onBlur={() => handleBlur(field.id)}
+                  aria-required={field.required}
+                  aria-invalid={hasError ? "true" : "false"}
+                  aria-describedby={hasError ? `${field.id}-error` : undefined}
+                  style={{
+                    ...fieldInputStyle,
+                    color: data[field.id]
+                      ? "var(--color-text-primary)"
+                      : "var(--color-text-tertiary)",
+                  }}
+                >
+                  <option value="" disabled>
+                    Select an option
+                  </option>
+                  {field.options?.map((o) => (
+                    <option key={o} value={o}>
+                      {o}
+                    </option>
+                  ))}
+                </select>
+              )}
+
+              {field.type !== "textarea" &&
+                field.type !== "select" &&
+                field.type !== "radio" &&
+                field.type !== "checkbox" && (
+                  <input
+                    id={field.id}
+                    type={field.type}
+                    value={data[field.id] || ""}
+                    onChange={(e) => handleChange(field.id, e.target.value)}
+                    onBlur={() => handleBlur(field.id)}
+                    placeholder={field.placeholder}
+                    aria-required={field.required}
+                    aria-invalid={hasError ? "true" : "false"}
+                    aria-describedby={
+                      hasError ? `${field.id}-error` : undefined
+                    }
+                    style={fieldInputStyle}
+                  />
+                )}
+
+              {hasError && (
+                <p
+                  id={`${field.id}-error`}
+                  role="alert"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    fontSize: 12,
+                    color: "#FF4D4D",
+                    margin: "5px 0 0",
+                  }}
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    strokeLinecap="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  {errors[field.id]}
+                </p>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Submit error */}
@@ -859,7 +939,7 @@ export default function IntakeForm() {
         </p>
       )}
 
-      {/* Navigation buttons */}
+      {/* Navigation */}
       <div
         style={{
           display: "flex",
