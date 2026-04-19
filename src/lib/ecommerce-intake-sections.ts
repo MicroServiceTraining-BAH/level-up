@@ -77,10 +77,7 @@ export const ECOMMERCE_SECTIONS: Section[] = [
         type: "radio",
         required: true,
         hint: "Each product needs a title, description, and price at minimum.",
-        options: [
-          "Yes — I'll send them",
-          "No — I'll write them before launch",
-        ],
+        options: ["Yes — I'll send them", "No — I'll write them before launch"],
       },
       {
         id: "content_deadline",
@@ -165,11 +162,7 @@ export const ECOMMERCE_SECTIONS: Section[] = [
         type: "radio",
         required: true,
         hint: "We can configure automatic tax calculation. You're responsible for your own filings.",
-        options: [
-          "Yes",
-          "No",
-          "Not sure — I'll check with my accountant",
-        ],
+        options: ["Yes", "No", "Not sure — I'll check with my accountant"],
       },
     ],
   },

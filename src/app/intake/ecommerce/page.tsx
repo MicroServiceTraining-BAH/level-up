@@ -41,8 +41,8 @@ export default function EcommerceIntakePage() {
               Let&apos;s build your store.
             </h1>
             <p className="mt-2 text-sm text-[#70708A] leading-relaxed max-w-md mx-auto">
-              Takes about 7 minutes — every answer helps us configure your
-              store correctly from day one.
+              Takes about 7 minutes — every answer helps us configure your store
+              correctly from day one.
             </p>
           </div>
           <div className="rounded-2xl border border-[#252535] bg-[#111118] p-6 sm:p-8">
