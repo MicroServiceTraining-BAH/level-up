@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjozyye";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqewledn";
 
 export type FieldType =
   | "text"
