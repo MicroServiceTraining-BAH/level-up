@@ -152,7 +152,6 @@ export const ECOMMERCE_SECTIONS: Section[] = [
           "Credit and debit cards",
           "PayPal",
           "Apple Pay / Google Pay",
-          "Buy now, pay later (e.g. Afterpay, Klarna)",
           "Not sure — use whatever's standard",
         ],
       },
