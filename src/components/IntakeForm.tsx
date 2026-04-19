@@ -4,17 +4,18 @@ import { useState } from "react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjozyye";
 
-type FieldType =
+export type FieldType =
   | "text"
   | "tel"
   | "email"
   | "url"
+  | "number"
   | "textarea"
   | "select"
   | "radio"
   | "checkbox";
 
-type Field = {
+export type Field = {
   id: string;
   label: string;
   type: FieldType;
@@ -24,7 +25,7 @@ type Field = {
   options?: string[];
 };
 
-type Section = {
+export type Section = {
   title: string;
   subtitle: string;
   notice?: string;
@@ -321,7 +322,12 @@ function validateField(field: Field, value: string): string {
   return "";
 }
 
-export default function IntakeForm() {
+export default function IntakeForm({
+  sections: sectionsProp,
+}: {
+  sections?: Section[];
+} = {}) {
+  const resolvedSections = sectionsProp ?? SECTIONS;
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormData>({});
   const [submitted, setSubmitted] = useState(false);
@@ -330,8 +336,8 @@ export default function IntakeForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const current = SECTIONS[step];
-  const total = SECTIONS.length;
+  const current = resolvedSections[step];
+  const total = resolvedSections.length;
   const progress = (step / total) * 100;
 
   function handleChange(id: string, value: string) {
@@ -866,10 +872,27 @@ export default function IntakeForm() {
                 </select>
               )}
 
+              {field.type === "number" && (
+                <input
+                  id={field.id}
+                  type="number"
+                  min={1}
+                  value={data[field.id] || ""}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                  onBlur={() => handleBlur(field.id)}
+                  placeholder={field.placeholder}
+                  aria-required={field.required}
+                  aria-invalid={hasError ? "true" : "false"}
+                  aria-describedby={hasError ? `${field.id}-error` : undefined}
+                  style={fieldInputStyle}
+                />
+              )}
+
               {field.type !== "textarea" &&
                 field.type !== "select" &&
                 field.type !== "radio" &&
-                field.type !== "checkbox" && (
+                field.type !== "checkbox" &&
+                field.type !== "number" && (
                   <input
                     id={field.id}
                     type={field.type}
