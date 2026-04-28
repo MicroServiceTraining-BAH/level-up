@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors */
-  --color-brand-blue: #00c2ff;
-  --color-brand-green: #39ff14;
-  --color-brand-bg: #09090f;
-  --color-brand-surface: #111118;
-  --color-brand-elevated: #1c1c28;
-  --color-brand-border: #252535;
-  --color-brand-text: #f0f0ff;
-  --color-brand-muted: #70708a;
+  /* Brand Colors — Light Theme */
+  --color-brand-blue: #0099cc;
+  --color-brand-green: #10b981;
+  --color-brand-bg: #ffffff;
+  --color-brand-surface: #f3f5fc;
+  --color-brand-elevated: #ffffff;
+  --color-brand-border: rgba(0, 0, 60, 0.09);
+  --color-brand-text: #080820;
+  --color-brand-muted: #6a6a8e;
 
   /* Fonts */
   --font-heading: var(--font-syne), sans-serif;
@@ -18,6 +18,13 @@
 
 * {
   box-sizing: border-box;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto;
+  }
 }
 
 html {
@@ -25,8 +32,8 @@ html {
 }
 
 body {
-  background-color: #09090f;
-  color: #f0f0ff;
+  background-color: #ffffff;
+  color: #080820;
   font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -100,6 +107,15 @@ body {
     transform: translateY(100%);
   }
 }
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
 @keyframes flicker {
   0%,
   95%,
@@ -146,17 +162,69 @@ body {
   text-shadow: 0 0 40px rgba(0, 194, 255, 0.45);
 }
 
+/* ─── Card hover effects ─── */
+.card-hover {
+  border: 1px solid rgba(0, 0, 60, 0.09);
+  box-shadow: 0 2px 12px rgba(0, 0, 80, 0.06);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.card-hover:hover {
+  border-color: rgba(0, 153, 204, 0.35);
+  box-shadow:
+    0 0 28px rgba(0, 153, 204, 0.1),
+    0 8px 28px rgba(0, 0, 80, 0.1);
+}
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+}
+.card-hover-step:hover {
+  border-color: rgba(0, 153, 204, 0.35);
+  box-shadow:
+    0 0 28px rgba(0, 153, 204, 0.1),
+    0 8px 28px rgba(0, 0, 80, 0.1);
+}
+.location-pill {
+  color: #6a6a8e;
+  border: 1px solid rgba(0, 0, 60, 0.09);
+  background: #ffffff;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.location-pill:hover {
+  color: #0099cc;
+  border-color: rgba(0, 153, 204, 0.35);
+}
+.ghost-btn {
+  border: 1px solid rgba(0, 0, 60, 0.14);
+  background: transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+.ghost-btn:hover {
+  color: #0099cc;
+  border-color: rgba(0, 153, 204, 0.4);
+}
+.ghost-btn:active {
+  transform: scale(0.97);
+}
+
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090f;
+  background: #f3f5fc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #252535;
+  background: #c0c0d8;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #353555;
+  background: #a0a0c0;
 }

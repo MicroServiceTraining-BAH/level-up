@@ -45,8 +45,8 @@ export default function ContactForm() {
         <div
           className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
           style={{
-            background: "rgba(57,255,20,0.1)",
-            border: "1px solid rgba(57,255,20,0.3)",
+            background: "rgba(16,185,129,0.1)",
+            border: "1px solid rgba(16,185,129,0.3)",
           }}
         >
           <svg
@@ -54,7 +54,7 @@ export default function ContactForm() {
             height="28"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="#39FF14"
+            stroke="#10b981"
             strokeWidth={2.5}
           >
             <polyline points="20 6 9 17 4 12" />

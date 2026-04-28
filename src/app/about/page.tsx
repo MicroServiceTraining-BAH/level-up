@@ -72,7 +72,7 @@ const staticTeam = [
     role: "Design & Development",
     initials: "GC",
     bio: "Gabriel handles all design and development. He builds fast, conversion-focused websites that look professional and work hard for the businesses behind them. His philosophy: every pixel should serve a purpose, and every page should generate results.",
-    color: "#39FF14",
+    color: "#00C2FF",
   },
 ];
 
@@ -195,9 +195,8 @@ export default async function AboutPage() {
                     <div
                       className="w-16 h-16 rounded-2xl flex items-center justify-center font-heading font-black text-xl flex-shrink-0"
                       style={{
-                        background: `${member.color}15`,
-                        border: `1px solid ${member.color}30`,
-                        color: member.color,
+                        background: "#00C2FF",
+                        color: "#ffffff",
                       }}
                     >
                       {member.initials}
@@ -206,10 +205,7 @@ export default async function AboutPage() {
                       <h3 className="font-heading font-black text-xl text-brand-text">
                         {member.name}
                       </h3>
-                      <p
-                        className="text-sm font-medium mt-0.5"
-                        style={{ color: member.color }}
-                      >
+                      <p className="text-sm font-medium mt-0.5 text-brand-blue">
                         {member.role}
                       </p>
                     </div>
@@ -246,7 +242,7 @@ export default async function AboutPage() {
                     <div
                       className="w-1 self-stretch rounded-full flex-shrink-0"
                       style={{
-                        background: i % 2 === 0 ? "#00C2FF" : "#39FF14",
+                        background: i % 2 === 0 ? "#00C2FF" : "#10b981",
                       }}
                     />
                     <div>

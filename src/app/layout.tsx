@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-syne",
@@ -306,6 +308,8 @@ export default function RootLayout({
             }),
           }}
         />
+        <SmoothScroll />
+        <CustomCursor />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
