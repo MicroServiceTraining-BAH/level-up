@@ -32,7 +32,7 @@ export default function EcommerceIntakePage() {
           <div className="mb-8 text-center">
             <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-[rgba(0,194,255,0.08)] border border-[rgba(0,194,255,0.2)] text-[#00C2FF]">
               <span
-                className="w-1.5 h-1.5 rounded-full bg-[#39FF14] animate-pulse"
+                className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"
                 aria-hidden="true"
               />
               Store Intake Form

@@ -128,7 +128,7 @@ export default function BookingPage() {
 
                 <div
                   className="p-6 rounded-2xl border border-brand-green/20"
-                  style={{ background: "rgba(57,255,20,0.04)" }}
+                  style={{ background: "rgba(16,185,129,0.04)" }}
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <span

@@ -287,7 +287,7 @@ const CSS_VARS: Record<string, string> = {
   "--color-text-primary": "#F0F0FF",
   "--color-text-secondary": "#70708A",
   "--color-text-tertiary": "#4A4A65",
-  "--color-text-success": "#39FF14",
+  "--color-text-success": "#10b981",
   "--color-text-danger": "#FF4D4D",
   "--color-border-secondary": "#252535",
   "--border-radius-md": "8px",
@@ -442,7 +442,7 @@ export default function IntakeForm({
             alignItems: "center",
             justifyContent: "center",
             margin: "0 auto 1.5rem",
-            border: "1px solid rgba(57,255,20,0.2)",
+            border: "1px solid rgba(16,185,129,0.2)",
           }}
         >
           <svg
@@ -614,7 +614,7 @@ export default function IntakeForm({
             style={{
               height: "100%",
               width: `${progress + 100 / total}%`,
-              background: "linear-gradient(90deg, #00C2FF, #39FF14)",
+              background: "linear-gradient(90deg, #0099cc, #10b981)",
               borderRadius: 4,
               transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
@@ -671,7 +671,7 @@ export default function IntakeForm({
           const borderColor = hasError
             ? "#FF4D4D"
             : isValid
-              ? "rgba(57,255,20,0.45)"
+              ? "rgba(16,185,129,0.45)"
               : "#252535";
           const fieldInputStyle: React.CSSProperties = {
             ...inputStyle,

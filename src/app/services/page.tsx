@@ -83,7 +83,7 @@ const staticServices = [
     ),
     title: "Lead Capture Systems",
     tag: "Convert Visitors",
-    tagColor: "#39FF14",
+    tagColor: "#10b981",
     description:
       "A pretty website isn't enough - you need systems that capture leads and get them into your hands. We set up everything so that when someone visits your site, they become a real inquiry.",
     bullets: [
@@ -137,7 +137,7 @@ const staticServices = [
     ),
     title: "Ongoing Support & Updates",
     tag: "Long-Term Partner",
-    tagColor: "#39FF14",
+    tagColor: "#10b981",
     description:
       "We don't disappear after your site goes live. We're your ongoing tech partner - keeping your site up-to-date, making changes when your business evolves, and answering questions when you need help.",
     bullets: [
@@ -338,7 +338,7 @@ export default async function ServicesPage() {
                 step: "02",
                 title: "Google Business Profile Optimization",
                 desc: "Your Google Business Profile is your most important local ranking tool. We optimize it with accurate categories, service areas, photos, and posts to maximize your local pack visibility.",
-                color: "#39FF14",
+                color: "#10b981",
               },
               {
                 step: "03",
