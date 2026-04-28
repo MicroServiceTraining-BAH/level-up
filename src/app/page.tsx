@@ -4,6 +4,7 @@ import { getTestimonials } from "@/sanity/queries";
 import HeroSection from "@/components/HeroSection";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import PageAnimations from "@/components/PageAnimations";
+import PhoneShowcase from "@/components/PhoneShowcase";
 
 export const metadata: Metadata = {
   title: "Local SEO Services That Bring You More Customers | LevelUp Local",
@@ -303,6 +304,7 @@ export default async function HomePage() {
       <PageAnimations />
       <HeroSection />
       <MarqueeStrip />
+      <PhoneShowcase />
 
       {/* ── PROBLEM ── */}
       <section style={{ background: "#f3f5fc" }} className="py-28">
